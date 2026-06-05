@@ -16,7 +16,6 @@ export async function POST(req: NextRequest) {
   const response = NextResponse.json({ success: true });
   response.cookies.set('admin_token', adminToken, {
     httpOnly: false, // must be readable by client-side JS for admin layout auth check
-    secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
     path: '/',
     // session cookie — expires on browser close
