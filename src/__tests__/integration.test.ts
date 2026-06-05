@@ -42,7 +42,7 @@ describe('Public Pages', () => {
     assert.equal(status, 200);
     assert.ok(text.includes('Audit Senior Manager'));
     assert.ok(text.includes('Top 20 Accountancy Practice'));
-    assert.ok(text.includes('BC-001'));
+    assert.ok(text.includes('BC-1'));
     assert.ok(text.includes('Discuss this role'));
     assert.ok(text.includes('Leading audit engagements'), 'description renders from shared store');
   });
@@ -96,12 +96,13 @@ describe('API Routes', () => {
   });
 
   it('POST /api/jobs → 201', async () => {
+    const slug = `test-job-${Date.now()}`;
     const res = await fetch(`${BASE}/api/jobs`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         title: 'Test Job', company: 'Test Co', location: 'London',
-        type: 'Full-time', sector: 'Practice', description: 'Test.', slug: 'test-job',
+        type: 'Full-time', sector: 'Practice', description: 'Test.', slug,
       }),
     });
     assert.equal(res.status, 201);

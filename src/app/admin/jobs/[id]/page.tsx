@@ -3,7 +3,12 @@
 import Link from 'next/link';
 import { useRouter, useParams } from 'next/navigation';
 import { useState, useEffect, FormEvent } from 'react';
-import { JOBS, type Job } from '@/lib/jobs';
+
+interface Job {
+  id: string; title: string; slug: string; company: string; location: string;
+  type: string; sector: string; salary: string; status: string; description: string;
+  applications: number; createdAt: string;
+}
 
 export default function JobDetailPage() {
   const router = useRouter();
@@ -11,14 +16,30 @@ export default function JobDetailPage() {
   const id = params.id as string;
 
   const [job, setJob] = useState<Job | null>(null);
+  const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    const found = JOBS[id];
-    if (found) setJob({ ...found });
+    fetch('/api/jobs')
+      .then(r => r.json())
+      .then((jobs: Job[]) => {
+        const found = jobs.find(j => j.id === id);
+        setJob(found || null);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, [id]);
+
+  if (loading) {
+    return (
+      <div className="max-w-2xl">
+        <Link href="/admin/jobs" className="text-gold text-sm hover:underline">← Back to Jobs</Link>
+        <p className="text-gray-400 text-sm py-8">Loading...</p>
+      </div>
+    );
+  }
 
   if (!job) {
     return (
@@ -33,33 +54,37 @@ export default function JobDetailPage() {
     );
   }
 
-  function handleSave(e: FormEvent<HTMLFormElement>) {
+  async function handleSave(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const fd = new FormData(form);
-    if (!job) return;
 
-    const updates: Partial<Job> = {
-      title: (fd.get('title') as string) || job.title,
-      company: (fd.get('company') as string) || job.company,
-      location: (fd.get('location') as string) || job.location,
-      salary: (fd.get('salary') as string) || job.salary,
-      type: (fd.get('type') as string) || job.type,
-      sector: (fd.get('sector') as string) || job.sector,
-      status: (fd.get('status') as string) || job.status,
-      description: (fd.get('description') as string) || job.description,
+    const updates = {
+      title: fd.get('title'),
+      company: fd.get('company'),
+      location: fd.get('location'),
+      salary: fd.get('salary'),
+      type: fd.get('type'),
+      sector: fd.get('sector'),
+      status: fd.get('status'),
+      description: fd.get('description'),
     };
 
     setSaving(true);
-    const updated = { ...job, ...updates };
-    JOBS[id] = updated; // shared store — visible to jobs list
+    const res = await fetch(`/api/jobs/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updates),
+    });
+
+    const updated = await res.json();
     setJob(updated);
     setEditing(false);
     setSaving(false);
   }
 
-  function handleDelete() {
-    delete JOBS[id];
+  async function handleDelete() {
+    await fetch(`/api/jobs/${id}`, { method: 'DELETE' });
     router.push('/admin/jobs');
   }
 
@@ -160,7 +185,6 @@ export default function JobDetailPage() {
         )}
       </div>
 
-      {/* Delete confirmation modal */}
       {showDelete && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-5">
           <div className="absolute inset-0 bg-black/50" onClick={() => setShowDelete(false)} />

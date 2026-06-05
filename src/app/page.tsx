@@ -148,6 +148,22 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
+
+              {/* Testimonial */}
+              <div className="card-dark">
+                <p className="font-heading italic text-gold text-base sm:text-lg mb-3 leading-relaxed">
+                  &ldquo;BC Financial understood our practice culture and delivered candidates who actually stayed. The precision is real.&rdquo;
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center">
+                    <span className="text-gold text-xs font-semibold">MP</span>
+                  </div>
+                  <div>
+                    <p className="text-white text-xs font-semibold tracking-wider">Mark Peters</p>
+                    <p className="text-white/40 text-[10px]">Managing Partner, Top 50 Firm</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

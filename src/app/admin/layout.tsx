@@ -81,12 +81,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           {/* Back to site + Sign Out + mobile hamburger */}
           <div className="flex items-center gap-3">
-            <Link
-              href="/"
+            <button
+              onClick={async () => {
+                await fetch('/api/auth/logout', { method: 'POST' });
+                window.location.href = '/';
+              }}
               className="btn-gold text-[10px] px-4 sm:px-5 py-2 sm:py-2.5 shrink-0"
             >
               ← Back to Site
-            </Link>
+            </button>
             <button
               onClick={async () => {
                 await fetch('/api/auth/logout', { method: 'POST' });

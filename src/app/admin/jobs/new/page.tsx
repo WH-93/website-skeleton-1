@@ -3,48 +3,25 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FormEvent, useState } from 'react';
-import { JOBS, type Job } from '@/lib/jobs';
 
 export default function NewJobPage() {
   const router = useRouter();
   const [saving, setSaving] = useState(false);
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setSaving(true);
     const form = e.target as HTMLFormElement;
     const data = Object.fromEntries(new FormData(form));
     const slug = (data.title as string).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
-    // Generate a unique-ish ID
-    const ids = Object.keys(JOBS).map(Number);
-    const nextId = String((ids.length ? Math.max(...ids) : 0) + 1);
-
-    const job: Job = {
-      id: nextId,
-      slug,
-      title: data.title as string,
-      company: (data.company as string) || '',
-      location: (data.location as string) || '',
-      type: (data.type as string) || 'Full-time',
-      sector: (data.sector as string) || 'Practice',
-      salary: (data.salary as string) || '',
-      status: 'Draft',
-      description: (data.description as string) || '',
-      applications: 0,
-      createdAt: new Date().toISOString().split('T')[0],
-    };
-
-    // Write to shared store + API
-    JOBS[nextId] = job;
-
-    fetch('/api/jobs', {
+    await fetch('/api/jobs', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(job),
-    }).finally(() => {
-      router.push('/admin/jobs');
+      body: JSON.stringify({ ...data, slug }),
     });
+
+    router.push('/admin/jobs');
   }
 
   const fields = [

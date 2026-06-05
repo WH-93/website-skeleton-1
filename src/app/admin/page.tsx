@@ -2,7 +2,6 @@
 
 import { useState, FormEvent, useEffect } from 'react';
 import Link from 'next/link';
-import { getJobsArray } from '@/lib/jobs';
 
 function getCookie(name: string) {
   if (typeof document === 'undefined') return null;
@@ -10,22 +9,35 @@ function getCookie(name: string) {
   return match ? match[1] : null;
 }
 
-
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
-  const [checked, setChecked] = useState(true); // start true so login form renders server-side
+  const [checked, setChecked] = useState(true);
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loginLoading, setLoginLoading] = useState(false);
+  const [liveCount, setLiveCount] = useState(0);
+  const [totalApps, setTotalApps] = useState(0);
 
   useEffect(() => {
     setAuthed(!!getCookie('admin_token'));
     setChecked(true);
   }, []);
 
+  useEffect(() => {
+    if (authed) {
+      fetch('/api/jobs')
+        .then(r => r.json())
+        .then((jobs: any[]) => {
+          setLiveCount(jobs.filter((j: any) => j.status === 'Live').length);
+          setTotalApps(jobs.reduce((sum: number, j: any) => sum + (j.applications || 0), 0));
+        })
+        .catch(() => {});
+    }
+  }, [authed]);
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError('');
-    setLoading(true);
+    setLoginLoading(true);
 
     const form = e.target as HTMLFormElement;
     const password = new FormData(form).get('password') as string;
@@ -37,28 +49,24 @@ export default function AdminPage() {
     });
 
     if (res.ok) {
-      // Full reload so the admin layout picks up the cookie and shows nav
       window.location.reload();
     } else {
       setError('Invalid password');
     }
 
-    setLoading(false);
+    setLoginLoading(false);
   }
 
   if (!checked) return null;
 
   if (authed) {
-    const jobs = getJobsArray();
-    const liveCount = jobs.filter(j => j.status === 'Live').length;
-    const totalApps = jobs.reduce((sum, j) => sum + j.applications, 0);
-
     const stats = [
       { label: 'Active Jobs', value: String(liveCount), href: '/admin/jobs' },
       { label: 'Total Applications', value: String(totalApps), href: '/admin/pipeline' },
       { label: 'Interviews This Week', value: '3', href: '/admin/pipeline' },
       { label: 'Placements This Month', value: '2', href: '#' },
     ];
+
     return (
       <div className="max-w-5xl">
         <h1 className="font-heading text-xl sm:text-2xl text-navy mb-8 sm:mb-10">Dashboard</h1>
@@ -113,9 +121,9 @@ export default function AdminPage() {
             <p className="text-red-600 text-sm">{error}</p>
           )}
 
-          <button type="submit" disabled={loading}
+          <button type="submit" disabled={loginLoading}
                   className="btn-gold-dark w-full text-center disabled:opacity-50">
-            {loading ? 'Signing in...' : 'Sign In'}
+            {loginLoading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
 

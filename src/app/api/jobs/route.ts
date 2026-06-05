@@ -1,19 +1,46 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
+import { PrismaClient } from '@prisma/client';
 
-// In production: import { PrismaClient } from '@prisma/client';
-// const prisma = new PrismaClient();
-
-const MOCK_JOBS = [
-  { id: '1', slug: 'audit-senior-manager', title: 'Audit Senior Manager', company: 'Top 20 Accountancy Practice', location: 'London', type: 'Full-time', sector: 'Practice', salary: '£75k-£90k', status: 'Live', description: 'Leading audit engagements...', createdAt: new Date().toISOString() },
-  { id: '2', slug: 'corporate-tax-director', title: 'Corporate Tax Director', company: 'Boutique Firm — Mayfair', location: 'London', type: 'Full-time', sector: 'Tax', salary: '£120k-£150k', status: 'Live', description: 'Leading the tax practice...', createdAt: new Date().toISOString() },
-];
+const prisma = new PrismaClient();
 
 export async function GET() {
-  return NextResponse.json(MOCK_JOBS);
+  const jobs = await prisma.job.findMany({
+    orderBy: { createdAt: 'desc' },
+    include: { _count: { select: { applications: true } } },
+  });
+
+  // Transform to include applications as a flat number
+  const result = jobs.map(({ _count, ...job }) => ({
+    ...job,
+    applications: _count.applications,
+  }));
+
+  return NextResponse.json(result);
 }
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const job = { id: String(MOCK_JOBS.length + 1), ...body, status: 'Live', createdAt: new Date().toISOString() };
-  return NextResponse.json(job, { status: 201 });
+  try {
+    const job = await prisma.job.create({
+      data: {
+        title: body.title || '',
+        company: body.company || '',
+        location: body.location || '',
+        type: body.type || 'Full-time',
+        sector: body.sector || 'Practice',
+        salary: body.salary || '',
+        description: body.description || '',
+        slug: body.slug || `job-${Date.now()}`,
+        status: 'Draft',
+      },
+      include: { _count: { select: { applications: true } } },
+    });
+    const { _count, ...rest } = job;
+    revalidatePath('/jobs');
+    return NextResponse.json({ ...rest, applications: _count.applications }, { status: 201 });
+  } catch (err: any) {
+    // Slug uniqueness violation or other DB error
+    return NextResponse.json({ error: err.message || 'Creation failed' }, { status: 500 });
+  }
 }
