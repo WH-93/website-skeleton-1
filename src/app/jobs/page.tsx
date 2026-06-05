@@ -23,7 +23,7 @@ export default function JobsPage() {
   useEffect(() => {
     fetch('/api/jobs')
       .then(r => r.json())
-      .then(data => setJobs(data.filter((j: any) => j.status === 'Live')))
+      .then(data => setJobs(data.filter((j: any) => j.status !== 'Draft')))
       .catch(() => setJobs([]));
   }, []);
 

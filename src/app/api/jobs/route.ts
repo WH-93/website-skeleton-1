@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
         salary: body.salary || '',
         description: body.description || '',
         slug: body.slug || `job-${Date.now()}`,
-        status: 'Draft',
+        status: body.status || 'Draft',
       },
       include: { _count: { select: { applications: true } } },
     });

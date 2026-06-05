@@ -1,6 +1,9 @@
 # Multi-stage Docker build for Next.js + Prisma
-FROM node:22-alpine AS base
+FROM node:22-slim AS base
 WORKDIR /app
+
+# Prisma engine requirements
+RUN apt-get update && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 # Install Prisma CLI for migration support
 RUN npm install -g prisma@^5.14.0
