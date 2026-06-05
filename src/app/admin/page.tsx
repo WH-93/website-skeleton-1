@@ -68,7 +68,7 @@ export default function AdminPage() {
   if (authed) {
     const stats = [
       { label: 'Active Jobs', value: String(liveCount), href: '/admin/jobs' },
-      { label: 'Total Applications', value: String(totalApps), href: '/admin/pipeline' },
+      { label: 'Total Applications', value: String(totalApps), href: '/admin/applications' },
       { label: 'Interviews This Week', value: '3', href: '/admin/pipeline' },
       { label: 'Placements This Month', value: '2', href: '#' },
     ];
