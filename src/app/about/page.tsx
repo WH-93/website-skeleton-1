@@ -13,7 +13,7 @@ export default function AboutPage() {
             a personal, partner-led approach.
           </p>
           <p>
-            Founded by Ben Carter, a former practice director with 20+ years in the sector, 
+            Founded by Ben Copsey, a former practice director with 20+ years in the sector, 
             we understand what makes a great hire &mdash; not just on paper, but in practice.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12 pt-12 border-t border-gold/10">
