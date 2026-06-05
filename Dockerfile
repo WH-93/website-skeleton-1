@@ -1,24 +1,45 @@
-# Multi-stage Docker build for Next.js
+# Multi-stage Docker build for Next.js + Prisma
 FROM node:22-alpine AS base
 WORKDIR /app
+
+# Install Prisma CLI for migration support
+RUN npm install -g prisma@^5.14.0
 
 # Dependencies
 FROM base AS deps
 COPY package.json package-lock.json ./
 RUN npm ci
 
+# Prisma client generation
+FROM deps AS prisma
+COPY prisma ./prisma
+RUN npx prisma generate
+
 # Build
-FROM base AS build
-COPY --from=deps /app/node_modules ./node_modules
+FROM prisma AS build
 COPY . .
 RUN npx next build
 
 # Production
 FROM base AS runner
 ENV NODE_ENV=production
-COPY --from=build /app/public ./public
+
+# Copy standalone output (includes .next/static, server.js, node_modules)
 COPY --from=build /app/.next/standalone ./
-COPY --from=build /app/.next/static ./.next/static
+
+# Copy public assets into standalone's public dir
+COPY --from=build /app/public ./public
+
+# Copy Prisma for migrations at startup
+COPY --from=build /app/prisma/migrations ./prisma/migrations
+COPY --from=build /app/prisma/schema.prisma ./prisma/schema.prisma
+COPY --from=build /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=build /app/node_modules/@prisma ./node_modules/@prisma
+
+# EFS mount point for SQLite
+RUN mkdir -p /data
 
 EXPOSE 3000
-CMD ["node", "server.js"]
+
+# Run migrations then start Next.js
+CMD sh -c "npx prisma migrate deploy --schema=prisma/schema.prisma && node server.js"

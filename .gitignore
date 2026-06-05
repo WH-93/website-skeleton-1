@@ -23,8 +23,15 @@ yarn-error.log*
 .env
 .env*.local
 
+# terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.tfvars.example
+
 # data
-.hermes/
+prisma/dev.db
 
 # turbo
 .turbo
