@@ -27,8 +27,11 @@ RUN npx next build
 FROM base AS runner
 ENV NODE_ENV=production
 
-# Copy standalone output (includes .next/static, server.js, node_modules)
+# Copy standalone output (server.js, node_modules, .next/server)
 COPY --from=build /app/.next/standalone ./
+
+# Copy static assets (CSS, JS chunks) — standalone does NOT include .next/static
+COPY --from=build /app/.next/static ./.next/static
 
 # Copy public assets into standalone's public dir
 COPY --from=build /app/public ./public
