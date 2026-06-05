@@ -2,6 +2,15 @@
 
 import { useState, FormEvent } from 'react';
 
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve((reader.result as string).split(',')[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
 export function ApplyForm({ jobTitle, jobId, onClose }: {
   jobTitle: string;
   jobId: string;
@@ -10,27 +19,21 @@ export function ApplyForm({ jobTitle, jobId, onClose }: {
   const [file, setFile] = useState<File | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setSending(true);
+    setError('');
 
     const form = e.target as HTMLFormElement;
     const fd = new FormData(form);
 
     try {
-      // 1. Get presigned S3 URL
-      const { url, key } = await fetch('/api/upload-url', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fileName: file!.name, contentType: file!.type }),
-      }).then(r => r.json());
+      const cvData = file ? await fileToBase64(file) : null;
+      const cvKey = file ? `cvs/${Date.now()}-${file.name}` : null;
 
-      // 2. Upload CV to S3
-      await fetch(url, { method: 'PUT', body: file, headers: { 'Content-Type': file!.type } });
-
-      // 3. Submit application
-      await fetch('/api/applications', {
+      const res = await fetch('/api/applications', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -38,15 +41,21 @@ export function ApplyForm({ jobTitle, jobId, onClose }: {
           firstName: fd.get('firstName'),
           lastName: fd.get('lastName'),
           email: fd.get('email'),
-          phone: fd.get('phone'),
-          cvKey: key,
-          cvName: file!.name,
+          phone: fd.get('phone') || null,
+          cvKey,
+          cvName: file?.name || null,
+          cvData,
         }),
       });
 
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || 'Submission failed');
+      }
+
       setSubmitted(true);
-    } catch (err) {
-      console.error('Submit failed:', err);
+    } catch (err: any) {
+      setError(err.message || 'Something went wrong. Please try again.');
     } finally {
       setSending(false);
     }
@@ -115,6 +124,8 @@ export function ApplyForm({ jobTitle, jobId, onClose }: {
             <a href="/privacy" className="text-gold underline">Privacy Policy</a>.
           </label>
         </div>
+
+        {error && <p className="text-red-600 text-sm">{error}</p>}
 
         <button type="submit" disabled={sending}
                 className="btn-gold-dark w-full text-center disabled:opacity-50">

@@ -32,6 +32,7 @@ model Candidate {
   phone     String?
   cvKey     String?
   cvName    String?
+  cvData    String?  // base64-encoded CV content for storage without S3
   createdAt DateTime @default(now())
 
   applications Application[]
