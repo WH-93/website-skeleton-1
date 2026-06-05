@@ -11,7 +11,7 @@ function getCookie(name: string) {
 
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
   const [error, setError] = useState('');
   const [loginLoading, setLoginLoading] = useState(false);
   const [liveCount, setLiveCount] = useState(0);
@@ -57,7 +57,13 @@ export default function AdminPage() {
     setLoginLoading(false);
   }
 
-  if (!checked) return null;
+  if (!checked) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <p className="text-gray-400 text-sm">Loading...</p>
+      </div>
+    );
+  }
 
   if (authed) {
     const stats = [
