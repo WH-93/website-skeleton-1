@@ -103,6 +103,13 @@ resource "aws_security_group" "alb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
@@ -169,6 +176,19 @@ resource "aws_lb_listener" "http" {
   load_balancer_arn = aws_lb.app.arn
   port              = 80
   protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.app.arn
+  }
+}
+
+# ── HTTPS (self-signed cert, imported manually — enables iOS Safari) ──
+resource "aws_lb_listener" "https" {
+  load_balancer_arn = aws_lb.app.arn
+  port              = 443
+  protocol          = "HTTPS"
+  certificate_arn   = "arn:aws:acm:eu-west-2:486208157703:certificate/93f1329e-b316-4b3d-8f76-45154eab338f"
 
   default_action {
     type             = "forward"
