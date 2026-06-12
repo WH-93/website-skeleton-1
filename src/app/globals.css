@@ -107,7 +107,7 @@
 
   .mobile-nav-link {
     @apply block w-full text-left text-navy/75 hover:text-gold hover:bg-warm-white
-           px-5 py-3 text-xs tracking-wider transition-colors;
+           px-5 py-3 text-xs tracking-wider;
   }
 }
 
