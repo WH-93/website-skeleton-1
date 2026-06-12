@@ -35,7 +35,7 @@ export default function NewJobPage() {
     <div className="max-w-2xl">
       <div className="flex items-center gap-3 mb-6 sm:mb-8">
         <Link href="/admin/jobs" className="text-gold text-sm hover:underline">← Back</Link>
-        <h1 className="font-heading text-xl sm:text-2xl text-navy">New Job</h1>
+        <h1 className="font-heading text-xl sm:text-2xl text-white">New Job</h1>
       </div>
 
       <form onSubmit={handleSubmit} className="bg-white rounded-card shadow-card p-5 sm:p-8 space-y-4 sm:space-y-5">

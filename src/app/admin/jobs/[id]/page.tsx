@@ -92,7 +92,7 @@ export default function JobDetailPage() {
     <div className="max-w-3xl">
       <div className="flex items-center gap-3 mb-6 sm:mb-8">
         <Link href="/admin/jobs" className="text-gold text-sm hover:underline">← Back</Link>
-        <h1 className="font-heading text-xl sm:text-2xl text-navy">
+        <h1 className="font-heading text-xl sm:text-2xl text-white">
           {editing ? 'Edit ' : ''}{job.title}
         </h1>
       </div>

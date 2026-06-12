@@ -2,6 +2,7 @@
 
 import { useState, FormEvent, useEffect } from 'react';
 import Link from 'next/link';
+import { BcLogo } from '@/components/bc-logo';
 
 function getCookie(name: string) {
   if (typeof document === 'undefined') return null;
@@ -75,7 +76,7 @@ export default function AdminPage() {
 
     return (
       <div className="max-w-5xl">
-        <h1 className="font-heading text-xl sm:text-2xl text-navy mb-8 sm:mb-10">Dashboard</h1>
+        <h1 className="font-heading text-xl sm:text-2xl text-white mb-8 sm:mb-10">Dashboard</h1>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-10 sm:mb-12">
           {stats.map(s => (
@@ -87,10 +88,10 @@ export default function AdminPage() {
           ))}
         </div>
 
-        <h2 className="font-heading text-lg sm:text-xl text-navy mb-4">Quick Actions</h2>
+        <h2 className="font-heading text-lg sm:text-xl text-white mb-4">Quick Actions</h2>
         <div className="flex flex-wrap gap-3">
-          <Link href="/admin/jobs/new" className="btn-gold-dark text-xs">+ New Job</Link>
-          <Link href="/admin/pipeline" className="btn-outline-dark text-xs">View Pipeline</Link>
+          <Link href="/admin/jobs/new" className="btn-gold text-xs">+ New Job</Link>
+          <Link href="/admin/pipeline" className="btn-outline-light text-xs">View Pipeline</Link>
         </div>
       </div>
     );
@@ -100,12 +101,8 @@ export default function AdminPage() {
     <div className="min-h-[60vh] flex items-center justify-center">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="relative w-10 h-10 flex items-center justify-center">
-              <span className="font-sans text-2xl font-bold text-navy">B</span>
-              <span className="absolute font-sans text-2xl font-bold text-gold"
-                    style={{ top: '2px', left: '14px' }}>C</span>
-            </div>
+          <div className="flex items-center justify-center mb-4">
+            <BcLogo height={52} />
           </div>
           <h1 className="font-heading text-xl text-navy">Admin Login</h1>
         </div>
@@ -128,7 +125,7 @@ export default function AdminPage() {
           )}
 
           <button type="submit" disabled={loginLoading}
-                  className="btn-gold-dark w-full text-center disabled:opacity-50">
+                  className="btn-gold w-full text-center disabled:opacity-50">
             {loginLoading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>

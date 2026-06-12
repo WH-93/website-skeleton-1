@@ -41,8 +41,8 @@ export default function ApplicationsPage() {
       <Link href="/admin" className="text-gold text-sm hover:underline inline-block mb-2">← Dashboard</Link>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
         <div>
-          <h1 className="font-heading text-xl sm:text-2xl text-navy">Applications & CVs</h1>
-          <p className="text-gray-400 text-xs sm:text-sm mt-1">
+          <h1 className="font-heading text-xl sm:text-2xl text-white">Applications & CVs</h1>
+          <p className="text-white/40 text-xs sm:text-sm mt-1">
             {apps.length} total applications — click a CV name to download.
           </p>
         </div>

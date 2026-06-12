@@ -36,9 +36,15 @@
   }
 
   .btn-outline-dark {
-    @apply inline-flex items-center justify-center border border-gold text-white font-bold
+    @apply inline-flex items-center justify-center border border-gold text-navy font-bold
            rounded uppercase tracking-wider text-[10px] sm:text-xs px-7 py-3 sm:px-8 sm:py-3.5
-           hover:bg-gold hover:text-white transition-colors whitespace-nowrap;
+           hover:bg-gold hover:text-white transition-colors whitespace-nowrap bg-white;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center border border-white/30 text-white font-bold
+           rounded uppercase tracking-wider text-[10px] sm:text-xs px-7 py-3 sm:px-8 sm:py-3.5
+           hover:bg-white hover:text-navy transition-colors whitespace-nowrap;
   }
 
   .input-field {
@@ -79,7 +85,7 @@
 
   .split-hero { @apply bg-white overflow-hidden; }
   .split-hero-grid { @apply grid lg:grid-cols-[43%_57%] items-stretch min-h-[520px] lg:min-h-[620px]; }
-  .split-hero-copy { @apply container-page lg:mx-0 lg:max-w-none lg:pl-16 xl:pl-20 lg:pr-12 xl:pr-16 py-14 sm:py-20 lg:py-16 flex flex-col justify-center; }
+  .split-hero-copy { @apply container-page lg:mx-0 lg:max-w-none lg:pl-16 xl:pl-20 lg:pr-12 xl:pr-16 py-14 sm:py-20 lg:py-16 flex flex-col justify-center bg-warm-white lg:bg-white; }
   .split-hero-media { @apply relative min-h-[300px] lg:min-h-[620px] h-full overflow-hidden bg-navy; }
   .split-hero-media img { @apply absolute inset-0 h-full w-full object-cover object-center; }
   .hero-actions { @apply mt-9 flex flex-col 2xl:flex-row gap-4 items-stretch 2xl:items-center max-w-md 2xl:max-w-none; }

@@ -21,8 +21,8 @@ export default function PipelinePage() {
       <Link href="/admin" className="text-gold text-sm hover:underline inline-block mb-2">← Dashboard</Link>
       <div className="flex items-center justify-between mb-6 sm:mb-8">
         <div>
-          <h1 className="font-heading text-xl sm:text-2xl text-navy">Candidate Pipeline</h1>
-          <p className="text-gray-400 text-xs sm:text-sm mt-1">Drag candidates between stages or use the arrow buttons.</p>
+          <h1 className="font-heading text-xl sm:text-2xl text-white">Candidate Pipeline</h1>
+          <p className="text-white/40 text-xs sm:text-sm mt-1">Drag candidates between stages or use the arrow buttons.</p>
         </div>
       </div>
       <Pipeline candidates={DEMO_CANDIDATES} />

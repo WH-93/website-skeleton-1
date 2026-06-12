@@ -23,12 +23,12 @@ export default function AdminJobsPage() {
     <div>
       <Link href="/admin" className="text-gold text-sm hover:underline inline-block mb-2">← Dashboard</Link>
       <div className="flex items-center justify-between mb-6 sm:mb-8">
-        <h1 className="font-heading text-xl sm:text-2xl text-navy">Jobs</h1>
-        <Link href="/admin/jobs/new" className="btn-gold-dark text-xs">+ New Job</Link>
+        <h1 className="font-heading text-xl sm:text-2xl text-white">Jobs</h1>
+        <Link href="/admin/jobs/new" className="btn-gold text-xs">+ New Job</Link>
       </div>
 
       {loading ? (
-        <p className="text-gray-400 text-sm py-8">Loading...</p>
+        <p className="text-white/30 text-sm py-8">Loading...</p>
       ) : (
         <>
           {/* Mobile: card list */}

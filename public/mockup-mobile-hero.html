@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>BC Financial — Mobile Hero Mockup</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #e8e4df; display: flex; justify-content: center; padding: 20px; }
+  .phone { width: 390px; background: #fff; border-radius: 40px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+
+  /* ── CURRENT: white bg ── */
+  .hero-current .split-hero-copy {
+    background: #ffffff;
+    padding: 56px 24px 40px;
+  }
+
+  /* ── OPTION 1: warm-white + gold detail ── */
+  .hero-option1 .split-hero-copy {
+    background: #F5F0EB;
+    padding: 56px 24px 48px;
+  }
+  .hero-option1 .gold-accent {
+    width: 48px; height: 2px; background: #B08D57;
+    margin: 20px 0 24px 0;
+  }
+
+  /* ── Shared ── */
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    line-height: 1.1;
+    color: #0B1120;
+  }
+  .hero-title .gold { color: #B08D57; }
+  .body-copy {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(11,17,32,0.7);
+    margin-bottom: 28px;
+  }
+  .body-copy p + p { margin-top: 14px; }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn-gold {
+    display: flex; align-items: center; justify-content: center;
+    background: #B08D57; color: #fff; font-weight: 700;
+    border-radius: 4px; text-transform: uppercase;
+    font-size: 10px; letter-spacing: 0.12em;
+    padding: 14px 24px; text-decoration: none;
+  }
+  .btn-outline {
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(11,17,32,0.6); color: #0B1120; font-weight: 700;
+    border-radius: 4px; text-transform: uppercase;
+    font-size: 10px; letter-spacing: 0.12em;
+    padding: 14px 24px; text-decoration: none;
+  }
+  .split-hero-media {
+    height: 280px;
+    background: #0B1120;
+    position: relative;
+    overflow: hidden;
+  }
+  .split-hero-media .img-placeholder {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+  }
+
+  .label {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #0B1120;
+    padding: 16px;
+    border-bottom: 1px solid rgba(11,17,32,0.08);
+    background: #fff;
+  }
+  .label .current-label { color: #888; }
+  .label .new-label { color: #B08D57; }
+
+  .comparison { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; padding: 20px; }
+  @media (max-width: 850px) { .comparison { flex-direction: column; align-items: center; } }
+</style>
+</head>
+<body>
+<div class="comparison">
+
+  <!-- CURRENT -->
+  <div>
+    <h3 style="text-align:center;font-size:13px;color:#888;margin-bottom:12px;font-family:Inter,sans-serif;">CURRENT — White background</h3>
+    <div class="phone hero-current">
+      <div class="label">BC FINANCIAL SEARCH</div>
+      <div class="split-hero-copy">
+        <h1 class="hero-title">
+          Specialist Search.<br>
+          Personal Service.<br>
+          <span class="gold">Lasting Fit.</span>
+        </h1>
+        <div class="body-copy">
+          <p>I specialise in practice and tax recruitment across the UK, helping professionals make better career moves and businesses hire exceptional talent.</p>
+          <p>With 12 years of specialist experience, I take the time to understand what matters, then proactively search the market to create the right fit.</p>
+        </div>
+        <div class="hero-actions">
+          <a href="#" class="btn-gold">View Current Roles</a>
+          <a href="#" class="btn-outline">Discuss Your Next Move</a>
+          <a href="#" class="btn-outline">Hire Specialist Talent</a>
+        </div>
+      </div>
+      <div class="split-hero-media">
+        <div class="img-placeholder" style="background: linear-gradient(135deg, #1a2744 0%, #0B1120 40%, #2d1f14 100%); display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.15);font-size:60px;">🏙️</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION 1 -->
+  <div>
+    <h3 style="text-align:center;font-size:13px;color:#B08D57;margin-bottom:12px;font-family:Inter,sans-serif;">OPTION 1 — Warm-white + gold detail</h3>
+    <div class="phone hero-option1">
+      <div class="label">BC FINANCIAL SEARCH</div>
+      <div class="split-hero-copy">
+        <h1 class="hero-title">
+          Specialist Search.<br>
+          Personal Service.<br>
+          <span class="gold">Lasting Fit.</span>
+        </h1>
+        <div class="gold-accent"></div>
+        <div class="body-copy">
+          <p>I specialise in practice and tax recruitment across the UK, helping professionals make better career moves and businesses hire exceptional talent.</p>
+          <p>With 12 years of specialist experience, I take the time to understand what matters, then proactively search the market to create the right fit.</p>
+        </div>
+        <div class="hero-actions">
+          <a href="#" class="btn-gold">View Current Roles</a>
+          <a href="#" class="btn-outline">Discuss Your Next Move</a>
+          <a href="#" class="btn-outline">Hire Specialist Talent</a>
+        </div>
+      </div>
+      <div class="split-hero-media">
+        <div class="img-placeholder" style="background: linear-gradient(135deg, #1a2744 0%, #0B1120 40%, #2d1f14 100%); display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.15);font-size:60px;">🏙️</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
