@@ -1,4 +1,12 @@
 import Link from 'next/link';
+import { BcIcon } from '@/components/bc-icon';
+
+const items = [
+  { icon: 'clipboard' as const, title: 'Register Your Interest', desc: "Send us your CV and we'll match you with roles that fit your expertise and career goals." },
+  { icon: 'shield' as const, title: 'Complete Discretion', desc: 'Your search is confidential. We never share your details without your explicit permission.' },
+  { icon: 'target' as const, title: 'Quality Over Volume', desc: 'We focus on finding the right long-term fit — not just filling a vacancy.' },
+  { icon: 'phone' as const, title: 'Partner-Led Approach', desc: "You'll deal directly with a senior consultant who knows the market inside out." },
+];
 
 export default function CandidatesPage() {
   return (
@@ -11,16 +19,12 @@ export default function CandidatesPage() {
         <p className="text-white/50 text-sm text-center max-w-xl mx-auto mb-12">
           We represent talented professionals at every level across practice and in-house tax.
         </p>
-
         <div className="max-w-3xl mx-auto space-y-8">
-          {[
-            { emoji: '📋', title: 'Register Your Interest', desc: 'Send us your CV and we\'ll match you with roles that fit your expertise and career goals.' },
-            { emoji: '🔒', title: 'Complete Discretion', desc: 'Your search is confidential. We never share your details without your explicit permission.' },
-            { emoji: '🎯', title: 'Quality Over Volume', desc: 'We focus on finding the right long-term fit — not just filling a vacancy.' },
-            { emoji: '📞', title: 'Partner-Led Approach', desc: 'You\'ll deal directly with a senior consultant who knows the market inside out.' },
-          ].map(item => (
+          {items.map(item => (
             <div key={item.title} className="flex gap-4 sm:gap-6 items-start">
-              <div className="icon-circle-sm text-gold shrink-0">{item.emoji}</div>
+              <div className="icon-circle-sm text-gold shrink-0">
+                <BcIcon name={item.icon} size={16} />
+              </div>
               <div>
                 <h3 className="font-sans text-sm font-semibold text-white mb-1">{item.title}</h3>
                 <p className="text-white/50 text-xs sm:text-sm">{item.desc}</p>
@@ -28,7 +32,6 @@ export default function CandidatesPage() {
             </div>
           ))}
         </div>
-
         <div className="text-center mt-12">
           <Link href="/jobs" className="btn-gold">Browse Current Opportunities</Link>
         </div>

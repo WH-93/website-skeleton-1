@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { BcLogo } from '@/components/bc-logo';
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -16,22 +17,9 @@ export function Header() {
   return (
     <header className="bg-navy sticky top-0 z-50">
       <div className="container-page flex items-center justify-between h-16 sm:h-20">
-        {/* Logo mark */}
-        <Link href="/" className="flex items-center gap-3 sm:gap-4 shrink-0">
-          <div className="relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
-            <span className="font-sans text-xl sm:text-2xl font-bold text-white">B</span>
-            <span className="absolute font-sans text-xl sm:text-2xl font-bold text-gold"
-                  style={{ top: '2px', left: '11px' }}>C</span>
-          </div>
-          <div className="hidden sm:block w-px h-8 bg-gold/30" />
-          <div className="hidden sm:block leading-tight">
-            <div className="text-[10px] sm:text-[11px] tracking-wider text-white font-semibold">
-              BC FINANCIAL
-            </div>
-            <div className="text-[8px] sm:text-[9px] tracking-widest text-gold font-medium">
-              SEARCH
-            </div>
-          </div>
+        {/* Logo */}
+        <Link href="/" className="flex items-center shrink-0">
+          <BcLogo height={32} />
         </Link>
 
         {/* Desktop nav */}

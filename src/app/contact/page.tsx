@@ -1,3 +1,11 @@
+import { BcIcon } from '@/components/bc-icon';
+
+const contacts = [
+  { icon: 'mail' as const, label: 'Email', value: 'ben@bcfinancialsearch.co.uk', href: 'mailto:ben@bcfinancialsearch.co.uk' },
+  { icon: 'phone' as const, label: 'Phone', value: '+44 7700 900123', href: 'tel:+447700900123' },
+  { icon: 'location' as const, label: 'Location', value: 'Manchester, United Kingdom', href: null },
+];
+
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-navy">
@@ -9,16 +17,13 @@ export default function ContactPage() {
         <p className="text-white/50 text-sm text-center max-w-xl mx-auto mb-12">
           Whether you&apos;re hiring or looking for your next role, we&apos;d love to hear from you.
         </p>
-
         <div className="max-w-lg mx-auto">
           <div className="bg-navy-800 border border-gold/10 rounded-card p-6 sm:p-8 space-y-6">
-            {[
-              { emoji: '📧', label: 'Email', value: 'ben@bcfinancialsearch.co.uk', href: 'mailto:ben@bcfinancialsearch.co.uk' },
-              { emoji: '📞', label: 'Phone', value: '+44 7700 900123', href: 'tel:+447700900123' },
-              { emoji: '📍', label: 'Location', value: 'London, UK', href: null },
-            ].map(item => (
+            {contacts.map(item => (
               <div key={item.label} className="flex items-center gap-4">
-                <div className="icon-circle-sm text-gold shrink-0">{item.emoji}</div>
+                <div className="icon-circle-sm text-gold shrink-0">
+                  <BcIcon name={item.icon} size={16} />
+                </div>
                 <div>
                   <p className="text-[10px] tracking-wider text-gold font-semibold mb-0.5">{item.label}</p>
                   {item.href ? (
@@ -32,7 +37,6 @@ export default function ContactPage() {
               </div>
             ))}
           </div>
-
           <p className="text-center text-white/40 text-xs mt-8">
             We aim to respond to all enquiries within 24 hours.
           </p>

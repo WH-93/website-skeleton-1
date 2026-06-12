@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,25 +20,25 @@
   /* ── Buttons ── */
   .btn-gold {
     @apply inline-flex items-center justify-center bg-gold text-white font-semibold
-           rounded uppercase tracking-wider text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-3.5
+           rounded-full uppercase tracking-wider text-xs sm:text-sm px-8 py-3 sm:py-3.5
            hover:bg-gold-500 transition-colors whitespace-nowrap;
   }
 
   .btn-outline {
     @apply inline-flex items-center justify-center border border-gold text-gold font-semibold
-           rounded uppercase tracking-wider text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-3.5
+           rounded-full uppercase tracking-wider text-xs sm:text-sm px-8 py-3 sm:py-3.5
            hover:bg-gold hover:text-white transition-colors whitespace-nowrap;
   }
 
   .btn-gold-dark {
     @apply inline-flex items-center justify-center bg-gold text-navy font-semibold
-           rounded uppercase tracking-wider text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-3.5
+           rounded-full uppercase tracking-wider text-xs sm:text-sm px-8 py-3 sm:py-3.5
            hover:bg-gold-500 transition-colors whitespace-nowrap;
   }
 
   .btn-outline-dark {
     @apply inline-flex items-center justify-center border border-gold text-gold font-semibold
-           rounded uppercase tracking-wider text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-3.5
+           rounded-full uppercase tracking-wider text-xs sm:text-sm px-8 py-3 sm:py-3.5
            hover:bg-gold hover:text-white transition-colors whitespace-nowrap;
   }
 

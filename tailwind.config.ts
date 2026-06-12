@@ -17,10 +17,11 @@ export default {
           500: '#9a7846',
           600: '#7d6139',
         },
+        'warm-white': '#F5F0EB',
       },
       fontFamily: {
         heading: ['"Playfair Display"', 'Garamond', 'serif'],
-        sans: ['Montserrat', 'Futura', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       borderRadius: {
         DEFAULT: '4px',

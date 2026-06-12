@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { BcLogo } from '@/components/bc-logo';
 
 function getCookie(name: string) {
   if (typeof document === 'undefined') return null;
@@ -45,16 +46,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="container-page flex items-center justify-between h-16 sm:h-20">
           {/* BC Logo */}
           <Link href="/" className="flex items-center gap-3 sm:gap-4 shrink-0">
-            <div className="relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
-              <span className="font-sans text-xl sm:text-2xl font-bold text-white">B</span>
-              <span className="absolute font-sans text-xl sm:text-2xl font-bold text-gold"
-                    style={{ top: '2px', left: '11px' }}>C</span>
-            </div>
+            <BcLogo height={32} />
             <div className="hidden sm:block w-px h-8 bg-gold/30" />
             <div className="hidden sm:block leading-tight">
-              <div className="text-[10px] sm:text-[11px] tracking-wider text-white font-semibold">
-                BC FINANCIAL
-              </div>
               <div className="text-[8px] sm:text-[9px] tracking-widest text-gold font-medium">
                 ADMIN
               </div>

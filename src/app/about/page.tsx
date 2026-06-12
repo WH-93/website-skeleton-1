@@ -1,3 +1,11 @@
+import { BcIcon } from '@/components/bc-icon';
+
+const VALUES = [
+  { icon: 'target' as const, label: 'Precision', desc: 'Quality over volume in every search.' },
+  { icon: 'star' as const, label: 'Specialism', desc: 'Deep domain expertise you can trust.' },
+  { icon: 'handshake' as const, label: 'Partnership', desc: 'Long-term relationships, not transactions.' },
+];
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-navy">
@@ -17,13 +25,11 @@ export default function AboutPage() {
             we understand what makes a great hire &mdash; not just on paper, but in practice.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12 pt-12 border-t border-gold/10">
-            {[
-              { emoji: '🎯', label: 'Precision', desc: 'Quality over volume in every search.' },
-              { emoji: '🏅', label: 'Specialism', desc: 'Deep domain expertise you can trust.' },
-              { emoji: '🤝', label: 'Partnership', desc: 'Long-term relationships, not transactions.' },
-            ].map(v => (
+            {VALUES.map(v => (
               <div key={v.label} className="text-center">
-                <div className="text-3xl mb-3">{v.emoji}</div>
+                <div className="text-gold mb-3 flex justify-center">
+                  <BcIcon name={v.icon} size={28} />
+                </div>
                 <h3 className="font-sans text-sm font-semibold text-white mb-2">{v.label}</h3>
                 <p className="text-white/50 text-xs">{v.desc}</p>
               </div>
