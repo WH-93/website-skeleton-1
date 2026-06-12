@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { BcLogo } from '@/components/bc-logo';
@@ -11,9 +11,13 @@ export function Header() {
   const router = useRouter();
 
   const handleMobileNav = (href: string) => {
-    setOpen(false);
     router.push(href);
   };
+
+  // Close mobile menu when navigation completes
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const navItems = [
     { label: 'HOME', href: '/' },
