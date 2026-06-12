@@ -14,8 +14,8 @@ export function Header() {
     { label: 'ABOUT', href: '/about' },
     { label: 'SERVICES', href: '/services' },
     { label: 'CANDIDATES', href: '/candidates' },
-    { label: 'JOBS', href: '/jobs' },
     { label: 'CLIENTS', href: '/clients' },
+    { label: 'JOBS', href: '/jobs' },
   ];
 
   return (
