@@ -8,40 +8,63 @@ const contacts = [
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-navy">
-      <section className="section container-page">
-        <p className="font-heading italic text-gold text-lg text-center mb-4">&mdash; Get in Touch &mdash;</p>
-        <h1 className="font-sans text-3xl sm:text-4xl font-bold text-white text-center mb-4">
-          Let&apos;s start a <span className="text-gold">conversation</span>
-        </h1>
-        <p className="text-white/50 text-sm text-center max-w-xl mx-auto mb-12">
-          Whether you&apos;re hiring or looking for your next role, we&apos;d love to hear from you.
-        </p>
-        <div className="max-w-lg mx-auto">
-          <div className="bg-navy-800 border border-gold/10 rounded-card p-6 sm:p-8 space-y-6">
-            {contacts.map(item => (
-              <div key={item.label} className="flex items-center gap-4">
-                <div className="icon-circle-sm text-gold shrink-0">
-                  <BcIcon name={item.icon} size={16} />
-                </div>
-                <div>
-                  <p className="text-[10px] tracking-wider text-gold font-semibold mb-0.5">{item.label}</p>
-                  {item.href ? (
-                    <a href={item.href} className="text-white/80 text-sm hover:text-gold transition-colors">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="text-white/80 text-sm">{item.value}</p>
-                  )}
-                </div>
-              </div>
-            ))}
+    <>
+      <section className="split-hero">
+        <div className="split-hero-grid">
+          <div className="split-hero-copy">
+            <p className="eyebrow mb-5">Contact</p>
+            <h1 className="hero-title">Start with a <span className="text-gold">conversation.</span></h1>
+            <span className="gold-rule" />
+            <div className="space-y-5 body-copy max-w-xl">
+              <p>Whether you are considering your next career move or planning an important hire, speak directly with a specialist who understands the practice and tax market.</p>
+              <p>No pressure. No scripts. Just a confidential conversation about what matters to you.</p>
+            </div>
           </div>
-          <p className="text-center text-white/40 text-xs mt-8">
-            We aim to respond to all enquiries within 24 hours.
-          </p>
+          <div className="split-hero-media">
+            <img src="/hero-about.png" alt="Confidential recruitment conversation in Manchester" />
+          </div>
         </div>
       </section>
-    </main>
+
+      <section className="section bg-warm-white">
+        <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
+          <div>
+            <p className="eyebrow mb-4">Get In Touch</p>
+            <h2 className="section-title text-3xl sm:text-4xl">Your priorities shape the search.</h2>
+            <span className="gold-rule" />
+            <p className="body-copy max-w-xl">
+              Tell me what you are trying to achieve — a better career move, a key hire, or simply a clearer view of the market. I will respond personally and confidentially.
+            </p>
+          </div>
+
+          <div className="bg-white border border-navy/10 rounded-card shadow-card p-7 sm:p-10">
+            <div className="space-y-7">
+              {contacts.map(item => (
+                <div key={item.label} className="flex items-center gap-5">
+                  <div className="icon-circle-sm text-gold shrink-0">
+                    <BcIcon name={item.icon} size={18} strokeWidth={1.4} />
+                  </div>
+                  <div>
+                    <p className="eyebrow mb-1">{item.label}</p>
+                    {item.href ? (
+                      <a href={item.href} className="text-navy text-base hover:text-gold transition-colors">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-navy text-base">{item.value}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 pt-6 border-t border-navy/10">
+              <p className="text-sm leading-7 text-navy/65">
+                I aim to respond to all enquiries within 24 hours. Career conversations and hiring discussions are treated in confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

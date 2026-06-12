@@ -48,11 +48,12 @@ export default function JobsPage() {
     <>
       <section className="bg-navy pt-8 sm:pt-12 pb-12 sm:pb-16">
         <div className="container-page">
-          <h1 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">
-            Current Opportunities
+          <h1 className="hero-title hero-title-reveal text-white mb-5">
+            <span className="hero-title-line">Current</span>
+            <span className="hero-title-line text-gold">Opportunities.</span>
           </h1>
-          <p className="text-white/60 text-sm sm:text-base max-w-lg">
-            Every role listed here has been briefed directly to us. No scraping, no aggregation — real jobs from real clients.
+          <p className="text-white/70 text-sm sm:text-base leading-7 max-w-xl">
+            Every role has been discussed with my clients — please don&apos;t hesitate to contact me to discuss one, or quiz my market knowledge if the right fit isn&apos;t listed here.
           </p>
         </div>
       </section>

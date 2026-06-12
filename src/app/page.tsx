@@ -1,206 +1,167 @@
 import Link from 'next/link';
 import { BcIcon } from '@/components/bc-icon';
 
-const SERVICES = [
-  { icon: 'people', title: 'PRACTICE RECRUITMENT', desc: 'Audit, Accounts, Advisory & Practice Management.' },
-  { icon: 'search', title: 'TAX RECRUITMENT', desc: 'Corporate Tax, Personal Tax, VAT, Employment Tax & In-House Tax.' },
-  { icon: 'target', title: 'SEARCH & SELECTION', desc: 'Specialist, Senior & Hard-to-Fill Appointments.' },
-] as const;
+const stats = [
+  { icon: 'person' as const, value: '12 YEARS', label: 'Specialist recruitment experience' },
+  { icon: 'people' as const, value: '200+', label: 'Successful placements' },
+  { icon: 'location' as const, value: 'UK WIDE', label: 'Established network across the UK' },
+  { icon: 'handshake' as const, value: 'LONG-TERM RELATIONSHIPS', label: 'Candidates and clients who return' },
+  { icon: 'target' as const, value: 'PROVEN RESULTS', label: 'Helping people and businesses succeed' },
+];
 
-const ROLES_TOP = ['Auditor', 'Accounts Manager', 'Client Senior Manager', 'Practice Manager'];
-const ROLES_BOT = ['Corporate Tax', 'VAT Manager', 'Employment Tax', 'In-House Tax'];
+const features = [
+  { icon: 'target' as const, title: 'Specialist Market Knowledge', desc: 'Deep expertise in practice and tax recruitment across the UK.' },
+  { icon: 'person' as const, title: 'A Genuinely Personal Approach', desc: 'Every search starts with a conversation to understand what really matters.' },
+  { icon: 'search' as const, title: 'Proactive Search', desc: 'I look beyond active applicants and advertised vacancies to find the right fit.' },
+  { icon: 'handshake' as const, title: 'Honest Guidance', desc: 'Clear communication, realistic advice and personal support throughout every stage.' },
+  { icon: 'people' as const, title: 'Long-Term Relationships', desc: 'Success is measured through lasting relationships and repeat business.' },
+];
+
+const process = [
+  { icon: 'person' as const, title: '1. Listen', desc: 'I start with the detail behind the brief or career move — the team, motivations, culture and what success needs to look like.' },
+  { icon: 'search' as const, title: '2. Search Beyond', desc: 'I map the market and use my personal network to reach people and roles that are not sitting on job boards.' },
+  { icon: 'people' as const, title: '3. Curate', desc: 'Quality over volume. I personally qualify each introduction so you are not flooded with hopeful CVs or irrelevant options.' },
+  { icon: 'handshake' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond. That is where lasting fit is proven.' },
+];
+
+const roles = ['Tax', 'Audit', 'Accounts', 'Advisory', 'Practice Support'];
 
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero ── */}
-      <section className="bg-navy overflow-hidden">
-        <div className="container-page">
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 py-16 sm:py-24 lg:py-32">
-            {/* Left: text + CTAs — ~40% */}
-            <div className="lg:w-[38%] text-center lg:text-left">
-              <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-                Specialist Search.<br />
-                Personal Service.<br />
-                <span className="text-gold italic">Lasting Fit.</span>
-              </h1>
-              <p className="text-white/60 text-sm sm:text-base max-w-lg mb-8 lg:mb-10">
-                Specialist recruitment for accountancy practices and in-house tax teams
-                across the UK. 12 years. 200+ placements. One point of contact.
+      <section className="split-hero">
+        <div className="split-hero-grid">
+          <div className="split-hero-copy">
+            <h1 className="hero-title hero-title-reveal">
+              <span className="hero-title-line">Specialist Search.</span>
+              <span className="hero-title-line">Personal Service.</span>
+              <span className="hero-title-line text-gold">Lasting Fit.</span>
+            </h1>
+            <span className="gold-rule" />
+            <div className="space-y-5 body-copy max-w-xl">
+              <p>
+                I specialise in practice and tax recruitment across the UK, helping professionals make better career moves and businesses hire exceptional talent.
               </p>
-              <div className="flex flex-col gap-3 justify-center lg:justify-start">
-                <Link href="/jobs" className="btn-outline text-center text-sm sm:text-base">
-                  Discuss Your Next Move
-                </Link>
-                <Link href="/contact" className="btn-gold text-center text-sm sm:text-base">
-                  Hire Specialist Talent
-                </Link>
-              </div>
+              <p>
+                With 12 years of specialist experience, I take the time to understand what matters, then proactively search the market to create the right fit for long-term success.
+              </p>
             </div>
-
-            {/* Right: headshot */}
-            <div className="flex-1 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md lg:max-w-lg aspect-[3/4] bg-navy-800 rounded-card overflow-hidden">
-                <img
-                  src="/placeholder-headshot-ben.png"
-                  alt="BC Financial Search"
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-[10px] text-white/40 tracking-wider">
-                  Professional photography coming soon
-                </div>
-              </div>
+            <div className="hero-actions">
+              <Link href="/jobs" className="btn-gold">View Current Roles</Link>
+              <Link href="/contact" className="btn-outline">Discuss Your Next Move</Link>
+              <Link href="/clients" className="btn-outline">Hire Specialist Talent</Link>
             </div>
+          </div>
+          <div className="split-hero-media">
+            <img src="/placeholder-manchester-cityscape.png" alt="Manchester business district at sunset" />
           </div>
         </div>
       </section>
 
-      {/* ── Service pillars ── */}
-      <section className="bg-warm-white section">
+      <section className="stats-band">
         <div className="container-page">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10">
-            {SERVICES.map(s => (
-              <div key={s.title} className="text-center">
-                <div className="icon-circle-lg mx-auto mb-4 sm:mb-5 text-gold">
-                  <BcIcon name={s.icon} size={24} />
-                </div>
-                <h3 className="font-sans text-xs sm:text-sm font-semibold tracking-wider text-navy mb-2">
-                  {s.title}
-                </h3>
-                <p className="text-navy/60 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto">
-                  {s.desc}
-                </p>
+          <div className="stats-grid">
+            {stats.map(item => (
+              <div key={item.value} className={`stat-item ${item.value === 'PROVEN RESULTS' ? 'hidden md:block' : ''}`}>
+                <div className="stat-icon"><BcIcon name={item.icon} size={38} strokeWidth={1.5} /></div>
+                <div className="stat-value">{item.value}</div>
+                <div className="stat-label">{item.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Stats Bar ── */}
-      <section className="bg-navy border-t border-gold/10">
+      <section className="section bg-white">
+        <div className="container-page grid gap-12 lg:grid-cols-2 lg:divide-x lg:divide-navy/15 items-stretch">
+          <div className="lg:pr-14 flex flex-col">
+            <BcIcon name="person" size={42} className="text-gold mb-5" strokeWidth={1.3} />
+            <p className="eyebrow mb-5">For Candidates</p>
+            <h2 className="section-title text-3xl sm:text-4xl">A career move built around what matters to you.</h2>
+            <span className="gold-rule" />
+            <div className="space-y-5 body-copy">
+              <p>I take the time to understand your career ambitions, preferred working arrangements, salary expectations and personal motivations.</p>
+              <p>I then proactively approach the market to uncover opportunities that truly match your goals.</p>
+              <p className="font-bold text-navy">No cost. No pressure. Just a confidential conversation about your career.</p>
+            </div>
+            <Link href="/candidates" className="btn-gold mt-auto self-start translate-y-4">Start a Career Conversation</Link>
+          </div>
+
+          <div className="lg:pl-14 flex flex-col">
+            <BcIcon name="building" size={42} className="text-gold mb-5" strokeWidth={1.3} />
+            <p className="eyebrow mb-5">For Clients</p>
+            <h2 className="section-title text-3xl sm:text-4xl">The right experience matters. So does the right fit.</h2>
+            <span className="gold-rule" />
+            <div className="space-y-5 body-copy">
+              <p>A successful appointment needs to work technically, commercially and culturally.</p>
+              <p>I meet with you to understand your business, your team and the challenge the appointment needs to solve.</p>
+              <p>I use targeted search and proactive headhunting to identify professionals who can perform the role and contribute long term.</p>
+            </div>
+            <Link href="/clients" className="btn-gold mt-auto self-start translate-y-4">Discuss Your Hiring Plans</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-warm-white border-y border-navy/10">
         <div className="container-page">
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-8 py-10 sm:py-14 text-center">
-            {([
-              { value: '12', label: 'Years specialist experience', icon: 'person' as const },
-              { value: '200+', label: 'Successful placements', icon: 'people' as const },
-              { value: 'UK WIDE', label: 'Established network', icon: 'location' as const },
-              { value: 'LONG-TERM', label: 'Relationships that last', icon: 'handshake' as const },
-              { value: 'PROVEN', label: 'Results that speak', icon: 'star' as const },
-            ] as const).map(({ value, label, icon }) => (
-              <div key={label}>
-                <div className="text-white/40 mb-2 flex justify-center">
-                  <BcIcon name={icon} size={20} strokeWidth={1.5} />
-                </div>
-                <div className="text-gold text-lg sm:text-2xl font-heading font-bold mb-1">{value}</div>
-                <div className="text-white/50 text-[9px] sm:text-[10px] tracking-wider">{label}</div>
+          <h2 className="font-sans text-xl sm:text-2xl tracking-widest uppercase text-navy text-center">Why BC Financial Search?</h2>
+          <span className="gold-rule mx-auto" />
+          <div className="feature-grid">
+            {features.map(item => (
+              <div key={item.title} className="feature-card">
+                <BcIcon name={item.icon} size={38} className="text-gold mx-auto mb-5" strokeWidth={1.35} />
+                <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-3">{item.title}</h3>
+                <p className="text-xs sm:text-sm leading-6 text-navy/65">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── For Candidates · For Clients ── */}
-      <section className="bg-white section">
-        <div className="container-page">
-          <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gold/10 gap-0">
-            {/* For Candidates */}
-            <div className="py-8 lg:py-12 lg:pr-12">
-              <div className="text-gold mb-4 flex justify-center lg:justify-start">
-                <BcIcon name="person" size={28} strokeWidth={1.5} />
-              </div>
-              <div className="text-[10px] tracking-widest text-gold font-semibold mb-3">FOR CANDIDATES</div>
-              <h3 className="font-heading text-2xl sm:text-3xl text-navy mb-4">
-                A career move built around what matters to you.
-              </h3>
-              <p className="text-navy/60 text-sm leading-relaxed mb-6">
-                We take the time to understand your goals, your experience, and what you're looking for next. 
-                Whether you're actively exploring or just curious about the market, we'll give you honest, 
-                confidential advice — no pressure, no hard sell.
-              </p>
-              <Link href="/candidates" className="btn-gold-dark text-sm">
-                Start a Career Conversation
-              </Link>
-            </div>
-
-            {/* For Clients */}
-            <div className="py-8 lg:py-12 lg:pl-12">
-              <div className="text-gold mb-4 flex justify-center lg:justify-start">
-                <BcIcon name="building" size={28} strokeWidth={1.5} />
-              </div>
-              <div className="text-[10px] tracking-widest text-gold font-semibold mb-3">FOR CLIENTS</div>
-              <h3 className="font-heading text-2xl sm:text-3xl text-navy mb-4">
-                The right experience matters. So does the right fit.
-              </h3>
-              <p className="text-navy/60 text-sm leading-relaxed mb-6">
-                We work with accountancy practices and in-house tax teams who value genuine expertise 
-                over transactional recruitment. Our approach is personal, proactive, and built on 
-                long-term relationships.
-              </p>
-              <Link href="/clients" className="btn-gold-dark text-sm">
-                Discuss Your Hiring Plans
-              </Link>
-            </div>
+      <section className="grid lg:grid-cols-[37%_28%_35%] bg-white">
+        <div className="section px-5 sm:px-8 lg:pl-16 xl:pl-20 lg:pr-10">
+          <p className="eyebrow mb-5">About BC Financial Search</p>
+          <h2 className="section-title">Experience.<br />Relationships.<br />Results.</h2>
+          <span className="gold-rule" />
+          <div className="body-copy space-y-5">
+            <p>BC Financial Search was founded after 12 years working exclusively within specialist finance recruitment.</p>
+            <p>Having successfully placed more than 200 professionals, the business was created to offer a more personal and considered recruitment experience: one based on listening carefully, searching proactively and building relationships that continue beyond a single placement.</p>
+          </div>
+          <Link href="/about" className="btn-gold mt-8">About BC Financial</Link>
+        </div>
+        <div className="min-h-[380px] lg:min-h-0 relative">
+          <img src="/ben-headshot.jpeg" alt="BC Financial Search founder" className="absolute inset-0 h-full w-full object-cover object-top" />
+        </div>
+        <div className="bg-navy text-white section px-5 sm:px-8 lg:px-14 flex items-center">
+          <div>
+            <div className="text-gold font-heading text-7xl leading-none mb-4">“</div>
+            <p className="eyebrow mb-4">One specialist. One market. One point of contact.</p>
+            <p className="font-heading text-3xl sm:text-4xl leading-tight max-w-md">
+              No handoffs. No account managers. Just direct, specialist search from first conversation to first day and beyond.
+            </p>
+            <span className="gold-rule" />
+            <p className="text-sm leading-7 text-white/70 max-w-md">
+              That is the advantage of a founder-led search partner: the person who takes the brief is the person mapping the market, qualifying the fit and staying involved after the placement.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── Why BC Financial Search? ── */}
-      <section className="bg-warm-white section">
-        <div className="container-page">
-          <h2 className="font-heading text-2xl sm:text-3xl text-navy text-center mb-3">Why BC Financial Search?</h2>
-          <p className="text-navy/50 text-sm text-center mb-10 sm:mb-14 max-w-lg mx-auto">
-            Specialist recruitment built on experience, personal accountability, and lasting relationships.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
-            {([
-              { icon: 'target' as const, title: 'Specialist Market Knowledge', desc: 'Deep knowledge of the practice and tax market.' },
-              { icon: 'person' as const, title: 'Personal Accountability', desc: 'You deal directly with an experienced specialist.' },
-              { icon: 'search' as const, title: 'Proactive Search', desc: 'We go beyond adverts to find the right fit.' },
-              { icon: 'handshake' as const, title: 'Honest Guidance', desc: 'Clear advice and support throughout the process.' },
-              { icon: 'star' as const, title: 'Lasting Relationships', desc: 'Built on trust, delivering long-term value.' },
-            ] as const).map(v => (
-              <div key={v.title} className="text-center">
-                <div className="text-gold mb-3 flex justify-center">
-                  <BcIcon name={v.icon} size={28} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-sans text-xs sm:text-sm font-semibold tracking-wider text-navy mb-2">
-                  {v.title.toUpperCase()}
-                </h3>
-                <p className="text-navy/50 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto">{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Our Approach — 4-Step Process ── */}
-      <section className="bg-warm-white section">
-        <div className="container-page">
-          <h2 className="font-heading text-2xl sm:text-3xl text-navy text-center mb-3">
-            We listen. We search. <span className="text-gold italic">We stay involved.</span>
-          </h2>
-          <p className="text-navy/50 text-sm text-center mb-12 sm:mb-16 max-w-lg mx-auto">
-            Every recruiter says "listen, search, connect, support." Here's how BC Financial says it differently.
-          </p>
-
-          <div className="relative max-w-4xl mx-auto">
-            {/* Dotted connecting line — desktop */}
-            <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 border-t-2 border-dotted border-gold/20" />
-
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6">
-              {([
-                { num: '1', icon: 'search' as const, title: 'UNDERSTAND', desc: "We start with a proper conversation. Not a checklist — the culture, the team, the unwritten expectations that make a placement work." },
-                { num: '2', icon: 'target' as const, title: 'SEARCH', desc: "Proactive market mapping. Our personal network. People who aren't on job boards. The best candidates often aren't actively looking." },
-                { num: '3', icon: 'people' as const, title: 'CURATE', desc: "3–4 genuine matches, not 20 CVs. Every candidate personally qualified before they reach your desk. No flooding. No hoping something sticks." },
-                { num: '4', icon: 'handshake' as const, title: 'STAY INVOLVED', desc: "Through offer, notice, onboarding, and beyond. The relationship doesn't end at placement. That's what lasting fit means in practice." },
-              ] as const).map(step => (
-                <div key={step.num} className="text-center relative">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white border-2 border-gold flex items-center justify-center relative z-10">
-                    <span className="font-heading text-lg font-bold text-gold">{step.num}</span>
+      <section className="section bg-white border-t border-navy/10">
+        <div className="container-page text-center">
+          <p className="eyebrow mb-3">My approach</p>
+          <h2 className="section-title text-3xl sm:text-4xl">I listen. I search. I stay involved.</h2>
+          <span className="gold-rule mx-auto" />
+          <div className="relative mt-12">
+            <div className="process-line" />
+            <div className="grid gap-9 lg:grid-cols-4">
+              {process.map(step => (
+                <div key={step.title} className="relative text-center">
+                  <div className="icon-circle-lg mx-auto mb-5 text-navy relative z-10">
+                    <BcIcon name={step.icon} size={30} strokeWidth={1.3} />
                   </div>
-                  <h4 className="font-sans text-sm font-semibold tracking-wider text-navy mb-2">{step.title}</h4>
-                  <p className="text-navy/50 text-xs sm:text-sm leading-relaxed">{step.desc}</p>
+                  <h3 className="font-sans text-sm font-bold uppercase tracking-wider text-navy mb-3">{step.title}</h3>
+                  <p className="text-sm leading-6 text-navy/65 max-w-xs mx-auto">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -208,39 +169,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Roles We Recruit ── */}
-      <section className="bg-white section">
-        <div className="container-page">
-          <h2 className="font-heading text-2xl sm:text-3xl text-navy text-center mb-3">Roles We Recruit</h2>
-          <p className="text-gray-500 text-sm text-center mb-10 sm:mb-12 max-w-md mx-auto">
-            Specialist coverage across practice and tax disciplines.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            {[...ROLES_TOP, ...ROLES_BOT].map(role => (
-              <div key={role} className="flex flex-col items-center gap-2 sm:gap-3 w-24 sm:w-28">
-                <div className="icon-circle-md text-gold">◆</div>
-                <span className="text-[9px] sm:text-[10px] tracking-wider text-navy/70 text-center leading-tight">
-                  {role.toUpperCase()}
-                </span>
+      <section className="grid lg:grid-cols-[1fr_28%] bg-warm-white border-t border-navy/10">
+        <div className="section px-5 sm:px-8 lg:pl-16 xl:pl-20 lg:pr-10 text-center">
+          <p className="eyebrow mb-3">Areas I Recruit</p>
+          <h2 className="section-title text-3xl sm:text-4xl">Specialist roles across practice and tax.</h2>
+          <span className="gold-rule mx-auto" />
+          <div className="feature-grid mt-8">
+            {roles.map((role, index) => (
+              <div key={role} className="feature-card">
+                <BcIcon name={index === 0 ? 'shield' : index === 1 ? 'search' : index === 2 ? 'target' : index === 3 ? 'handshake' : 'people'} size={34} className="text-gold mx-auto mb-4" strokeWidth={1.3} />
+                <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy">{role}</h3>
               </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* ── CTA Banner ── */}
-      <section className="bg-navy py-12 sm:py-16">
-        <div className="container-page text-center">
-          <h2 className="font-heading text-2xl sm:text-3xl text-white mb-3 sm:mb-4">
-            Start with a conversation.
-          </h2>
-          <p className="text-white/60 text-sm mb-6 sm:mb-8 max-w-md mx-auto">
-            Speak directly with a specialist. No handoffs. No scripts.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-            <Link href="/contact" className="btn-gold text-center">Start a Conversation</Link>
-            <Link href="/jobs" className="btn-outline text-center">Browse All Roles</Link>
+        <div className="bg-navy text-white section px-6 sm:px-10 flex items-center">
+          <div>
+            <h2 className="font-sans text-2xl uppercase tracking-wide leading-tight">Ready to take the next step?</h2>
+            <p className="mt-5 text-sm leading-7 text-white/70">Whether you are passively exploring or actively looking, let&apos;s have a confidential conversation about your next move.</p>
+            <Link href="/contact" className="btn-gold mt-8">Talk to BC today</Link>
           </div>
         </div>
       </section>
