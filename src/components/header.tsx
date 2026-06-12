@@ -40,7 +40,7 @@ export function Header() {
               </Link>
             );
           })}
-          <Link href="/contact" className="btn-gold text-[10px] px-5 py-3">
+          <Link href="/#contact" className="btn-gold text-[10px] px-5 py-3">
             Contact
           </Link>
         </nav>
@@ -70,7 +70,7 @@ export function Header() {
             </Link>
           ))}
           <div className="px-5 pt-3">
-            <Link href="/contact" onClick={() => setOpen(false)} className="btn-gold w-full text-center text-xs py-3">
+            <Link href="/#contact" onClick={() => setOpen(false)} className="btn-gold w-full text-center text-xs py-3">
               Contact
             </Link>
           </div>
@@ -79,3 +79,4 @@ export function Header() {
     </header>
   );
 }
+

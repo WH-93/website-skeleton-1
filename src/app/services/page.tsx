@@ -26,7 +26,7 @@ const method = [
   { icon: 'person' as const, title: 'Listen', desc: 'Your priorities shape the search from the first conversation.' },
   { icon: 'search' as const, title: 'Search Beyond', desc: 'I identify where the right people are, not just who is actively applying.' },
   { icon: 'target' as const, title: 'Curate', desc: 'I personally qualify the fit before making an introduction.' },
-  { icon: 'handshake' as const, title: 'Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond.' },
+  { icon: 'clock' as const, title: 'Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond.' },
 ];
 
 export default function ServicesPage() {
@@ -46,7 +46,7 @@ export default function ServicesPage() {
               <p>A targeted search, built around you — with market knowledge, discretion and personal accountability throughout.</p>
             </div>
             <div className="hero-actions">
-              <Link href="/contact" className="btn-gold">Start a Search Conversation</Link>
+              <Link href="/#contact" className="btn-gold">Start a Search Conversation</Link>
               <Link href="/jobs" className="btn-outline">View Current Roles</Link>
             </div>
           </div>

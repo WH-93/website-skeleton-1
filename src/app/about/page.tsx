@@ -5,7 +5,7 @@ const stats = [
   { icon: 'person' as const, value: '12 YEARS', label: 'Specialist recruitment experience' },
   { icon: 'people' as const, value: '200+', label: 'Successful placements' },
   { icon: 'location' as const, value: 'UK WIDE', label: 'Established network across the UK' },
-  { icon: 'handshake' as const, value: 'LONG-TERM RELATIONSHIPS', label: 'Candidates and clients who return' },
+  { icon: 'star' as const, value: 'LONG-TERM RELATIONSHIPS', label: 'Candidates and clients who return' },
   { icon: 'target' as const, value: 'PROVEN RESULTS', label: 'Helping people and businesses succeed' },
 ];
 
@@ -13,14 +13,14 @@ const process = [
   { icon: 'person' as const, title: '1. Listen', desc: 'I start with the detail behind the brief or career move — the team, motivations, culture and what success needs to look like.' },
   { icon: 'search' as const, title: '2. Search Beyond', desc: 'I map the market and use my personal network to reach people and roles that are not sitting on job boards.' },
   { icon: 'people' as const, title: '3. Curate', desc: 'Quality over volume. I personally qualify each introduction so you are not flooded with hopeful CVs or irrelevant options.' },
-  { icon: 'handshake' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond. That is where lasting fit is proven.' },
+  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond. That is where lasting fit is proven.' },
 ];
 
 const values = [
   { icon: 'target' as const, title: 'Specialist Expertise', desc: 'Deep knowledge of the practice and tax market.' },
   { icon: 'person' as const, title: 'Personal Accountability', desc: 'You deal directly with an experienced specialist.' },
   { icon: 'search' as const, title: 'Proactive Search', desc: 'I go beyond adverts to find the right fit.' },
-  { icon: 'handshake' as const, title: 'Honest Communication', desc: 'Clear advice and support throughout.' },
+  { icon: 'shield' as const, title: 'Honest Communication', desc: 'Clear advice and support throughout.' },
   { icon: 'people' as const, title: 'Lasting Relationships', desc: 'Built on trust, delivering long-term value.' },
 ];
 
@@ -121,7 +121,7 @@ export default function AboutPage() {
           ))}
         </div>
         <div className="text-center mt-2">
-          <Link href="/contact" className="btn-gold">Get in touch</Link>
+          <Link href="/#contact" className="btn-gold">Get in touch</Link>
         </div>
       </section>
     </>

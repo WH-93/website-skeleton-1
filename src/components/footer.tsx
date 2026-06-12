@@ -28,7 +28,7 @@ export function Footer() {
           <p className="text-sm text-white/60 lg:text-center">
             Specialist search for accountancy practices and in-house tax teams across the UK.
           </p>
-          <Link href="/contact" className="btn-gold justify-self-start lg:justify-self-end">
+          <Link href="/#contact" className="btn-gold justify-self-start lg:justify-self-end">
             Get in touch
           </Link>
         </div>

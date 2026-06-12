@@ -5,7 +5,7 @@ const stats = [
   { icon: 'person' as const, value: '12 YEARS', label: 'Specialist recruitment experience' },
   { icon: 'people' as const, value: '200+', label: 'Successful placements' },
   { icon: 'location' as const, value: 'UK WIDE', label: 'Established network across the UK' },
-  { icon: 'handshake' as const, value: 'LONG-TERM RELATIONSHIPS', label: 'Candidates and clients who return' },
+  { icon: 'star' as const, value: 'LONG-TERM RELATIONSHIPS', label: 'Candidates and clients who return' },
   { icon: 'target' as const, value: 'PROVEN RESULTS', label: 'Helping people and businesses succeed' },
 ];
 
@@ -13,18 +13,24 @@ const features = [
   { icon: 'target' as const, title: 'Specialist Market Knowledge', desc: 'Deep expertise in practice and tax recruitment across the UK.' },
   { icon: 'person' as const, title: 'A Genuinely Personal Approach', desc: 'Every search starts with a conversation to understand what really matters.' },
   { icon: 'search' as const, title: 'Proactive Search', desc: 'I look beyond active applicants and advertised vacancies to find the right fit.' },
-  { icon: 'handshake' as const, title: 'Honest Guidance', desc: 'Clear communication, realistic advice and personal support throughout every stage.' },
-  { icon: 'people' as const, title: 'Long-Term Relationships', desc: 'Success is measured through lasting relationships and repeat business.' },
+  { icon: 'shield' as const, title: 'Honest Guidance', desc: 'Clear communication, realistic advice and personal support throughout every stage.' },
+  { icon: 'star' as const, title: 'Long-Term Relationships', desc: 'Success is measured through lasting relationships and repeat business.' },
 ];
 
 const process = [
   { icon: 'person' as const, title: '1. Listen', desc: 'I start with the detail behind the brief or career move — the team, motivations, culture and what success needs to look like.' },
   { icon: 'search' as const, title: '2. Search Beyond', desc: 'I map the market and use my personal network to reach people and roles that are not sitting on job boards.' },
   { icon: 'people' as const, title: '3. Curate', desc: 'Quality over volume. I personally qualify each introduction so you are not flooded with hopeful CVs or irrelevant options.' },
-  { icon: 'handshake' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond. That is where lasting fit is proven.' },
+  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond. That is where lasting fit is proven.' },
 ];
 
 const roles = ['Tax', 'Audit', 'Accounts', 'Advisory', 'Practice Support'];
+
+const contacts = [
+  { icon: 'mail' as const, label: 'Email', value: 'ben@bcfinancialsearch.co.uk', href: 'mailto:ben@bcfinancialsearch.co.uk' },
+  { icon: 'phone' as const, label: 'Phone', value: '+44 7700 900123', href: 'tel:+447700900123' },
+  { icon: 'location' as const, label: 'Location', value: 'Manchester, United Kingdom', href: null },
+];
 
 export default function HomePage() {
   return (
@@ -48,7 +54,7 @@ export default function HomePage() {
             </div>
             <div className="hero-actions">
               <Link href="/jobs" className="btn-gold">View Current Roles</Link>
-              <Link href="/contact" className="btn-outline">Discuss Your Next Move</Link>
+              <Link href="/#contact" className="btn-outline">Discuss Your Next Move</Link>
               <Link href="/clients" className="btn-outline">Hire Specialist Talent</Link>
             </div>
           </div>
@@ -134,7 +140,7 @@ export default function HomePage() {
         </div>
         <div className="bg-navy text-white section px-5 sm:px-8 lg:px-14 flex items-center">
           <div>
-            <div className="text-gold font-heading text-7xl leading-none mb-4">“</div>
+            <div className="text-gold font-heading text-7xl leading-none mb-4">{'"'}</div>
             <p className="eyebrow mb-4">One specialist. One market. One point of contact.</p>
             <p className="font-heading text-3xl sm:text-4xl leading-tight max-w-md">
               No handoffs. No account managers. Just direct, specialist search from first conversation to first day and beyond.
@@ -177,7 +183,7 @@ export default function HomePage() {
           <div className="feature-grid mt-8">
             {roles.map((role, index) => (
               <div key={role} className="feature-card">
-                <BcIcon name={index === 0 ? 'shield' : index === 1 ? 'search' : index === 2 ? 'target' : index === 3 ? 'handshake' : 'people'} size={34} className="text-gold mx-auto mb-4" strokeWidth={1.3} />
+                <BcIcon name={index === 0 ? 'shield' : index === 1 ? 'search' : index === 2 ? 'target' : index === 3 ? 'clipboard' : 'people'} size={34} className="text-gold mx-auto mb-4" strokeWidth={1.3} />
                 <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy">{role}</h3>
               </div>
             ))}
@@ -187,10 +193,51 @@ export default function HomePage() {
           <div>
             <h2 className="font-sans text-2xl uppercase tracking-wide leading-tight">Ready to take the next step?</h2>
             <p className="mt-5 text-sm leading-7 text-white/70">Whether you are passively exploring or actively looking, let&apos;s have a confidential conversation about your next move.</p>
-            <Link href="/contact" className="btn-gold mt-8">Talk to BC today</Link>
+            <Link href="/#contact" className="btn-gold mt-8">Talk to BC today</Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="section bg-warm-white scroll-mt-24">
+        <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
+          <div>
+            <p className="eyebrow mb-4">Get In Touch</p>
+            <h2 className="section-title text-3xl sm:text-4xl">Your priorities shape the search.</h2>
+            <span className="gold-rule" />
+            <p className="body-copy max-w-xl">
+              Tell me what you are trying to achieve — a better career move, a key hire, or simply a clearer view of the market. I will respond personally and confidentially.
+            </p>
+          </div>
+
+          <div className="bg-white border border-navy/10 rounded-card shadow-card p-7 sm:p-10">
+            <div className="space-y-7">
+              {contacts.map(item => (
+                <div key={item.label} className="flex items-center gap-5">
+                  <div className="icon-circle-sm text-gold shrink-0">
+                    <BcIcon name={item.icon} size={18} strokeWidth={1.4} />
+                  </div>
+                  <div>
+                    <p className="eyebrow mb-1">{item.label}</p>
+                    {item.href ? (
+                      <a href={item.href} className="text-navy text-base hover:text-gold transition-colors">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-navy text-base">{item.value}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 pt-6 border-t border-navy/10">
+              <p className="text-sm leading-7 text-navy/65">
+                I aim to respond to all enquiries within 24 hours. Career conversations and hiring discussions are treated in confidence.
+              </p>
+            </div>
           </div>
         </div>
       </section>
     </>
   );
 }
+

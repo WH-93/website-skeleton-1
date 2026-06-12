@@ -4,7 +4,7 @@ import { BcIcon } from '@/components/bc-icon';
 const benefits = [
   { icon: 'person' as const, title: 'Personal Service', desc: 'You deal directly with an experienced specialist who takes the time to listen.' },
   { icon: 'search' as const, title: 'Exclusive Opportunities', desc: 'Access to roles that are not always advertised and a wider network of employers.' },
-  { icon: 'handshake' as const, title: 'Expert Guidance', desc: 'Honest advice and market insight to help you make the right move.' },
+  { icon: 'shield' as const, title: 'Expert Guidance', desc: 'Honest advice and market insight to help you make the right move.' },
   { icon: 'shield' as const, title: 'Confidential & Discreet', desc: 'Your career conversations are always in the strictest confidence.' },
 ];
 
@@ -12,7 +12,7 @@ const steps = [
   { icon: 'person' as const, title: '1. Listen', desc: 'I start with what matters to you — ambitions, motivations, working pattern, salary expectations and timing.' },
   { icon: 'search' as const, title: '2. Search Beyond', desc: 'I use my market knowledge and personal network to uncover roles that may never reach a jobs board.' },
   { icon: 'people' as const, title: '3. Curate', desc: 'I only introduce opportunities that make sense for your goals. No pressure, no irrelevant roles, no CV sent without permission.' },
-  { icon: 'handshake' as const, title: '4. Stay Involved', desc: 'I stay with you through interviews, offer, notice period and beyond — because the right move has to last.' },
+  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay with you through interviews, offer, notice period and beyond — because the right move has to last.' },
 ];
 
 const roleGroups = [
@@ -41,7 +41,7 @@ export default function CandidatesPage() {
             </div>
             <div className="hero-actions">
               <Link href="/jobs" className="btn-gold">Browse Current Opportunities</Link>
-              <Link href="/contact" className="btn-outline">Talk to BC</Link>
+              <Link href="/#contact" className="btn-outline">Talk to BC</Link>
             </div>
           </div>
           <div className="split-hero-media">
@@ -78,7 +78,7 @@ export default function CandidatesPage() {
               </div>
             ))}
           </div>
-          <Link href="/contact" className="btn-outline mt-8">Start a confidential conversation</Link>
+          <Link href="/#contact" className="btn-outline mt-8">Start a confidential conversation</Link>
         </div>
         <div className="relative min-h-[420px]">
           <img src="/hero-about.png" alt="Confidential recruitment conversation" className="absolute inset-0 h-full w-full object-cover" />
@@ -113,7 +113,7 @@ export default function CandidatesPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 mt-10">
             {roleGroups.map((group, i) => (
               <div key={group.title} className="feature-card">
-                <BcIcon name={i === 0 ? 'shield' : i === 1 ? 'search' : i === 2 ? 'target' : i === 3 ? 'handshake' : 'people'} size={34} className="text-gold mx-auto mb-4" />
+                <BcIcon name={i === 0 ? 'shield' : i === 1 ? 'search' : i === 2 ? 'target' : i === 3 ? 'clipboard' : 'people'} size={34} className="text-gold mx-auto mb-4" />
                 <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-3">{group.title}</h3>
                 <ul className="space-y-1 text-xs leading-5 text-navy/65">
                   {group.roles.map(role => <li key={role}>{role}</li>)}

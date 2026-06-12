@@ -4,7 +4,7 @@ import { BcIcon } from '@/components/bc-icon';
 const benefits = [
   { icon: 'target' as const, title: 'Specialist Expertise', desc: 'Deep knowledge of practice and tax recruitment across the UK.' },
   { icon: 'people' as const, title: 'Targeted Search', desc: 'Proactive headhunting to access the best talent, not just active jobseekers.' },
-  { icon: 'handshake' as const, title: 'Culture Focused', desc: 'I assess cultural fit to ensure long-term success for your team.' },
+  { icon: 'star' as const, title: 'Culture Focused', desc: 'I assess cultural fit to ensure long-term success for your team.' },
   { icon: 'clock' as const, title: 'Time Saving', desc: 'I manage the process efficiently, saving you valuable time.' },
   { icon: 'target' as const, title: 'Proven Results', desc: 'A track record of successful placements and long-term partnerships.' },
 ];
@@ -13,7 +13,7 @@ const process = [
   { icon: 'person' as const, title: '1. Understand', desc: 'I start with the business problem: the team, culture, expectations and the impact the right hire needs to make.' },
   { icon: 'search' as const, title: '2. Search Beyond', desc: 'I map the market and use my network to reach people who are not on job boards — often before they are actively looking.' },
   { icon: 'target' as const, title: '3. Curate', desc: 'I qualify every candidate personally. No flooding. No hopeful CV send. Just a considered shortlist with a reason behind each introduction.' },
-  { icon: 'handshake' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond — because lasting fit is proven after the placement.' },
+  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond — because lasting fit is proven after the placement.' },
 ];
 
 const areas = [
@@ -41,7 +41,7 @@ export default function ClientsPage() {
               <p>My expertise, network and proactive approach ensure you have access to the people who can make a real difference to your business.</p>
             </div>
             <div className="hero-actions">
-              <Link href="/contact" className="btn-gold">Discuss Your Hiring Needs</Link>
+              <Link href="/#contact" className="btn-gold">Discuss Your Hiring Needs</Link>
               <Link href="/services" className="btn-outline">View Search Services</Link>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function ClientsPage() {
               ))}
             </div>
           </div>
-          <Link href="/contact" className="btn-outline mt-10">Discuss Your Hiring Needs</Link>
+          <Link href="/#contact" className="btn-outline mt-10">Discuss Your Hiring Needs</Link>
         </div>
       </section>
 
@@ -94,7 +94,7 @@ export default function ClientsPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-10">
             {areas.map((area, i) => (
               <div key={area.title} className="feature-card">
-                <BcIcon name={i === 0 ? 'shield' : i === 1 ? 'search' : i === 2 ? 'target' : 'handshake'} size={34} className="text-gold mx-auto mb-4" />
+                <BcIcon name={i === 0 ? 'shield' : i === 1 ? 'search' : i === 2 ? 'target' : 'clipboard'} size={34} className="text-gold mx-auto mb-4" />
                 <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-3">{area.title}</h3>
                 <ul className="space-y-1 text-xs leading-5 text-navy/65">
                   {area.roles.map(role => <li key={role}>{role}</li>)}
@@ -126,7 +126,7 @@ export default function ClientsPage() {
             <h2 className="font-sans text-2xl sm:text-3xl uppercase tracking-wide">Let&apos;s find the right person for your team.</h2>
             <p className="text-white/70 mt-2">Get in touch for a confidential conversation about your hiring needs.</p>
           </div>
-          <Link href="/contact" className="btn-gold">Discuss Your Hiring Needs</Link>
+          <Link href="/#contact" className="btn-gold">Discuss Your Hiring Needs</Link>
         </div>
       </section>
     </>
