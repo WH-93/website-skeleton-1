@@ -28,7 +28,7 @@ export default async function JobDetailPage({ params }: { params: { slug: string
             <span>·</span>
             <span>{data.sector}</span>
             <span>·</span>
-            <span>{`Ref: BC-${data.id}`}</span>
+            <span>{`Ref: BC-${data.id.substring(0, 8)}`}</span>
           </div>
           <h1 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white mb-2">
             {data.title}
