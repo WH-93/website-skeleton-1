@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     httpOnly: false, // must be readable by client-side JS for admin layout auth check
     sameSite: 'lax',
     path: '/',
-    // session cookie — expires on browser close
+    // session cookie - expires on browser close
   });
 
   return response;

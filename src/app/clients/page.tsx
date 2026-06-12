@@ -11,9 +11,9 @@ const benefits = [
 
 const process = [
   { icon: 'person' as const, title: '1. Understand', desc: 'I start with the business problem: the team, culture, expectations and the impact the right hire needs to make.' },
-  { icon: 'search' as const, title: '2. Search Beyond', desc: 'I map the market and use my network to reach people who are not on job boards — often before they are actively looking.' },
+  { icon: 'search' as const, title: '2. Search Beyond', desc: 'I map the market and use my network to reach people who are not on job boards - often before they are actively looking.' },
   { icon: 'target' as const, title: '3. Curate', desc: 'I qualify every candidate personally. No flooding. No hopeful CV send. Just a considered shortlist with a reason behind each introduction.' },
-  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond — because lasting fit is proven after the placement.' },
+  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond - because lasting fit is proven after the placement.' },
 ];
 
 const areas = [

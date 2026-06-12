@@ -18,7 +18,7 @@ const features = [
 ];
 
 const process = [
-  { icon: 'person' as const, title: '1. Listen', desc: 'I start with the detail behind the brief or career move — the team, motivations, culture and what success needs to look like.' },
+  { icon: 'person' as const, title: '1. Listen', desc: 'I start with the detail behind the brief or career move - the team, motivations, culture and what success needs to look like.' },
   { icon: 'search' as const, title: '2. Search Beyond', desc: 'I map the market and use my personal network to reach people and roles that are not sitting on job boards.' },
   { icon: 'people' as const, title: '3. Curate', desc: 'Quality over volume. I personally qualify each introduction so you are not flooded with hopeful CVs or irrelevant options.' },
   { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond. That is where lasting fit is proven.' },
@@ -205,7 +205,7 @@ export default function HomePage() {
             <h2 className="section-title text-3xl sm:text-4xl">Your priorities shape the search.</h2>
             <span className="gold-rule" />
             <p className="body-copy max-w-xl">
-              Tell me what you are trying to achieve — a better career move, a key hire, or simply a clearer view of the market. I will respond personally and confidentially.
+              Tell me what you are trying to achieve - a better career move, a key hire, or simply a clearer view of the market. I will respond personally and confidentially.
             </p>
           </div>
 

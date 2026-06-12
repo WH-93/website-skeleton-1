@@ -72,7 +72,7 @@ export default function LoginPage() {
         </form>
 
         <p className="text-center text-white/30 text-xs mt-6">
-          BC Financial Search — Admin
+          BC Financial Search - Admin
         </p>
       </div>
     </div>

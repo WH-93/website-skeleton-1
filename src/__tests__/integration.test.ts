@@ -34,7 +34,7 @@ describe('Public Pages', () => {
     assert.ok(text.includes('Current Opportunities'));
     assert.ok(text.includes('Audit Senior Manager'));
     assert.ok(text.includes('Corporate Tax Director'));
-    assert.ok(text.includes('£75,000 — £90,000'));
+    assert.ok(text.includes('£75,000 - £90,000'));
   });
 
   it('GET /jobs/audit-senior-manager → 200 with job detail', async () => {
@@ -140,7 +140,7 @@ describe('Security', () => {
 
   it('No user-injected script tags in job listings', async () => {
     const { text } = await get('/jobs');
-    // Next.js injects its own scripts — check that no script appears inside job content
+    // Next.js injects its own scripts - check that no script appears inside job content
     const bodyStart = text.indexOf('<main');
     const bodyEnd = text.indexOf('</main>');
     const mainContent = text.slice(bodyStart, bodyEnd);

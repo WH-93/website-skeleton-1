@@ -9,10 +9,10 @@ const benefits = [
 ];
 
 const steps = [
-  { icon: 'person' as const, title: '1. Listen', desc: 'I start with what matters to you — ambitions, motivations, working pattern, salary expectations and timing.' },
+  { icon: 'person' as const, title: '1. Listen', desc: 'I start with what matters to you - ambitions, motivations, working pattern, salary expectations and timing.' },
   { icon: 'search' as const, title: '2. Search Beyond', desc: 'I use my market knowledge and personal network to uncover roles that may never reach a jobs board.' },
   { icon: 'people' as const, title: '3. Curate', desc: 'I only introduce opportunities that make sense for your goals. No pressure, no irrelevant roles, no CV sent without permission.' },
-  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay with you through interviews, offer, notice period and beyond — because the right move has to last.' },
+  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay with you through interviews, offer, notice period and beyond - because the right move has to last.' },
 ];
 
 const roleGroups = [
@@ -37,7 +37,7 @@ export default function CandidatesPage() {
             <span className="gold-rule" />
             <div className="space-y-5 body-copy max-w-xl">
               <p>I take the time to understand what is important to you and proactively find opportunities that match your skills, ambitions and lifestyle.</p>
-              <p>With specialist knowledge of the practice and tax market across the UK, I open doors to the right opportunities — often before they are advertised.</p>
+              <p>With specialist knowledge of the practice and tax market across the UK, I open doors to the right opportunities - often before they are advertised.</p>
             </div>
             <div className="hero-actions">
               <Link href="/jobs" className="btn-gold">Browse Current Opportunities</Link>

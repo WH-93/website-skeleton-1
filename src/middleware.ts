@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Allow login page and login API — also allow /admin itself (login-or-dashboard page)
+  // Allow login page and login API - also allow /admin itself (login-or-dashboard page)
   if (pathname === '/admin' || pathname === '/admin/login' || pathname === '/api/auth/login') {
     return NextResponse.next();
   }

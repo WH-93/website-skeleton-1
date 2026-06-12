@@ -131,7 +131,7 @@ export default function AdminPage() {
         </form>
 
         <p className="text-center text-gray-400 text-xs mt-6">
-          BC Financial Search — Admin
+          BC Financial Search - Admin
         </p>
       </div>
     </div>

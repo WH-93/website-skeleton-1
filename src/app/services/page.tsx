@@ -43,7 +43,7 @@ export default function ServicesPage() {
             <span className="gold-rule" />
             <div className="space-y-5 body-copy max-w-xl">
               <p>I focus where I add the most value: accountancy practices, in-house tax teams and specialist finance appointments that need more than a transactional search.</p>
-              <p>A targeted search, built around you — with market knowledge, discretion and personal accountability throughout.</p>
+              <p>A targeted search, built around you - with market knowledge, discretion and personal accountability throughout.</p>
             </div>
             <div className="hero-actions">
               <Link href="/#contact" className="btn-gold">Start a Search Conversation</Link>

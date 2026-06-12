@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 
-// Brand-aligned geometric icons — 24×24 viewBox, 2px strokes, rounded caps, gold accent
+// Brand-aligned geometric icons - 24×24 viewBox, 2px strokes, rounded caps, gold accent
 // All icons echo the logo's geometric sans-serif aesthetic with open forms
 
 const icons = {

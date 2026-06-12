@@ -3,7 +3,7 @@ import './globals.css';
 import { PublicLayout } from '@/components/public-layout';
 
 export const metadata: Metadata = {
-  title: 'BC Financial Search — Practice & Tax Recruitment',
+  title: 'BC Financial Search - Practice & Tax Recruitment',
   description: 'Specialist recruitment for accountancy practices and in-house tax teams.',
 };
 

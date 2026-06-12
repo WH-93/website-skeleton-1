@@ -43,7 +43,7 @@ export default function ApplicationsPage() {
         <div>
           <h1 className="font-heading text-xl sm:text-2xl text-white">Applications & CVs</h1>
           <p className="text-white/40 text-xs sm:text-sm mt-1">
-            {apps.length} total applications — click a CV name to download.
+            {apps.length} total applications - click a CV name to download.
           </p>
         </div>
         <input

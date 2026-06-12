@@ -53,7 +53,7 @@ export default function JobsPage() {
             <span className="hero-title-line text-gold">Opportunities.</span>
           </h1>
           <p className="text-white/70 text-sm sm:text-base leading-7 max-w-xl">
-            Every role has been discussed with my clients — please don&apos;t hesitate to contact me to discuss one, or quiz my market knowledge if the right fit isn&apos;t listed here.
+            Every role has been discussed with my clients - please don&apos;t hesitate to contact me to discuss one, or quiz my market knowledge if the right fit isn&apos;t listed here.
           </p>
         </div>
       </section>

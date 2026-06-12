@@ -28,7 +28,7 @@ export default function NewJobPage() {
     { name: 'title', label: 'Job Title *', type: 'text', placeholder: 'Audit Senior Manager' },
     { name: 'company', label: 'Company', type: 'text', placeholder: 'Top 20 Accountancy Practice' },
     { name: 'location', label: 'Location', type: 'text', placeholder: 'London' },
-    { name: 'salary', label: 'Salary', type: 'text', placeholder: '£75,000 — £90,000' },
+    { name: 'salary', label: 'Salary', type: 'text', placeholder: '£75,000 - £90,000' },
   ];
 
   return (

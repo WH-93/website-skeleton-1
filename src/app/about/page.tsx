@@ -10,7 +10,7 @@ const stats = [
 ];
 
 const process = [
-  { icon: 'person' as const, title: '1. Listen', desc: 'I start with the detail behind the brief or career move — the team, motivations, culture and what success needs to look like.' },
+  { icon: 'person' as const, title: '1. Listen', desc: 'I start with the detail behind the brief or career move - the team, motivations, culture and what success needs to look like.' },
   { icon: 'search' as const, title: '2. Search Beyond', desc: 'I map the market and use my personal network to reach people and roles that are not sitting on job boards.' },
   { icon: 'people' as const, title: '3. Curate', desc: 'Quality over volume. I personally qualify each introduction so you are not flooded with hopeful CVs or irrelevant options.' },
   { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond. That is where lasting fit is proven.' },
@@ -105,7 +105,7 @@ export default function AboutPage() {
             <p className="eyebrow mb-4">One brand. One person. One promise.</p>
             <p className="font-heading text-3xl leading-tight">Personal service only matters if the same specialist stays accountable throughout.</p>
             <span className="gold-rule" />
-            <p className="text-sm leading-7 text-white/70">Ben takes the brief, maps the market, qualifies the fit and stays close after the placement — no handoffs, no diluted accountability.</p>
+            <p className="text-sm leading-7 text-white/70">Ben takes the brief, maps the market, qualifies the fit and stays close after the placement - no handoffs, no diluted accountability.</p>
           </div>
         </div>
       </section>
