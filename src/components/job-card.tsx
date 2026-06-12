@@ -26,6 +26,8 @@ export function JobCard({ job }: { job: {
                 <span className="text-gold font-medium">{job.salary}</span>
               </>
             )}
+            <span className="text-gold/30 hidden sm:inline">|</span>
+            <span className="text-gray-300 text-[9px]">Ref: BC-{job.id.substring(0, 8)}</span>
           </div>
         </div>
         <span className="text-[9px] sm:text-[10px] tracking-wider text-gold uppercase whitespace-nowrap shrink-0">
