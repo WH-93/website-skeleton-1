@@ -31,9 +31,9 @@ export default function ClientsPage() {
           <div className="split-hero-copy">
             <p className="eyebrow mb-5">For Clients</p>
             <h1 className="hero-title hero-title-reveal">
-              <span className="hero-title-line">The right hire.</span>
-              <span className="hero-title-line">The right fit.</span>
-              <span className="hero-title-line">The right <span className="text-gold">impact.</span></span>
+              <span className="hero-title-line">Technical fit.</span>
+              <span className="hero-title-line">Cultural fit.</span>
+              <span className="hero-title-line">Long-term <span className="text-gold">value.</span></span>
             </h1>
             <span className="gold-rule" />
             <div className="space-y-5 body-copy max-w-xl">

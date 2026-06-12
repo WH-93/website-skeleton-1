@@ -31,11 +31,12 @@ export default function CandidatesPage() {
           <div className="split-hero-copy">
             <p className="eyebrow mb-5">For Candidates</p>
             <h1 className="hero-title hero-title-reveal">
-              <span className="hero-title-line">A personal approach</span>
-              <span className="hero-title-line">to your next <span className="text-gold">career move.</span></span>
+              <span className="hero-title-line">Specialist knowledge,</span>
+              <span className="hero-title-line">applied <span className="text-gold">personally.</span></span>
             </h1>
             <span className="gold-rule" />
             <div className="space-y-5 body-copy max-w-xl">
+              <p className="font-heading text-lg sm:text-xl italic text-navy/80">Careers considered. Talent discovered.</p>
               <p>I take the time to understand what is important to you and proactively find opportunities that match your skills, ambitions and lifestyle.</p>
               <p>With specialist knowledge of the practice and tax market across the UK, I open doors to the right opportunities - often before they are advertised.</p>
             </div>
@@ -65,7 +66,7 @@ export default function CandidatesPage() {
       <section className="grid lg:grid-cols-[40%_60%] bg-white">
         <div className="section px-5 sm:px-8 lg:pl-16 xl:pl-20 lg:pr-12">
           <p className="eyebrow mb-4">How I Help You</p>
-          <h2 className="section-title text-3xl sm:text-4xl">Your career goals, my priority.</h2>
+          <h2 className="section-title text-3xl sm:text-4xl">Local knowledge. Wider market access.</h2>
           <span className="gold-rule" />
           <div className="space-y-7">
             {steps.map(step => (
@@ -87,7 +88,8 @@ export default function CandidatesPage() {
 
       <section className="bg-navy text-white section">
         <div className="container-page">
-          <h2 className="font-sans text-xl sm:text-2xl uppercase tracking-wide text-center mb-12">What candidates value</h2>
+          <h2 className="font-sans text-xl sm:text-2xl uppercase tracking-wide text-center mb-4">What candidates value</h2>
+          <p className="text-center text-white/50 text-sm mb-12">Relationships that last beyond the placement.</p>
           <div className="grid gap-8 md:grid-cols-3 md:divide-x md:divide-white/15">
             {[
               'Ben took the time to understand what I was looking for. He found me a fantastic opportunity that was the perfect next step in my career.',

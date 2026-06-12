@@ -65,7 +65,7 @@ export default function AboutPage() {
       <section className="section bg-white text-center">
         <div className="container-page">
           <p className="eyebrow mb-3">My Approach</p>
-          <h2 className="section-title text-3xl sm:text-4xl">I listen. I search. I stay involved.</h2>
+          <h2 className="section-title text-3xl sm:text-4xl">We listen. We search. We stay involved.</h2>
           <span className="gold-rule mx-auto" />
           <div className="relative mt-12">
             <div className="process-line" />
