@@ -19,12 +19,16 @@ export default function JobsPage() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [keyword, setKeyword] = useState('');
   const [location, setLocation] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/jobs')
+    const timer = new Promise(resolve => setTimeout(resolve, 2000));
+    const fetchJobs = fetch('/api/jobs')
       .then(r => r.json())
       .then(data => setJobs(data.filter((j: any) => j.status !== 'Draft')))
       .catch(() => setJobs([]));
+
+    Promise.all([timer, fetchJobs]).then(() => setLoading(false));
   }, []);
 
   const filtered = useMemo(() => {
@@ -43,6 +47,20 @@ export default function JobsPage() {
       return true;
     });
   }, [jobs, keyword, location]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-navy flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <svg className="animate-spin h-10 w-10 text-gold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+          </svg>
+          <p className="text-white/40 text-xs tracking-wider">Loading opportunities...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>

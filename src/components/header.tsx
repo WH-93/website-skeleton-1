@@ -69,15 +69,18 @@ export function Header() {
 
       {open && (
         <div className="lg:hidden bg-white border-t border-navy/5 pb-4 shadow-card">
-          {navItems.map(item => (
-            <button
-              key={item.label}
-              onClick={() => handleMobileNav(item.href)}
-              className="mobile-nav-link"
-            >
-              {item.label}
-            </button>
-          ))}
+          {navItems.map(item => {
+            const active = pathname === item.href;
+            return (
+              <button
+                key={item.label}
+                onClick={() => handleMobileNav(item.href)}
+                className={`mobile-nav-link ${active ? 'mobile-nav-link-active' : ''}`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
           <div className="px-5 pt-3">
             <button onClick={() => handleMobileNav('/#contact')} className="btn-gold w-full text-center text-xs py-3">
               Contact

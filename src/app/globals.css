@@ -109,6 +109,10 @@
     @apply block w-full text-left text-navy/75 hover:text-gold hover:bg-warm-white
            px-5 py-3 text-xs tracking-wider;
   }
+
+  .mobile-nav-link-active {
+    @apply text-gold font-semibold;
+  }
 }
 
 @keyframes heroTextReveal {
