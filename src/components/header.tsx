@@ -12,7 +12,7 @@ export function Header() {
 
   const handleMobileNav = (href: string) => {
     setOpen(false);
-    setTimeout(() => router.push(href), 150);
+    router.push(href);
   };
 
   const navItems = [
