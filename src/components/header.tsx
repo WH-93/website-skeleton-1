@@ -2,12 +2,18 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { BcLogo } from '@/components/bc-logo';
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleMobileNav = (href: string) => {
+    setOpen(false);
+    setTimeout(() => router.push(href), 150);
+  };
 
   const navItems = [
     { label: 'HOME', href: '/' },
@@ -60,19 +66,18 @@ export function Header() {
       {open && (
         <div className="lg:hidden bg-white border-t border-navy/5 pb-4 shadow-card">
           {navItems.map(item => (
-            <Link
+            <button
               key={item.label}
-              href={item.href}
-              onClick={() => setOpen(false)}
+              onClick={() => handleMobileNav(item.href)}
               className="mobile-nav-link"
             >
               {item.label}
-            </Link>
+            </button>
           ))}
           <div className="px-5 pt-3">
-            <Link href="/#contact" onClick={() => setOpen(false)} className="btn-gold w-full text-center text-xs py-3">
+            <button onClick={() => handleMobileNav('/#contact')} className="btn-gold w-full text-center text-xs py-3">
               Contact
-            </Link>
+            </button>
           </div>
         </div>
       )}

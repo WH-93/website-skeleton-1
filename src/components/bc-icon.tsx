@@ -80,7 +80,7 @@ const icons = {
 
   phone: (props: SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M22 16.9v-3.9a2 2 0 0 0-1.7-2 11 11 0 0 1-5.6-2.3 2 2 0 0 0-2.3-.2L9.1 10a13.5 13.5 0 0 0 4.9 4.9l1.4-3.3a2 2 0 0 0-.2-2.3 11 11 0 0 1-2.3-5.6 2 2 0 0 0-2-1.7H7.1a2 2 0 0 0-1.9 2.2A16 16 0 0 0 21.8 18.8a2 2 0 0 0 2.2-1.9z"/>
+      <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94M17 16.5l-3.7 3.7c-1.5.5-3.1.8-4.8.8A12 12 0 0 1 3 15c-2-4 0-9 5-12l3.7 3.7c-.2 1.5.4 3 1.3 4.1a6 6 0 0 0 4 2z"/>
     </svg>
   ),
 
