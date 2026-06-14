@@ -106,7 +106,7 @@ export function ApplyForm({ jobTitle, jobId, onClose }: {
         </div>
 
         <div>
-          <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">CV / Resume *</label>
+          <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">CV (max 10MB) </label>
           <input
             type="file" required accept=".pdf,.doc,.docx"
             onChange={e => setFile(e.target.files?.[0] || null)}

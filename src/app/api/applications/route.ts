@@ -3,7 +3,21 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+const MAX_BODY_SIZE = 10 * 1024 * 1024; // 10MB
+
 export async function POST(req: NextRequest) {
+  // --- Size check: reject before parsing body ---
+  const contentLength = parseInt(
+    req.headers.get('content-length') || '0',
+    10
+  );
+  if (contentLength > MAX_BODY_SIZE) {
+    return NextResponse.json(
+      { error: 'File too large. Maximum upload size is 10MB.' },
+      { status: 413 }
+    );
+  }
+
   try {
     const body = await req.json();
     const { jobId, firstName, lastName, email, phone, cvKey, cvName, cvData } = body;
