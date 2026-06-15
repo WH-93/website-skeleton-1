@@ -204,8 +204,8 @@ export default function HomePage() {
         <div className="bg-navy text-white section px-6 sm:px-10 flex items-center">
           <div>
             <h2 className="font-sans text-2xl uppercase tracking-wide leading-tight">Ready to take the next step?</h2>
-            <p className="mt-5 text-sm leading-7 text-white/70">Whether you are passively exploring or actively looking, let&apos;s have a confidential conversation about your next move.</p>
-            <Link href="/#contact" className="btn-gold mt-8">Talk to BC today</Link>
+            <p className="mt-5 text-sm leading-7 text-white/70">Whether you are beginning to explore your options or actively looking for your next role, start a confidential conversation about what matters to you.</p>
+            <Link href="/#contact" className="btn-gold mt-8">Start a Career Conversation</Link>
           </div>
         </div>
       </section>
