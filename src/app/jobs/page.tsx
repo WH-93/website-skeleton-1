@@ -22,7 +22,7 @@ export default function JobsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = new Promise(resolve => setTimeout(resolve, 1600));
+    const timer = new Promise(resolve => setTimeout(resolve, 1235));
     const fetchJobs = fetch('/api/jobs')
       .then(r => r.json())
       .then(data => setJobs(data.filter((j: any) => j.status !== 'Draft')))

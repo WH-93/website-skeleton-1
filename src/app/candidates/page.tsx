@@ -85,7 +85,7 @@ export default function CandidatesPage() {
           <Link href="/#contact" className="btn-outline mt-8">Start a confidential conversation</Link>
         </div>
         <div className="relative min-h-[420px]">
-          <img src="/hero-about.png" alt="Confidential recruitment conversation" className="absolute inset-0 h-full w-full object-cover" />
+          <img src="/hero-candidates-section.png" alt="Confidential recruitment conversation" className="absolute inset-0 h-full w-full object-cover" />
         </div>
       </section>
 
