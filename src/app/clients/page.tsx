@@ -17,12 +17,8 @@ const process = [
 ];
 
 const areas = [
-  { title: 'Audit & Assurance', roles: ['Audit Semi-Senior', 'Audit Senior', 'Audit Manager', 'Audit Director', 'Partner'] },
-  { title: 'Accounts & Business Services', roles: ['Accounts Semi-Senior', 'Accounts Senior', 'Client Manager', 'Accounts Manager', 'Client Director'] },
-  { title: 'Practice Tax', roles: ['Personal Tax', 'Corporate Tax', 'Mixed Tax', 'VAT', 'Employment Tax', 'R&D Tax'] },
-  { title: 'Advisory', roles: ['Business Advisory', 'Corporate Finance', 'Transaction Services'] },
-  { title: 'Payroll & Bookkeeping', roles: ['Payroll Assistant', 'Payroll Senior', 'Payroll Manager', 'Bookkeeper'] },
-  { title: 'In-House Tax', roles: ['Corporate Tax', 'Indirect Tax and VAT', 'International Tax', 'Transfer Pricing', 'Employment Tax', 'Tax Manager', 'Senior Tax Manager', 'Head of Tax', 'Tax Director'] },
+  { title: 'Accountancy Practice', desc: 'I recruit across audit and assurance, accounts and business services, practice tax, advisory, payroll and bookkeeping, covering appointments from part-qualified professionals through to senior leadership and partner level.' },
+  { title: 'In-House Tax', desc: 'I support hiring across corporate tax, indirect tax and VAT, international tax, transfer pricing and employment tax, including Tax Manager, Head of Tax and Tax Director appointments.' },
 ];
 
 export default function ClientsPage() {
@@ -93,13 +89,11 @@ export default function ClientsPage() {
           <p className="eyebrow mb-3">Specialist Areas</p>
           <h2 className="section-title text-3xl sm:text-4xl">Connecting accountancy practices and in-house tax teams with carefully selected professionals across the UK.</h2>
           <span className="gold-rule mx-auto" />
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-10">
+          <div className="grid gap-8 sm:grid-cols-2 mt-10">
             {areas.map((area) => (
               <div key={area.title} className="feature-card">
                 <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-3">{area.title}</h3>
-                <ul className="space-y-1 text-xs leading-5 text-navy/65">
-                  {area.roles.map(role => <li key={role}>{role}</li>)}
-                </ul>
+                <p className="text-xs leading-5 text-navy/65">{area.desc}</p>
               </div>
             ))}
           </div>

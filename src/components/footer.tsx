@@ -65,6 +65,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs tracking-widest text-gold mb-4 font-bold uppercase">Get In Touch</h4>
             <ul className="space-y-3 text-sm text-white/65">
+              <li className="flex gap-3"><BcIcon name="phone" size={16} className="text-gold mt-1" /> 07522 996561</li>
               <li className="flex gap-3"><BcIcon name="mail" size={16} className="text-gold mt-1" /> ben@bcfinancialsearch.co.uk</li>
               <li className="flex gap-3"><BcIcon name="location" size={16} className="text-gold mt-1" /> Manchester<br />United Kingdom</li>
             </ul>

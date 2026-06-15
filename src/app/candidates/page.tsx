@@ -17,28 +17,12 @@ const steps = [
 
 const roleGroups = [
   {
-    title: 'Audit & Assurance',
-    roles: ['Audit Semi-Senior', 'Audit Senior', 'Audit Manager', 'Audit Director', 'Partner'],
-  },
-  {
-    title: 'Accounts & Business Services',
-    roles: ['Accounts Semi-Senior', 'Accounts Senior', 'Client Manager', 'Accounts Manager', 'Client Director'],
-  },
-  {
-    title: 'Practice Tax',
-    roles: ['Personal Tax', 'Corporate Tax', 'Mixed Tax', 'VAT', 'Employment Tax', 'R&D Tax'],
-  },
-  {
-    title: 'Advisory',
-    roles: ['Business Advisory', 'Corporate Finance', 'Transaction Services'],
-  },
-  {
-    title: 'Payroll & Bookkeeping',
-    roles: ['Payroll Assistant', 'Payroll Senior', 'Payroll Manager', 'Bookkeeper'],
+    title: 'Accountancy Practice',
+    desc: 'Opportunities across audit, accounts and business services, practice tax, advisory, payroll and bookkeeping, from early career through to partner level.',
   },
   {
     title: 'In-House Tax',
-    roles: ['Corporate Tax', 'Indirect Tax and VAT', 'International Tax', 'Transfer Pricing', 'Employment Tax', 'Tax Manager', 'Senior Tax Manager', 'Head of Tax', 'Tax Director'],
+    desc: 'Opportunities across corporate tax, indirect tax and VAT, international tax, transfer pricing and employment tax, from Tax Manager through to Head of Tax and Tax Director.',
   },
 ];
 
@@ -131,13 +115,11 @@ export default function CandidatesPage() {
           <p className="eyebrow mb-3">Areas I Recruit</p>
           <h2 className="section-title text-3xl sm:text-4xl">Specialist opportunities across accountancy practice and in-house tax.</h2>
           <span className="gold-rule mx-auto" />
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-10">
+          <div className="grid gap-8 sm:grid-cols-2 mt-10">
             {roleGroups.map((group) => (
               <div key={group.title} className="feature-card">
                 <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-3">{group.title}</h3>
-                <ul className="space-y-1 text-xs leading-5 text-navy/65">
-                  {group.roles.map(role => <li key={role}>{role}</li>)}
-                </ul>
+                <p className="text-xs leading-5 text-navy/65">{group.desc}</p>
               </div>
             ))}
           </div>
