@@ -85,7 +85,7 @@ export default function CandidatesPage() {
       <section className="grid lg:grid-cols-[40%_60%] bg-white">
         <div className="section px-5 sm:px-8 lg:pl-16 xl:pl-20 lg:pr-12">
           <p className="eyebrow mb-4">How I Help You</p>
-          <h2 className="section-title text-3xl sm:text-4xl">Local knowledge. Wider market access.</h2>
+          <h2 className="section-title text-3xl sm:text-4xl">Specialist knowledge. Wider market access.</h2>
           <span className="gold-rule" />
           <div className="space-y-7">
             {steps.map(step => (
