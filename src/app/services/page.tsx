@@ -4,21 +4,24 @@ import { BcIcon } from '@/components/bc-icon';
 const services = [
   {
     icon: 'building' as const,
-    title: 'Practice Recruitment',
-    desc: 'Audit, accounts, advisory and practice management appointments from newly qualified to partner level.',
-    roles: ['Audit Senior / Manager', 'Accounts Manager', 'Client Director', 'Practice Manager'],
+    title: 'Accountancy Practice Recruitment',
+    desc: 'Audit, accounts, advisory, payroll and practice management appointments, from newly qualified professionals through to partner level.',
+    roles: ['Audit Senior and Audit Manager', 'Accounts Senior and Accounts Manager', 'Client Manager and Client Director', 'Practice Manager', 'Payroll Manager', 'Partner'],
+    roleLabel: 'Typical Roles',
   },
   {
     icon: 'shield' as const,
     title: 'Tax Recruitment',
-    desc: 'Corporate tax, personal tax, VAT, employment tax and in-house tax specialists across the UK.',
-    roles: ['Corporate Tax Director', 'Personal Tax Senior', 'VAT Manager', 'Employment Tax Lead', 'In-House Tax Manager'],
+    desc: 'Practice and in-house tax appointments across corporate tax, personal tax, VAT, employment tax, international tax and transfer pricing.',
+    roles: ['Corporate Tax Manager and Director', 'Personal Tax Senior and Manager', 'VAT Manager', 'Employment Tax Lead', 'In-House Tax Manager', 'Head of Tax'],
+    roleLabel: 'Typical Roles',
   },
   {
     icon: 'target' as const,
-    title: 'Search & Selection',
-    desc: 'Specialist, senior and hard-to-fill appointments requiring discretion, market mapping and proactive search.',
-    roles: ['Partner-Level', 'Heads of Tax', 'Senior Directors', 'Confidential Searches'],
+    title: 'Senior & Confidential Search',
+    desc: 'Senior, specialist and hard-to-fill appointments requiring discretion, detailed market mapping and proactive headhunting.',
+    roles: ['Partner and Director appointments', 'Heads of Tax', 'Senior leadership roles', 'Confidential searches', 'Market mapping and succession-led searches'],
+    roleLabel: 'Typical Assignments',
   },
 ];
 
@@ -42,11 +45,11 @@ export default function ServicesPage() {
             </h1>
             <span className="gold-rule" />
             <div className="space-y-5 body-copy max-w-xl">
-              <p>I focus where I add the most value: accountancy practices, in-house tax teams and specialist finance appointments that need more than a transactional search.</p>
-              <p>A targeted search, built around you - with market knowledge, discretion and personal accountability throughout.</p>
+              <p>I focus on assignments where detailed market knowledge and a proactive approach can make a genuine difference.</p>
+              <p>Every search is shaped around your requirements, with discretion, clear communication and personal accountability throughout the process.</p>
             </div>
             <div className="hero-actions">
-              <Link href="/#contact" className="btn-gold">Start a Search Conversation</Link>
+              <Link href="/#contact" className="btn-gold">Discuss Your Hiring Plans</Link>
               <Link href="/jobs" className="btn-outline">View Current Roles</Link>
             </div>
           </div>
@@ -68,7 +71,7 @@ export default function ServicesPage() {
                 <h3 className="font-sans text-sm font-bold uppercase tracking-wider text-navy mb-4">{service.title}</h3>
                 <p className="text-sm leading-7 text-navy/70 mb-7">{service.desc}</p>
                 <div className="border-t border-navy/10 pt-5">
-                  <p className="eyebrow mb-3">Typical Roles</p>
+                  <p className="eyebrow mb-3">{service.roleLabel}</p>
                   <ul className="space-y-2 text-sm text-navy/65">
                     {service.roles.map(role => <li key={role}>{role}</li>)}
                   </ul>

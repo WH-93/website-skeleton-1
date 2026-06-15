@@ -2,33 +2,30 @@ import Link from 'next/link';
 import { BcIcon } from '@/components/bc-icon';
 
 const stats = [
-  { icon: 'person' as const, value: '12 YEARS', label: 'Specialist recruitment experience' },
+  { icon: 'person' as const, value: '12 YEARS', label: 'Specialist market experience' },
   { icon: 'people' as const, value: '200+', label: 'Successful placements' },
-  { icon: 'location' as const, value: 'UK WIDE', label: 'Established network across the UK' },
-  { icon: 'star' as const, value: 'LONG-TERM RELATIONSHIPS', label: 'Candidates and clients who return' },
-  { icon: 'target' as const, value: 'PROVEN RESULTS', label: 'Helping people and businesses succeed' },
+  { icon: 'location' as const, value: 'UK-WIDE', label: 'A trusted network across the UK' },
+  { icon: 'star' as const, value: 'LONG-TERM RELATIONSHIPS', label: 'Built beyond a single placement' },
 ];
 
 const features = [
-  { icon: 'target' as const, title: 'Specialist Market Knowledge', desc: 'Deep expertise in practice and tax recruitment across the UK.' },
-  { icon: 'person' as const, title: 'A Genuinely Personal Approach', desc: 'Every search starts with a conversation to understand what really matters.' },
-  { icon: 'search' as const, title: 'Proactive Search', desc: 'I look beyond active applicants and advertised vacancies to find the right fit.' },
-  { icon: 'shield' as const, title: 'Honest Guidance', desc: 'Clear communication, realistic advice and personal support throughout every stage.' },
-  { icon: 'star' as const, title: 'Long-Term Relationships', desc: 'Success is measured through lasting relationships and repeat business.' },
+  { icon: 'target' as const, title: 'Specialist Market Knowledge', desc: 'Twelve years of experience recruiting across accountancy practice and tax markets throughout the UK.' },
+  { icon: 'person' as const, title: 'Personal, Not Transactional', desc: 'Every search begins with a proper conversation about the person, business and priorities behind the move.' },
+  { icon: 'search' as const, title: 'Proactive Search', desc: 'I go beyond advertised vacancies and active applicants, approaching the market directly to uncover the strongest opportunities and talent.' },
+  { icon: 'shield' as const, title: 'Honest Guidance', desc: 'Clear communication, realistic advice and straightforward feedback at every stage.' },
+  { icon: 'star' as const, title: 'Long-Term Relationships', desc: 'I focus on appointments that work for the long term, building relationships that continue beyond a single hire.' },
 ];
 
 const process = [
-  { icon: 'person' as const, title: '1. Listen', desc: 'I start with the detail behind the brief or career move - the team, motivations, culture and what success needs to look like.' },
-  { icon: 'search' as const, title: '2. Search Beyond', desc: 'I map the market and use my personal network to reach people and roles that are not sitting on job boards.' },
-  { icon: 'people' as const, title: '3. Curate', desc: 'Quality over volume. I personally qualify each introduction so you are not flooded with hopeful CVs or irrelevant options.' },
-  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond. That is where lasting fit is proven.' },
+  { icon: 'person' as const, title: '1. Listen', desc: 'I begin with the detail behind the brief or career move: the team, ambitions, motivations, culture and what a successful outcome needs to look like.' },
+  { icon: 'search' as const, title: '2. Search the Market', desc: 'I map the market and draw on my specialist network to uncover people and opportunities that may never appear on a job board.' },
+  { icon: 'people' as const, title: '3. Curate', desc: 'Quality matters more than volume. I personally assess every introduction, ensuring each opportunity or candidate is relevant and carefully considered.' },
+  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I remain closely involved throughout interviews, offers, notice periods and onboarding, providing support well beyond the placement.' },
 ];
-
-const roles = ['Tax', 'Audit', 'Accounts', 'Advisory', 'Practice Support'];
 
 const contacts = [
   { icon: 'mail' as const, label: 'Email', value: 'ben@bcfinancialsearch.co.uk', href: 'mailto:ben@bcfinancialsearch.co.uk' },
-  { icon: 'phone' as const, label: 'Phone', value: '+44 7700 900123', href: 'tel:+447700900123' },
+  { icon: 'phone' as const, label: 'Phone', value: '07522996561', href: 'tel:07522996561' },
   { icon: 'location' as const, label: 'Location', value: 'Manchester, United Kingdom', href: null },
 ];
 
@@ -46,10 +43,10 @@ export default function HomePage() {
             <span className="gold-rule" />
             <div className="space-y-5 body-copy max-w-xl">
               <p>
-                I specialise in practice and tax recruitment across the UK, helping professionals make better career moves and businesses hire exceptional talent.
+                Specialist accountancy practice and tax recruitment across the UK.
               </p>
               <p>
-                With 12 years of specialist experience, I take the time to understand what matters, then proactively search the market to create the right fit for long-term success.
+                With 12 years of experience in the market, I connect ambitious professionals with firms where they can thrive, while helping employers secure talent that supports their long-term growth.
               </p>
             </div>
             <div className="hero-actions">
@@ -66,9 +63,9 @@ export default function HomePage() {
 
       <section className="stats-band">
         <div className="container-page">
-          <div className="stats-grid">
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {stats.map(item => (
-              <div key={item.value} className={`stat-item ${item.value === 'PROVEN RESULTS' ? 'hidden md:block' : ''}`}>
+              <div key={item.value} className="stat-item">
                 <div className="stat-icon"><BcIcon name={item.icon} size={38} strokeWidth={1.5} /></div>
                 <div className="stat-value">{item.value}</div>
                 <div className="stat-label">{item.label}</div>
@@ -86,8 +83,8 @@ export default function HomePage() {
             <h2 className="section-title text-3xl sm:text-4xl">A career move built around what matters to you.</h2>
             <span className="gold-rule" />
             <div className="space-y-5 body-copy">
-              <p>I take the time to understand your career ambitions, preferred working arrangements, salary expectations and personal motivations.</p>
-              <p>I then proactively approach the market to uncover opportunities that truly match your goals.</p>
+              <p>I take the time to understand your ambitions, preferred working arrangements, salary expectations and what is motivating your next move.</p>
+              <p>I then proactively search the market and approach relevant businesses to uncover opportunities that genuinely align with your goals.</p>
               <p className="font-bold text-navy">No cost. No pressure. Just a confidential conversation about your career.</p>
             </div>
             <Link href="/candidates" className="btn-gold mt-auto self-start translate-y-4">Start a Career Conversation</Link>
@@ -100,8 +97,8 @@ export default function HomePage() {
             <span className="gold-rule" />
             <div className="space-y-5 body-copy">
               <p>A successful appointment needs to work technically, commercially and culturally.</p>
-              <p>I meet with you to understand your business, your team and the challenge the appointment needs to solve.</p>
-              <p>I use targeted search and proactive headhunting to identify professionals who can perform the role and contribute long term.</p>
+              <p>Every search begins with understanding your business, your team and the challenge behind the hire.</p>
+              <p>Through targeted search and proactive headhunting, I identify professionals who can perform the role, strengthen your team and contribute for the long term.</p>
             </div>
             <Link href="/clients" className="btn-gold mt-auto self-start translate-y-4">Discuss Your Hiring Plans</Link>
           </div>
@@ -143,11 +140,11 @@ export default function HomePage() {
             <div className="text-gold font-heading text-7xl leading-none mb-4">{'"'}</div>
             <p className="eyebrow mb-4">One specialist. One market. One point of contact.</p>
             <p className="font-heading text-3xl sm:text-4xl leading-tight max-w-md">
-              No handoffs. No account managers. Just direct, specialist search from first conversation to first day and beyond.
+              You work directly with me throughout the search, from understanding the brief to supporting a successful appointment and beyond.
             </p>
             <span className="gold-rule" />
             <p className="text-sm leading-7 text-white/70 max-w-md">
-              That is the advantage of a founder-led search partner: the person who takes the brief is the person mapping the market, qualifying the fit and staying involved after the placement.
+              I map the market, approach candidates, manage the process and remain involved after the placement.
             </p>
           </div>
         </div>
@@ -180,13 +177,28 @@ export default function HomePage() {
           <p className="eyebrow mb-3">Areas I Recruit</p>
           <h2 className="section-title text-3xl sm:text-4xl">Specialist roles across practice and tax.</h2>
           <span className="gold-rule mx-auto" />
-          <div className="feature-grid mt-8">
-            {roles.map((role, index) => (
-              <div key={role} className="feature-card">
-                <BcIcon name={index === 0 ? 'shield' : index === 1 ? 'search' : index === 2 ? 'target' : index === 3 ? 'clipboard' : 'people'} size={34} className="text-gold mx-auto mb-4" strokeWidth={1.3} />
-                <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy">{role}</h3>
-              </div>
-            ))}
+          <div className="grid gap-10 sm:grid-cols-2 mt-8 max-w-2xl mx-auto text-left">
+            <div>
+              <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-4">Accountancy Practice</h3>
+              <ul className="space-y-1.5 text-sm leading-6 text-navy/65">
+                <li>Tax</li>
+                <li>Audit &amp; Assurance</li>
+                <li>Accounts &amp; Business Services</li>
+                <li>Advisory</li>
+                <li>Payroll</li>
+                <li>Bookkeeping</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-4">In-House Tax</h3>
+              <ul className="space-y-1.5 text-sm leading-6 text-navy/65">
+                <li>Corporate Tax</li>
+                <li>Indirect Tax</li>
+                <li>International Tax</li>
+                <li>Transfer Pricing</li>
+                <li>Employment Tax</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="bg-navy text-white section px-6 sm:px-10 flex items-center">
@@ -231,7 +243,7 @@ export default function HomePage() {
             </div>
             <div className="mt-8 pt-6 border-t border-navy/10">
               <p className="text-sm leading-7 text-navy/65">
-                I aim to respond to all enquiries within 24 hours. Career conversations and hiring discussions are treated in confidence.
+                I aim to respond to all enquiries within one business day. Career conversations and hiring discussions are treated in confidence.
               </p>
             </div>
           </div>

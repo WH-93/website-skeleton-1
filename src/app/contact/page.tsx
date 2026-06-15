@@ -2,7 +2,7 @@ import { BcIcon } from '@/components/bc-icon';
 
 const contacts = [
   { icon: 'mail' as const, label: 'Email', value: 'ben@bcfinancialsearch.co.uk', href: 'mailto:ben@bcfinancialsearch.co.uk' },
-  { icon: 'phone' as const, label: 'Phone', value: '+44 7700 900123', href: 'tel:+447700900123' },
+  { icon: 'phone' as const, label: 'Phone', value: '07522996561', href: 'tel:07522996561' },
   { icon: 'location' as const, label: 'Location', value: 'Manchester, United Kingdom', href: null },
 ];
 
@@ -16,8 +16,8 @@ export default function ContactPage() {
             <h1 className="hero-title">Start with a <span className="text-gold">conversation.</span></h1>
             <span className="gold-rule" />
             <div className="space-y-5 body-copy max-w-xl">
-              <p>Whether you are considering your next career move or planning an important hire, speak directly with a specialist who understands the practice and tax market.</p>
-              <p>No pressure. No scripts. Just a confidential conversation about what matters to you.</p>
+              <p>Whether you are considering your next career move, planning an important hire or simply looking for a clearer view of the market, I would be happy to hear from you.</p>
+              <p>Every enquiry is handled personally, discreetly and in confidence.</p>
             </div>
           </div>
           <div className="split-hero-media">
@@ -59,7 +59,7 @@ export default function ContactPage() {
             </div>
             <div className="mt-8 pt-6 border-t border-navy/10">
               <p className="text-sm leading-7 text-navy/65">
-                I aim to respond to all enquiries within 24 hours. Career conversations and hiring discussions are treated in confidence.
+                I aim to respond to all enquiries within one business day. Career conversations and hiring discussions are treated in confidence.
               </p>
             </div>
           </div>

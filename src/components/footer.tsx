@@ -25,9 +25,6 @@ export function Footer() {
               Whether you are considering your next career move or planning an important hire, speak directly with a specialist.
             </p>
           </div>
-          <p className="text-sm text-white/60 lg:text-center">
-            Specialist search for accountancy practices and in-house tax teams across the UK.
-          </p>
           <Link href="/#contact" className="btn-gold justify-self-start lg:justify-self-end">
             Get in touch
           </Link>
@@ -39,10 +36,7 @@ export function Footer() {
           <div>
             <BcLogo variant="white" height={45} />
             <p className="text-sm text-white/60 leading-relaxed mt-5">
-              Specialist recruitment for accountancy practices and in-house tax teams.
-            </p>
-            <p className="text-[10px] tracking-[0.22em] text-white/50 uppercase mt-4">
-              Specialising in Practice &amp; Tax
+              Specialist recruitment for accountancy practices and in-house tax teams across the UK.
             </p>
           </div>
 

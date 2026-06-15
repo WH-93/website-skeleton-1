@@ -2,25 +2,27 @@ import Link from 'next/link';
 import { BcIcon } from '@/components/bc-icon';
 
 const benefits = [
-  { icon: 'target' as const, title: 'Specialist Expertise', desc: 'Deep knowledge of practice and tax recruitment across the UK.' },
-  { icon: 'people' as const, title: 'Targeted Search', desc: 'Proactive headhunting to access the best talent, not just active jobseekers.' },
-  { icon: 'star' as const, title: 'Culture Focused', desc: 'I assess cultural fit to ensure long-term success for your team.' },
-  { icon: 'clock' as const, title: 'Time Saving', desc: 'I manage the process efficiently, saving you valuable time.' },
-  { icon: 'target' as const, title: 'Proven Results', desc: 'A track record of successful placements and long-term partnerships.' },
+  { icon: 'target' as const, title: 'Specialist Expertise', desc: 'Detailed knowledge of accountancy practice and tax recruitment across the UK.' },
+  { icon: 'search' as const, title: 'Proactive Search', desc: 'Targeted headhunting that reaches beyond active applicants and traditional job advertising.' },
+  { icon: 'star' as const, title: 'Considered Assessment', desc: 'I assess technical experience, career motivations and alignment with your team and working environment.' },
+  { icon: 'clock' as const, title: 'Efficient Process', desc: 'I manage communication, interviews and feedback throughout, allowing you to focus on running your business.' },
+  { icon: 'people' as const, title: 'Established Track Record', desc: 'More than 200 successful placements and relationships that continue beyond a single appointment.' },
 ];
 
 const process = [
-  { icon: 'person' as const, title: '1. Understand', desc: 'I start with the business problem: the team, culture, expectations and the impact the right hire needs to make.' },
-  { icon: 'search' as const, title: '2. Search Beyond', desc: 'I map the market and use my network to reach people who are not on job boards - often before they are actively looking.' },
-  { icon: 'target' as const, title: '3. Curate', desc: 'I qualify every candidate personally. No flooding. No hopeful CV send. Just a considered shortlist with a reason behind each introduction.' },
-  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond - because lasting fit is proven after the placement.' },
+  { icon: 'person' as const, title: '1. Listen', desc: 'I begin by understanding the detail behind the hire: your business, team, working environment, expectations and what a successful appointment needs to achieve.' },
+  { icon: 'search' as const, title: '2. Search the Market', desc: 'I map the market and draw on my specialist network to reach professionals who may not be actively looking or visible through traditional advertising.' },
+  { icon: 'target' as const, title: '3. Curate', desc: 'Quality matters more than volume. I personally assess every candidate and present a carefully considered shortlist, with clear reasoning behind each introduction.' },
+  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I remain closely involved throughout interviews, offers, notice periods and onboarding, providing support beyond the placement.' },
 ];
 
 const areas = [
-  { title: 'Tax', roles: ['Corporate Tax', 'Personal Tax', 'VAT', 'Employment Tax', 'International Tax', 'R&D Tax'] },
-  { title: 'Audit', roles: ['Audit Senior', 'Audit Manager', 'Audit Director', 'Partner'] },
-  { title: 'Accounts', roles: ['Financial Accountant', 'Management Accountant', 'Part Qualified', 'Qualified by Experience'] },
-  { title: 'Advisory', roles: ['Business Advisory', 'Corporate Finance', 'Commercial Finance', 'Transaction Services'] },
+  { title: 'Audit & Assurance', roles: ['Audit Semi-Senior', 'Audit Senior', 'Audit Manager', 'Audit Director', 'Partner'] },
+  { title: 'Accounts & Business Services', roles: ['Accounts Semi-Senior', 'Accounts Senior', 'Client Manager', 'Accounts Manager', 'Client Director'] },
+  { title: 'Practice Tax', roles: ['Personal Tax', 'Corporate Tax', 'Mixed Tax', 'VAT', 'Employment Tax', 'R&D Tax'] },
+  { title: 'Advisory', roles: ['Business Advisory', 'Corporate Finance', 'Transaction Services'] },
+  { title: 'Payroll & Bookkeeping', roles: ['Payroll Assistant', 'Payroll Senior', 'Payroll Manager', 'Bookkeeper'] },
+  { title: 'In-House Tax', roles: ['Corporate Tax', 'Indirect Tax and VAT', 'International Tax', 'Transfer Pricing', 'Employment Tax', 'Tax Manager', 'Senior Tax Manager', 'Head of Tax', 'Tax Director'] },
 ];
 
 export default function ClientsPage() {
@@ -37,11 +39,11 @@ export default function ClientsPage() {
             </h1>
             <span className="gold-rule" />
             <div className="space-y-5 body-copy max-w-xl">
-              <p>I partner with accountancy practices and in-house tax teams across the UK to find exceptional talent that fits your role, your culture and your ambitions.</p>
-              <p>My expertise, network and proactive approach ensure you have access to the people who can make a real difference to your business.</p>
+              <p>I work with accountancy practices and in-house tax teams across the UK to identify professionals who match the requirements of the role, complement the team and contribute for the long term.</p>
+              <p>Through specialist market knowledge, an established network and proactive search, I help you reach candidates who may not be actively looking or visible through traditional advertising.</p>
             </div>
             <div className="hero-actions">
-              <Link href="/#contact" className="btn-gold">Discuss Your Hiring Needs</Link>
+              <Link href="/#contact" className="btn-gold">Discuss Your Hiring Plans</Link>
               <Link href="/services" className="btn-outline">View Search Services</Link>
             </div>
           </div>
@@ -54,7 +56,7 @@ export default function ClientsPage() {
       <section className="stats-band">
         <div className="container-page stats-grid">
           {benefits.map(item => (
-            <div key={item.title} className={`stat-item ${item.title === 'Proven Results' ? 'hidden md:block' : ''}`}>
+            <div key={item.title} className="stat-item">
               <div className="stat-icon"><BcIcon name={item.icon} size={36} strokeWidth={1.5} /></div>
               <div className="stat-value">{item.title}</div>
               <div className="stat-label">{item.desc}</div>
@@ -66,7 +68,7 @@ export default function ClientsPage() {
       <section className="section bg-white text-center border-b border-navy/10">
         <div className="container-page">
           <p className="eyebrow mb-3">My Approach</p>
-          <h2 className="section-title text-3xl sm:text-4xl">A consultative approach to every search.</h2>
+          <h2 className="section-title text-3xl sm:text-4xl">A considered approach to every search.</h2>
           <span className="gold-rule mx-auto" />
           <div className="relative mt-12">
             <div className="process-line" />
@@ -82,19 +84,18 @@ export default function ClientsPage() {
               ))}
             </div>
           </div>
-          <Link href="/#contact" className="btn-outline mt-10">Discuss Your Hiring Needs</Link>
+          <Link href="/#contact" className="btn-outline mt-10">Discuss Your Hiring Plans</Link>
         </div>
       </section>
 
       <section className="section bg-warm-white text-center">
         <div className="container-page">
           <p className="eyebrow mb-3">Specialist Areas</p>
-          <h2 className="section-title text-3xl sm:text-4xl">Connecting you with talent across practice and tax.</h2>
+          <h2 className="section-title text-3xl sm:text-4xl">Connecting accountancy practices and in-house tax teams with carefully selected professionals across the UK.</h2>
           <span className="gold-rule mx-auto" />
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-10">
-            {areas.map((area, i) => (
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-10">
+            {areas.map((area) => (
               <div key={area.title} className="feature-card">
-                <BcIcon name={i === 0 ? 'shield' : i === 1 ? 'search' : i === 2 ? 'target' : 'clipboard'} size={34} className="text-gold mx-auto mb-4" />
                 <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-3">{area.title}</h3>
                 <ul className="space-y-1 text-xs leading-5 text-navy/65">
                   {area.roles.map(role => <li key={role}>{role}</li>)}
@@ -107,26 +108,18 @@ export default function ClientsPage() {
 
       <section className="grid lg:grid-cols-2 bg-white border-t border-navy/10">
         <div className="section px-5 sm:px-8 lg:pl-16 xl:pl-20 lg:pr-12">
-          <p className="eyebrow mb-5">What our clients value</p>
-          <div className="text-gold font-heading text-7xl leading-none mb-2">“</div>
+          <p className="eyebrow mb-5">What Clients Value</p>
+          <p className="text-sm text-navy/50 mb-6">Relationships built on understanding, trust and considered delivery.</p>
+          <div className="text-gold font-heading text-7xl leading-none mb-2">{'"'}</div>
           <p className="font-heading text-2xl sm:text-3xl leading-tight text-navy max-w-2xl">
-            BC Financial Search took the time to truly understand our business and the type of person who would thrive in our team.
+            Ben took the time to understand our business, the requirements of the role and the type of person who would thrive within our team.
           </p>
           <p className="eyebrow mt-8">Managing Partner</p>
           <p className="text-xs uppercase tracking-wider font-bold text-navy">Accountancy Practice, Manchester</p>
+          <p className="text-xs text-navy/50 mt-1">Client previously supported by Ben</p>
         </div>
         <div className="relative min-h-[360px]">
           <img src="/hero-services.png" alt="Specialist search desk overlooking Manchester" className="absolute inset-0 h-full w-full object-cover" />
-        </div>
-      </section>
-
-      <section className="bg-navy text-white py-12">
-        <div className="container-page flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
-          <div>
-            <h2 className="font-sans text-2xl sm:text-3xl uppercase tracking-wide">Let&apos;s find the right person for your team.</h2>
-            <p className="text-white/70 mt-2">Get in touch for a confidential conversation about your hiring needs.</p>
-          </div>
-          <Link href="/#contact" className="btn-gold">Discuss Your Hiring Needs</Link>
         </div>
       </section>
     </>
