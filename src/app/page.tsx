@@ -50,9 +50,9 @@ export default function HomePage() {
               </p>
             </div>
             <div className="hero-actions">
-              <Link href="/jobs" className="btn-gold">View Current Roles</Link>
-              <Link href="/#contact" className="btn-outline">Discuss Your Next Move</Link>
-              <Link href="/clients" className="btn-outline">Hire Specialist Talent</Link>
+              <Link href="/jobs" className="btn-gold">View current roles</Link>
+              <Link href="/#contact" className="btn-outline">Start a career conversation</Link>
+              <Link href="/clients" className="btn-outline">Discuss your hiring plans</Link>
             </div>
           </div>
           <div className="split-hero-media">
