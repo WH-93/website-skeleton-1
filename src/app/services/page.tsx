@@ -27,7 +27,7 @@ const services = [
 
 const method = [
   { icon: 'person' as const, title: 'Listen', desc: 'Your priorities shape the search from the first conversation.' },
-  { icon: 'search' as const, title: 'Search Beyond', desc: 'I identify where the right people are, not just who is actively applying.' },
+  { icon: 'search' as const, title: 'Search the Market', desc: 'I identify where the right people are, not just who is actively applying.' },
   { icon: 'target' as const, title: 'Curate', desc: 'I personally qualify the fit before making an introduction.' },
   { icon: 'clock' as const, title: 'Stay Involved', desc: 'I stay close through interviews, offer, notice, onboarding and beyond.' },
 ];

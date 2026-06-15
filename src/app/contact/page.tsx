@@ -33,7 +33,10 @@ export default function ContactPage() {
             <h2 className="section-title text-3xl sm:text-4xl">Your priorities shape the search.</h2>
             <span className="gold-rule" />
             <p className="body-copy max-w-xl">
-              Tell me what you are trying to achieve - a better career move, a key hire, or simply a clearer view of the market. I will respond personally and confidentially.
+              Tell me what you are looking to achieve: a better career move, an important hire or simply a clearer view of the market.
+            </p>
+            <p className="body-copy max-w-xl mt-4">
+              Every enquiry is handled personally and in confidence.
             </p>
           </div>
 

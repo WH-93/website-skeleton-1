@@ -127,10 +127,10 @@ export default function HomePage() {
           <h2 className="section-title">Experience.<br />Relationships.<br />Results.</h2>
           <span className="gold-rule" />
           <div className="body-copy space-y-5">
-            <p>BC Financial Search was founded after 12 years working exclusively within specialist finance recruitment.</p>
-            <p>Having successfully placed more than 200 professionals, the business was created to offer a more personal and considered recruitment experience: one based on listening carefully, searching proactively and building relationships that continue beyond a single placement.</p>
+            <p>I founded BC Financial Search after 12 years specialising in accountancy practice and tax recruitment across the UK.</p>
+            <p>Having placed more than 200 professionals, I wanted to offer a more personal and considered approach to recruitment: one built on listening carefully, searching proactively and developing relationships that continue well beyond a single placement.</p>
           </div>
-          <Link href="/about" className="btn-gold mt-8">About BC Financial</Link>
+          <Link href="/about" className="btn-gold mt-8">About BC Financial Search</Link>
         </div>
         <div className="min-h-[380px] lg:min-h-0 relative">
           <img src="/ben-headshot.jpeg" alt="BC Financial Search founder" className="absolute inset-0 h-full w-full object-cover object-top" />
@@ -217,7 +217,10 @@ export default function HomePage() {
             <h2 className="section-title text-3xl sm:text-4xl">Your priorities shape the search.</h2>
             <span className="gold-rule" />
             <p className="body-copy max-w-xl">
-              Tell me what you are trying to achieve - a better career move, a key hire, or simply a clearer view of the market. I will respond personally and confidentially.
+              Tell me what you are looking to achieve: a better career move, an important hire or simply a clearer view of the market.
+            </p>
+            <p className="body-copy max-w-xl mt-4">
+              Every enquiry is handled personally and in confidence.
             </p>
           </div>
 
