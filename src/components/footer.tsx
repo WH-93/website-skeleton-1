@@ -10,7 +10,7 @@ const quickLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
-const areas = ['Tax', 'Audit', 'Accounts', 'Advisory', 'Practice Support'];
+const areas = ['Audit & Assurance', 'Accounts & Business Services', 'Practice Tax', 'Advisory', 'Payroll & Bookkeeping', 'In-House Tax'];
 
 export function Footer() {
   return (
