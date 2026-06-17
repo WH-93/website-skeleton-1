@@ -35,30 +35,33 @@ export function AboutStory() {
               <span className="gold-rule" />
             </m.div>
 
-            <m.div className="about-story-grid" variants={aboutStoryGridVariants}>
-              {chapters.map((chapter, index) => (
-                <m.article
-                  key={chapter.id}
-                  id={chapter.id}
-                  className="about-story-card-shell"
-                  variants={aboutStoryCardVariants}
-                  custom={index}
-                >
-                  <m.div className="about-story-scene" aria-hidden="true" variants={aboutStorySceneVariants}>
-                    <StoryScene visual={chapter.visual} />
-                  </m.div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
-                    Proof {String(index + 1).padStart(2, '0')}
-                  </p>
-                  <h3 className="about-story-heading font-heading text-white">
-                    {chapter.headline}
-                  </h3>
-                  <p className="about-story-copy text-white/70">
-                    {chapter.supportingCopy}
-                  </p>
-                </m.article>
-              ))}
-            </m.div>
+          <m.div className="about-story-grid" variants={aboutStoryGridVariants}>
+            {chapters.map((chapter, index) => (
+              <m.article
+                key={chapter.id}
+                id={chapter.id}
+                className="about-story-card-shell"
+                variants={aboutStoryCardVariants}
+                custom={index}
+              >
+                <div className="about-story-card-top">
+                  <span className="about-story-card-index">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="about-story-card-kicker">Proof</span>
+                </div>
+                <m.div className="about-story-scene" aria-hidden="true" variants={aboutStorySceneVariants}>
+                  <StoryScene visual={chapter.visual} />
+                </m.div>
+                <h3 className="about-story-heading font-heading text-white">
+                  {chapter.headline}
+                </h3>
+                <p className="about-story-copy text-white/70">
+                  {chapter.supportingCopy}
+                </p>
+              </m.article>
+            ))}
+          </m.div>
 
             <m.div className="about-story-cta" variants={aboutStoryCtaVariants}>
               <p className="about-story-cta-copy font-heading text-white">

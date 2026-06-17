@@ -1,55 +1,122 @@
 .about-story-section {
-  /* Visible pre-hydration — Framer Motion sets opacity:0 in idle, animates to 1 */
-  opacity: 1;
   overflow: hidden;
+  border-top: 1px solid rgba(208, 170, 109, 0.18);
+  border-bottom: 1px solid rgba(208, 170, 109, 0.18);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0) 28%),
+    linear-gradient(90deg, rgba(208, 170, 109, 0.12), transparent 32%, transparent 68%, rgba(208, 170, 109, 0.08)),
     #0b1120;
 }
 
 .about-story-intro {
-  max-width: 48rem;
+  max-width: 56rem;
 }
 
 .about-story-grid {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: clamp(1rem, 2vw, 1.5rem);
-  margin-top: clamp(2rem, 5vw, 3.5rem);
+  gap: clamp(1.25rem, 2.6vw, 2rem);
+  margin-top: clamp(2.5rem, 5.5vw, 4.5rem);
+}
+
+.about-story-grid::before {
+  content: '';
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(208, 170, 109, 0.5), transparent);
 }
 
 .about-story-card-shell {
+  position: relative;
   display: flex;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.035);
-  padding: clamp(1.125rem, 3.8vw, 1.5rem);
+  border: 1px solid rgba(208, 170, 109, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(255, 255, 255, 0.025);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+  padding: clamp(1.125rem, 3.8vw, 1.625rem);
+}
+
+.about-story-card-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-top: 3px solid rgba(208, 170, 109, 0.72);
+}
+
+.about-story-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.125rem;
+}
+
+.about-story-card-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(208, 170, 109, 0.5);
+  color: #d0aa6d;
+  font-family: Inter, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.about-story-card-kicker {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: Inter, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 .about-story-scene {
+  position: relative;
   display: flex;
-  min-height: clamp(12rem, 56vw, 16rem);
+  min-height: clamp(13.5rem, 58vw, 17rem);
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin: calc(clamp(1.125rem, 3.8vw, 1.5rem) * -1) calc(clamp(1.125rem, 3.8vw, 1.5rem) * -1) clamp(1.25rem, 4vw, 1.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
   padding: clamp(0.75rem, 3vw, 1.25rem);
-  background: rgba(255, 255, 255, 0.03);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.015)),
+    rgba(255, 255, 255, 0.02);
+}
+
+.about-story-scene::after {
+  content: '';
+  position: absolute;
+  inset: 0.75rem;
+  pointer-events: none;
+  border: 1px solid rgba(208, 170, 109, 0.12);
 }
 
 .about-story-visual {
-  width: min(100%, 20rem);
+  position: relative;
+  z-index: 1;
+  width: min(100%, 21.5rem);
   height: auto;
   overflow: visible;
 }
 
 .about-story-heading {
   overflow-wrap: anywhere;
-  margin-top: 1.25rem;
-  font-size: clamp(1.5rem, 6vw, 1.875rem);
-  line-height: 1.08;
+  font-size: clamp(1.55rem, 6vw, 2rem);
+  line-height: 1.06;
 }
 
 .about-story-copy {
@@ -63,9 +130,10 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  margin-top: clamp(2rem, 5vw, 3rem);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding-top: clamp(1.5rem, 4vw, 2rem);
+  margin-top: clamp(2.5rem, 5.5vw, 4rem);
+  border: 1px solid rgba(208, 170, 109, 0.22);
+  background: rgba(255, 255, 255, 0.045);
+  padding: clamp(1.25rem, 4vw, 2rem);
 }
 
 .about-story-cta-copy {
@@ -110,7 +178,7 @@
 
 .about-story-line {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.24);
+  stroke: rgba(255, 255, 255, 0.3);
   stroke-width: 1.5;
 }
 
@@ -141,17 +209,54 @@
   font-size: 1rem;
 }
 
+.about-story-card-shell:nth-child(1) .about-story-card {
+  animation: aboutStoryCardStack 5.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.about-story-card-shell:nth-child(1) .about-story-card:nth-of-type(2) { animation-delay: 0.2s; }
+.about-story-card-shell:nth-child(1) .about-story-card:nth-of-type(3) { animation-delay: 0.4s; }
+.about-story-card-shell:nth-child(1) .about-story-card:nth-of-type(4) { animation-delay: 0.6s; }
+.about-story-card-shell:nth-child(1) .about-story-card:nth-of-type(5) { animation-delay: 0.8s; }
+
+.about-story-card-shell:nth-child(2) .about-story-node,
+.about-story-card-shell:nth-child(3) .about-story-node {
+  animation: aboutStoryNodePulse 4.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.about-story-card-shell:nth-child(2) .about-story-node:nth-of-type(2),
+.about-story-card-shell:nth-child(3) .about-story-node:nth-of-type(2) { animation-delay: 0.2s; }
+.about-story-card-shell:nth-child(2) .about-story-node:nth-of-type(3),
+.about-story-card-shell:nth-child(3) .about-story-node:nth-of-type(3) { animation-delay: 0.4s; }
+.about-story-card-shell:nth-child(2) .about-story-node:nth-of-type(4),
+.about-story-card-shell:nth-child(3) .about-story-node:nth-of-type(4) { animation-delay: 0.6s; }
+
+.about-story-card-shell:nth-child(3) .about-story-line,
+.about-story-card-shell:nth-child(4) .about-story-gold-stroke {
+  stroke-dasharray: 180;
+  animation: aboutStoryLineTrace 5.4s ease-in-out infinite;
+}
+
+.about-story-card-shell:nth-child(4) .about-story-final-card {
+  animation: aboutStoryFinalLift 5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
 @media (min-width: 640px) {
   .about-story-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .about-story-card-shell {
-    min-height: 31rem;
+    min-height: 33rem;
   }
 
   .about-story-scene {
-    min-height: 14rem;
+    min-height: 15.5rem;
   }
 
   .about-story-cta {
@@ -167,15 +272,50 @@
 }
 
 @media (min-width: 1280px) {
+  .about-story-grid::before {
+    display: block;
+  }
+
   .about-story-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .about-story-card-shell {
-    min-height: 34rem;
+    min-height: 36rem;
   }
 
   .about-story-scene {
-    min-height: 15rem;
+    min-height: 16rem;
+  }
+}
+
+@keyframes aboutStoryCardStack {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+}
+
+@keyframes aboutStoryNodePulse {
+  0%, 70%, 100% { transform: scale(1); opacity: 1; }
+  35% { transform: scale(1.2); opacity: 0.86; }
+}
+
+@keyframes aboutStoryLineTrace {
+  0% { stroke-dashoffset: 180; }
+  35%, 70% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -180; }
+}
+
+@keyframes aboutStoryFinalLift {
+  0%, 75%, 100% { transform: translateY(0); }
+  38% { transform: translateY(-7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-story-card,
+  .about-story-node,
+  .about-story-line,
+  .about-story-gold-stroke,
+  .about-story-final-card {
+    animation: none !important;
   }
 }

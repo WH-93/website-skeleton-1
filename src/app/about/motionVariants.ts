@@ -19,8 +19,8 @@ export const aboutStorySectionVariants: Variants = {
 
 export const aboutStoryIntroVariants: Variants = {
   idle: {
-    opacity: 0,
-    y: 24,
+    opacity: 1,
+    y: 34,
   },
   ready: {
     opacity: 1,
@@ -43,9 +43,9 @@ export const aboutStoryGridVariants: Variants = {
 
 export const aboutStoryCardVariants: Variants = {
   idle: {
-    opacity: 0,
-    y: 30,
-    scale: 0.98,
+    opacity: 1,
+    y: 44,
+    scale: 0.965,
   },
   ready: (index: number = 0) => ({
     opacity: 1,
@@ -61,8 +61,8 @@ export const aboutStoryCardVariants: Variants = {
 
 export const aboutStorySceneVariants: Variants = {
   idle: {
-    opacity: 0,
-    scale: 0.96,
+    opacity: 1,
+    scale: 0.92,
   },
   ready: {
     opacity: 1,
@@ -76,8 +76,8 @@ export const aboutStorySceneVariants: Variants = {
 
 export const aboutStoryCtaVariants: Variants = {
   idle: {
-    opacity: 0,
-    y: 18,
+    opacity: 1,
+    y: 28,
   },
   ready: {
     opacity: 1,
