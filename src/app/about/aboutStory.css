@@ -1,39 +1,79 @@
 .about-story-section {
+  overflow: hidden;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
     #0b1120;
 }
 
+.about-story-intro {
+  max-width: 48rem;
+}
+
 .about-story-grid {
   display: grid;
-  gap: 1.25rem;
-  margin-top: 2.5rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(2rem, 5vw, 3.5rem);
 }
 
 .about-story-card-shell {
   display: flex;
-  min-height: 34rem;
+  min-width: 0;
+  min-height: 0;
   flex-direction: column;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.035);
-  padding: 1.5rem;
+  padding: clamp(1.125rem, 3.8vw, 1.5rem);
 }
 
 .about-story-scene {
   display: flex;
-  min-height: 15rem;
+  min-height: clamp(12rem, 56vw, 16rem);
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin: -1.5rem -1.5rem 1.5rem;
-  padding: 1.25rem;
+  margin: calc(clamp(1.125rem, 3.8vw, 1.5rem) * -1) calc(clamp(1.125rem, 3.8vw, 1.5rem) * -1) clamp(1.25rem, 4vw, 1.5rem);
+  padding: clamp(0.75rem, 3vw, 1.25rem);
   background: rgba(255, 255, 255, 0.03);
 }
 
 .about-story-visual {
-  width: min(100%, 22.5rem);
+  width: min(100%, 20rem);
   height: auto;
   overflow: visible;
+}
+
+.about-story-heading {
+  overflow-wrap: anywhere;
+  margin-top: 1.25rem;
+  font-size: clamp(1.5rem, 6vw, 1.875rem);
+  line-height: 1.08;
+}
+
+.about-story-copy {
+  overflow-wrap: anywhere;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.about-story-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: clamp(2rem, 5vw, 3rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: clamp(1.5rem, 4vw, 2rem);
+}
+
+.about-story-cta-copy {
+  max-width: 42rem;
+  font-size: clamp(1.5rem, 6vw, 1.875rem);
+  line-height: 1.12;
+}
+
+.about-story-cta-link {
+  align-self: flex-start;
 }
 
 .about-story-panel,
@@ -99,8 +139,41 @@
   font-size: 1rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
+  .about-story-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-story-card-shell {
+    min-height: 31rem;
+  }
+
+  .about-story-scene {
+    min-height: 14rem;
+  }
+
+  .about-story-cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .about-story-cta-link {
+    align-self: auto;
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 1280px) {
   .about-story-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .about-story-card-shell {
+    min-height: 34rem;
+  }
+
+  .about-story-scene {
+    min-height: 15rem;
   }
 }

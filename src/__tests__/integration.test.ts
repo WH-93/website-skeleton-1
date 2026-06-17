@@ -39,6 +39,7 @@ describe('Public Pages', () => {
     assert.ok(text.includes('12 YEARS'), 'market experience stat should be preserved');
     assert.ok(text.includes('200+'), 'successful placements stat should be preserved');
     assert.ok(text.includes('id="about-proof"'), 'about proof section should be inserted');
+    assert.ok(text.includes('about-story-grid'), 'about proof responsive grid should render');
     assert.ok(text.includes('A CV tells you where someone has been.'), 'about proof chapter copy should render');
     assert.ok(text.includes('Motivation'), 'about proof static visual labels should render');
     assert.ok(text.includes('Future CFO'), 'about proof shortlist visual should render');
