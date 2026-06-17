@@ -28,6 +28,26 @@ describe('Public Pages', () => {
     assert.ok(text.includes('lg:grid-cols'), 'should have desktop layout classes');
   });
 
+  it('GET /about → 200 with current About page content preserved', async () => {
+    const { status, text } = await get('/about');
+    assert.equal(status, 200);
+
+    assert.ok(text.includes('About Us'), 'about eyebrow should be preserved');
+    assert.ok(text.includes('Built on experience.'), 'about hero headline should be preserved');
+    assert.ok(text.includes('Focused on'), 'about hero second line should be preserved');
+    assert.ok(text.includes('BC Financial Search is a specialist recruitment partner'), 'about introduction should be preserved');
+    assert.ok(text.includes('12 YEARS'), 'market experience stat should be preserved');
+    assert.ok(text.includes('200+'), 'successful placements stat should be preserved');
+    assert.ok(text.includes('I listen. I search. I stay involved.'), 'approach headline should be preserved');
+    assert.ok(text.includes('A personal approach, built on results.'), 'founder section headline should be preserved');
+    assert.ok(text.includes('Ben Copsey'), 'founder name should be preserved');
+    assert.ok(text.includes('One specialist. One point of contact. One consistent approach.'), 'specialist message should be preserved');
+    assert.ok(text.includes('What You Can Expect'), 'expectations section should be preserved');
+    assert.ok(text.includes('Get in touch'), 'about CTA should be preserved');
+    assert.ok(text.includes('/hero-about.png'), 'about hero image should be preserved');
+    assert.ok(text.includes('/ben-about-headshot.jpeg'), 'founder image should be preserved');
+  });
+
   it('GET /jobs → 200 with job listings container', async () => {
     const { status, text } = await get('/jobs');
     assert.equal(status, 200);
