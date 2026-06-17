@@ -52,7 +52,7 @@ export default function ClientsPage() {
       <section className="stats-band">
         <div className="container-page stats-grid">
           {benefits.map(item => (
-            <div key={item.title} className="stat-item">
+            <div key={item.title} className={`stat-item ${item.title === 'Considered Assessment' ? 'hidden sm:block' : ''}`}>
               <div className="stat-icon"><BcIcon name={item.icon} size={36} strokeWidth={1.5} /></div>
               <div className="stat-value">{item.title}</div>
               <div className="stat-label">{item.desc}</div>
