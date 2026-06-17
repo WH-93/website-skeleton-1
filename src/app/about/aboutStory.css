@@ -1,56 +1,53 @@
 .about-story-section {
   overflow: hidden;
-  border-top: 1px solid rgba(208, 170, 109, 0.18);
+  border-top: 1px solid rgba(208, 170, 109, 0.2);
   border-bottom: 1px solid rgba(208, 170, 109, 0.18);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0) 28%),
-    linear-gradient(90deg, rgba(208, 170, 109, 0.12), transparent 32%, transparent 68%, rgba(208, 170, 109, 0.08)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), transparent 20%),
+    linear-gradient(90deg, rgba(208, 170, 109, 0.1), transparent 38%, transparent 70%, rgba(208, 170, 109, 0.06)),
     #0b1120;
 }
 
 .about-story-intro {
-  max-width: 56rem;
+  max-width: 58rem;
 }
 
 .about-story-grid {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: clamp(1.25rem, 2.6vw, 2rem);
-  margin-top: clamp(2.5rem, 5.5vw, 4.5rem);
+  gap: clamp(1.25rem, 3.8vw, 2.5rem);
+  margin-top: clamp(2.25rem, 6vw, 4.75rem);
 }
 
 .about-story-grid::before {
   content: '';
   display: none;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 2rem;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(208, 170, 109, 0.5), transparent);
+  top: 0;
+  bottom: 0;
+  left: 1.4rem;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(208, 170, 109, 0.75), rgba(208, 170, 109, 0.08));
 }
 
 .about-story-card-shell {
   position: relative;
-  display: flex;
+  display: grid;
+  gap: clamp(1.25rem, 3.4vw, 2.5rem);
   min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  border: 1px solid rgba(208, 170, 109, 0.2);
+  border: 1px solid rgba(208, 170, 109, 0.22);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
     rgba(255, 255, 255, 0.025);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
-  padding: clamp(1.125rem, 3.8vw, 1.625rem);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+  padding: clamp(1.125rem, 4vw, 2rem);
 }
 
-.about-story-card-shell::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-top: 3px solid rgba(208, 170, 109, 0.72);
+.about-story-card-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about-story-card-top {
@@ -58,7 +55,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.125rem;
+  margin-bottom: clamp(1.25rem, 4vw, 2rem);
 }
 
 .about-story-card-index {
@@ -67,7 +64,8 @@
   justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
-  border: 1px solid rgba(208, 170, 109, 0.5);
+  border: 1px solid rgba(208, 170, 109, 0.55);
+  background: rgba(208, 170, 109, 0.08);
   color: #d0aa6d;
   font-family: Inter, sans-serif;
   font-size: 0.78rem;
@@ -75,7 +73,7 @@
 }
 
 .about-story-card-kicker {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.48);
   font-family: Inter, sans-serif;
   font-size: 0.62rem;
   font-weight: 800;
@@ -83,63 +81,65 @@
   text-transform: uppercase;
 }
 
+.about-story-heading {
+  max-width: 13em;
+  overflow-wrap: anywhere;
+  font-size: clamp(2rem, 8.5vw, 3.35rem);
+  line-height: 1.02;
+}
+
+.about-story-copy {
+  max-width: 34rem;
+  overflow-wrap: anywhere;
+  margin-top: 1.15rem;
+  font-size: clamp(0.98rem, 2.9vw, 1.08rem);
+  line-height: 1.75;
+}
+
 .about-story-scene {
   position: relative;
   display: flex;
-  min-height: clamp(13.5rem, 58vw, 17rem);
+  min-height: clamp(16rem, 68vw, 23rem);
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
-  padding: clamp(0.75rem, 3vw, 1.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.012)),
-    rgba(255, 255, 255, 0.02);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.015)),
+    rgba(255, 255, 255, 0.024);
+  padding: clamp(1rem, 4vw, 2rem);
 }
 
 .about-story-scene::after {
   content: '';
   position: absolute;
-  inset: 1rem;
+  inset: clamp(0.75rem, 2.8vw, 1.25rem);
   pointer-events: none;
-  border: 1px solid rgba(208, 170, 109, 0.08);
+  border: 1px solid rgba(208, 170, 109, 0.12);
 }
 
 .about-story-visual {
   position: relative;
   z-index: 1;
-  width: min(100%, 21.5rem);
+  width: min(100%, 32rem);
   height: auto;
   overflow: visible;
 }
 
-.about-story-heading {
-  overflow-wrap: anywhere;
-  font-size: clamp(1.55rem, 6vw, 2rem);
-  line-height: 1.06;
-}
-
-.about-story-copy {
-  overflow-wrap: anywhere;
-  margin-top: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.65;
-}
-
 .about-story-cta {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1.25rem;
-  margin-top: clamp(2.5rem, 5.5vw, 4rem);
-  border: 1px solid rgba(208, 170, 109, 0.22);
-  background: rgba(255, 255, 255, 0.045);
-  padding: clamp(1.25rem, 4vw, 2rem);
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+  border: 1px solid rgba(208, 170, 109, 0.26);
+  background:
+    linear-gradient(135deg, rgba(208, 170, 109, 0.1), rgba(255, 255, 255, 0.035)),
+    rgba(255, 255, 255, 0.035);
+  padding: clamp(1.35rem, 4vw, 2.25rem);
 }
 
 .about-story-cta-copy {
   max-width: 42rem;
-  font-size: clamp(1.5rem, 6vw, 1.875rem);
-  line-height: 1.12;
+  font-size: clamp(1.6rem, 6vw, 2.35rem);
+  line-height: 1.08;
 }
 
 .about-story-cta-link {
@@ -151,7 +151,7 @@
 .about-story-card,
 .about-story-final-card {
   fill: rgba(255, 255, 255, 0.08);
-  stroke: rgba(255, 255, 255, 0.2);
+  stroke: rgba(255, 255, 255, 0.22);
 }
 
 .about-story-card,
@@ -250,46 +250,48 @@
   transform-origin: center;
 }
 
-@media (min-width: 640px) {
-  .about-story-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .about-story-card-shell {
-    min-height: 33rem;
-  }
-
-  .about-story-scene {
-    min-height: 15.5rem;
-  }
-
+@media (min-width: 768px) {
   .about-story-cta {
-    flex-direction: row;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    justify-content: space-between;
   }
 
   .about-story-cta-link {
     align-self: auto;
-    flex: 0 0 auto;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .about-story-grid::before {
     display: block;
   }
 
-  .about-story-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .about-story-card-shell {
+    grid-template-columns: minmax(15rem, 0.8fr) minmax(0, 1.2fr);
+    align-items: stretch;
+    padding: 0;
   }
 
-  .about-story-card-shell {
-    min-height: 36rem;
+  .about-story-card-copy {
+    padding: clamp(1.75rem, 4vw, 3rem);
   }
 
   .about-story-scene {
-    min-height: 16rem;
+    min-height: 24rem;
+    border-width: 0 0 0 1px;
+  }
+
+  .about-story-card-shell:nth-child(even) {
+    grid-template-columns: minmax(0, 1.2fr) minmax(15rem, 0.8fr);
+  }
+
+  .about-story-card-shell:nth-child(even) .about-story-card-copy {
+    order: 2;
+  }
+
+  .about-story-card-shell:nth-child(even) .about-story-scene {
+    order: 1;
+    border-width: 0 1px 0 0;
   }
 }
 
