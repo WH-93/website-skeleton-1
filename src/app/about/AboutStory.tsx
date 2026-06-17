@@ -21,6 +21,8 @@ export function AboutStory() {
         id="about-proof"
         className="section about-story-section text-white"
         variants={aboutStorySectionVariants}
+        initial="idle"
+        whileInView="ready"
         viewport={aboutStoryViewport}
       >
         <div className="container-page">
