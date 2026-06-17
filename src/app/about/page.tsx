@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BcIcon } from '@/components/bc-icon';
+import { AboutStory } from './AboutStory';
 
 const stats = [
   { icon: 'person' as const, value: '12 YEARS', label: 'Specialist market experience' },
@@ -46,6 +47,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <AboutStory />
 
       <section className="stats-band">
         <div className="container-page">
