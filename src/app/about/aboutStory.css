@@ -1,4 +1,6 @@
 .about-story-section {
+  /* Visible pre-hydration — Framer Motion sets opacity:0 in idle, animates to 1 */
+  opacity: 1;
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
