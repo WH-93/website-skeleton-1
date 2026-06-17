@@ -93,16 +93,16 @@
   margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
   padding: clamp(0.75rem, 3vw, 1.25rem);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.015)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.012)),
     rgba(255, 255, 255, 0.02);
 }
 
 .about-story-scene::after {
   content: '';
   position: absolute;
-  inset: 0.75rem;
+  inset: 1rem;
   pointer-events: none;
-  border: 1px solid rgba(208, 170, 109, 0.12);
+  border: 1px solid rgba(208, 170, 109, 0.08);
 }
 
 .about-story-visual {
@@ -156,7 +156,7 @@
 
 .about-story-card,
 .about-story-final-card {
-  fill: rgba(245, 240, 235, 0.95);
+  fill: rgba(245, 240, 235, 0.98);
   stroke: rgba(208, 170, 109, 0.45);
 }
 
@@ -195,13 +195,17 @@
 .about-story-centre-text {
   fill: rgba(255, 255, 255, 0.78);
   font-family: Inter, sans-serif;
-  font-size: 0.625rem;
+  font-size: 0.6rem;
   font-weight: 700;
 }
 
 .about-story-text-dark,
 .about-story-label {
   fill: #17243a;
+}
+
+.about-story-text-dark {
+  font-size: 0.78rem;
 }
 
 .about-story-centre-text {

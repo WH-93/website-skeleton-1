@@ -20,18 +20,17 @@ export function StoryScene({ visual }: StorySceneProps) {
 function CvCardsVisual({ labels, filterLabel }: { labels: string[]; filterLabel: string }) {
   return (
     <svg className="about-story-visual" viewBox="0 0 360 240" role="img" aria-label="CV data cards">
-      <rect className="about-story-panel" x="28" y="28" width="214" height="156" rx="6" />
+      <rect className="about-story-panel" x="36" y="30" width="202" height="166" rx="10" />
       {labels.slice(0, 5).map((label, index) => (
-        <g key={label} transform={`translate(${48 + index * 16} ${50 + index * 24})`}>
-          <rect className="about-story-card" width="154" height="36" rx="5" />
-          <line className="about-story-line" x1="16" y1="14" x2="104" y2="14" />
-          <text className="about-story-text-dark" x="16" y="27">{label}</text>
+        <g key={label} transform={`translate(${58 + index * 9} ${52 + index * 26})`}>
+          <rect className="about-story-card" width="168" height="38" rx="7" />
+          <text className="about-story-text-dark" x="18" y="24">{label}</text>
         </g>
       ))}
-      <g transform="translate(224 72)">
-        <rect className="about-story-filter" width="96" height="88" rx="8" />
-        <path className="about-story-gold-stroke" d="M24 28h48M32 44h32M40 60h16" />
-        <text className="about-story-label" x="48" y="78" textAnchor="middle">{filterLabel}</text>
+      <g transform="translate(252 70)">
+        <rect className="about-story-filter" width="74" height="90" rx="10" />
+        <path className="about-story-gold-stroke" d="M20 28h34M25 44h24M30 60h14" />
+        <text className="about-story-label" x="37" y="78" textAnchor="middle">{filterLabel}</text>
       </g>
     </svg>
   );
@@ -99,19 +98,35 @@ function NetworkGraphVisual({ centralLabel, sectorLabels }: { centralLabel: stri
 }
 
 function TransformationVisual({ stageLabels, finalCards }: { stageLabels: string[]; finalCards: string[] }) {
+  const stageDisplay = ['20 candidates', '6 strong', '3 intros'];
+
   return (
     <svg className="about-story-visual" viewBox="0 0 360 240" role="img" aria-label="Shortlist refinement">
       {stageLabels.slice(0, 3).map((label, index) => (
-        <g key={label} transform={`translate(${28 + index * 96} 36)`}>
-          <rect className={index === 2 ? 'about-story-filter' : 'about-story-card'} width="76" height="58" rx="7" />
-          <text className="about-story-label" x="38" y="30" textAnchor="middle">{label}</text>
+        <g key={label} transform={`translate(${68 + index * 18} ${34 + index * 42})`}>
+          <rect
+            className={index === 2 ? 'about-story-filter' : 'about-story-card'}
+            width={224 - index * 36}
+            height="34"
+            rx="8"
+          />
+          <text className="about-story-label" x={(224 - index * 36) / 2} y="22" textAnchor="middle">
+            {stageDisplay[index]}
+          </text>
         </g>
       ))}
-      <path className="about-story-gold-stroke" d="M66 112c46 34 184 34 230 0" />
+      <path className="about-story-gold-stroke" d="M114 158c38 18 94 18 132 0" />
       {finalCards.slice(0, 3).map((label, index) => (
-        <g key={label} transform={`translate(${42 + index * 94} 148)`}>
-          <rect className="about-story-final-card" width="88" height="48" rx="7" />
-          <text className="about-story-label" x="44" y="29" textAnchor="middle">{label}</text>
+        <g key={label} transform={`translate(${31 + index * 103} 178)`}>
+          <rect className="about-story-final-card" width="92" height="42" rx="8" />
+          {label === 'Finance Director' ? (
+            <text className="about-story-label" x="46" y="18" textAnchor="middle">
+              <tspan x="46" dy="0">Finance</tspan>
+              <tspan x="46" dy="13">Director</tspan>
+            </text>
+          ) : (
+            <text className="about-story-label" x="46" y="26" textAnchor="middle">{label}</text>
+          )}
         </g>
       ))}
     </svg>
