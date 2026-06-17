@@ -44,7 +44,8 @@ describe('Public Pages', () => {
     assert.ok(text.includes('Motivation'), 'about proof static visual labels should render');
     assert.ok(text.includes('Future CFO'), 'about proof shortlist visual should render');
     assert.ok(text.includes('I listen. I search. I stay involved.'), 'approach headline should be preserved');
-    assert.ok(text.includes('A personal approach, built on results.'), 'founder section headline should be preserved');
+    assert.ok(text.includes('Judgement. Relationships. Results.'), 'founder section headline should be preserved');
+    assert.ok(text.includes('The person behind the introductions'), 'founder eyebrow should be preserved');
     assert.ok(text.includes('Ben Copsey'), 'founder name should be preserved');
     assert.ok(text.includes('One specialist. One point of contact. One consistent approach.'), 'specialist message should be preserved');
     assert.ok(text.includes('What You Can Expect'), 'expectations section should be preserved');

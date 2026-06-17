@@ -92,12 +92,12 @@ export default function AboutPage() {
           <img src="/ben-about-headshot.jpeg" alt="BC Financial Search founder" className="absolute inset-0 h-full w-full object-cover object-top" />
         </div>
         <div className="section px-5 sm:px-8 lg:px-12 order-1 lg:order-2">
-          <p className="eyebrow mb-5">Founder</p>
-          <h2 className="section-title text-3xl sm:text-4xl">A personal approach, built on results.</h2>
+          <p className="eyebrow mb-5">The person behind the introductions</p>
+          <h2 className="section-title text-3xl sm:text-4xl">Judgement. Relationships. Results.</h2>
           <span className="gold-rule" />
           <div className="body-copy space-y-4">
-            <p>I founded BC Financial Search after 12 years specialising in accountancy practice and tax recruitment across the UK.</p>
-            <p>Having placed more than 200 professionals, I wanted to offer a more personal and considered recruitment experience: one built on listening carefully, searching proactively and developing relationships that continue well beyond a single placement.</p>
+            <p>Every introduction I make is shaped by 12 years of specialist experience across accountancy practice and in-house tax.</p>
+            <p>More than 200 successful placements have reinforced what I believe: the right appointment is rarely the most obvious one. It requires listening for what matters, searching where others don't, and understanding the people involved - not just their qualifications.</p>
           </div>
           <p className="mt-6 font-heading italic text-3xl text-navy">Ben Copsey</p>
           <p className="text-xs uppercase tracking-wider font-bold text-navy">Founder and Director</p>
