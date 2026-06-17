@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { chapters, ctaButtonLabel, ctaCopy } from './content';
+import { StoryScene } from './StoryScene';
+import './aboutStory.css';
 
 export function AboutStory() {
   return (
-    <section id="about-proof" className="section bg-navy text-white">
+    <section id="about-proof" className="section about-story-section text-white">
       <div className="container-page">
         <div className="max-w-3xl">
           <p className="eyebrow mb-4">Proof Beyond Paper</p>
@@ -13,13 +15,16 @@ export function AboutStory() {
           <span className="gold-rule" />
         </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-4">
+        <div className="about-story-grid">
           {chapters.map((chapter, index) => (
             <article
               key={chapter.id}
               id={chapter.id}
-              className="border border-white/15 bg-white/[0.03] p-6 min-h-[260px] flex flex-col"
+              className="about-story-card-shell"
             >
+              <div className="about-story-scene" aria-hidden="true">
+                <StoryScene visual={chapter.visual} />
+              </div>
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
                 Proof {String(index + 1).padStart(2, '0')}
               </p>
@@ -29,12 +34,6 @@ export function AboutStory() {
               <p className="mt-4 text-sm leading-6 text-white/70">
                 {chapter.supportingCopy}
               </p>
-              <div
-                className="mt-auto pt-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white/35"
-                aria-hidden="true"
-              >
-                {chapter.visual.type}
-              </div>
             </article>
           ))}
         </div>
