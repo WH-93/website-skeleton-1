@@ -352,7 +352,7 @@ function TransformationVisual({ stageLabels, finalCards }: { stageLabels: string
           />
         </m.svg>
 
-        <span className="about-story-fit-label about-story-fit-label--role">Perfect Role</span>
+        <span className="about-story-fit-label about-story-fit-label--role">Perfect role</span>
         <span className="about-story-fit-knot" aria-hidden="true" />
         <span className="about-story-fit-label about-story-fit-label--fit">Lasting fit</span>
         <span className="sr-only">{finalCards.join(' ')}</span>
