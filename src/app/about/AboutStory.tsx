@@ -28,7 +28,7 @@ export function AboutStory() {
               whileInView="ready"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <p className="eyebrow mb-4">Proof Beyond Paper</p>
+              <p className="eyebrow mb-4">Proof Beyond Data</p>
               <h2 id="about-proof-heading" className="font-heading text-3xl sm:text-4xl lg:text-5xl leading-tight">
                 Recruitment is about the evidence a CV cannot show.
               </h2>
