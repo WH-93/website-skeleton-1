@@ -603,6 +603,7 @@
   width: min(100%, 9.4rem);
   min-height: 1.55rem;
   align-items: center;
+  justify-content: center;
   gap: 0.42rem;
   padding: 0.26rem 0.62rem;
   overflow: visible;
@@ -724,19 +725,24 @@
   display: grid;
   height: 0.78rem;
   min-width: 0;
-  flex: 1 1 auto;
+  width: max-content;
+  max-width: calc(100% - 0.95rem);
+  flex: 0 1 auto;
+  align-items: center;
+  justify-items: center;
   overflow: hidden;
 }
 
 .about-story-network-title {
   grid-area: 1 / 1;
   min-width: 0;
+  max-width: 100%;
   overflow: hidden;
   color: rgba(255, 255, 255, 0.7);
   font-family: Inter, sans-serif;
   font-size: clamp(0.54rem, 1.28vw, 0.66rem);
   font-weight: 650;
-  line-height: 1.1;
+  line-height: 1;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
