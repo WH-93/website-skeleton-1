@@ -5,12 +5,10 @@ import { LazyMotion, MotionConfig, domAnimation, m } from 'framer-motion';
 import { chapters, ctaButtonLabel, ctaCopy } from './content';
 import {
   aboutStoryCardVariants,
+  aboutStoryCardChildVariants,
   aboutStoryCtaVariants,
-  aboutStoryGridVariants,
   aboutStoryIntroVariants,
   aboutStorySceneVariants,
-  aboutStorySectionVariants,
-  aboutStoryViewport,
 } from './motionVariants';
 import { StoryScene } from './StoryScene';
 
@@ -18,16 +16,18 @@ export function AboutStory() {
   return (
     <MotionConfig reducedMotion="user">
       <LazyMotion features={domAnimation}>
-        <m.section
+        <section
           id="about-proof"
           className="section about-story-section text-white"
-          variants={aboutStorySectionVariants}
-          initial="idle"
-          whileInView="ready"
-          viewport={aboutStoryViewport}
         >
           <div className="container-page">
-            <m.div className="about-story-intro" variants={aboutStoryIntroVariants}>
+            <m.div
+              className="about-story-intro"
+              variants={aboutStoryIntroVariants}
+              initial="idle"
+              whileInView="ready"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <p className="eyebrow mb-4">Proof Beyond Paper</p>
               <h2 id="about-proof-heading" className="font-heading text-3xl sm:text-4xl lg:text-5xl leading-tight">
                 Recruitment is about the evidence a CV cannot show.
@@ -35,37 +35,43 @@ export function AboutStory() {
               <span className="gold-rule" />
             </m.div>
 
-            <m.div className="about-story-grid" variants={aboutStoryGridVariants}>
+            <div className="about-story-grid">
               {chapters.map((chapter, index) => (
                 <m.article
                   key={chapter.id}
                   id={chapter.id}
                   className="about-story-card-shell"
                   variants={aboutStoryCardVariants}
-                  custom={index}
+                  initial="idle"
+                  whileInView="ready"
+                  viewport={{ once: true, amount: 0.35 }}
                 >
-                  <div className="about-story-card-copy">
-                    <div className="about-story-card-top">
-                      <span className="about-story-card-index">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                      <span className="about-story-card-kicker">Proof</span>
-                    </div>
+                  <m.div className="about-story-card-copy" variants={aboutStoryCardChildVariants}>
                     <h3 className="about-story-heading font-heading text-white">
                       {chapter.headline}
                     </h3>
                     <p className="about-story-copy text-white/70">
                       {chapter.supportingCopy}
                     </p>
-                  </div>
-                  <m.div className="about-story-scene" aria-hidden="true" variants={aboutStorySceneVariants}>
+                  </m.div>
+                  <m.div
+                    className="about-story-scene"
+                    aria-hidden="true"
+                    variants={aboutStorySceneVariants}
+                  >
                     <StoryScene visual={chapter.visual} />
                   </m.div>
                 </m.article>
               ))}
-            </m.div>
+            </div>
 
-            <m.div className="about-story-cta" variants={aboutStoryCtaVariants}>
+            <m.div
+              className="about-story-cta"
+              variants={aboutStoryCtaVariants}
+              initial="idle"
+              whileInView="ready"
+              viewport={{ once: true, amount: 0.4 }}
+            >
               <p className="about-story-cta-copy font-heading text-white">
                 {ctaCopy}
               </p>
@@ -74,7 +80,7 @@ export function AboutStory() {
               </Link>
             </m.div>
           </div>
-        </m.section>
+        </section>
       </LazyMotion>
     </MotionConfig>
   );

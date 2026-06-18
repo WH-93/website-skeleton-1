@@ -84,7 +84,7 @@ export const chapters: Chapter[] = [
     visual: {
       type: "network-graph",
       data: {
-        centralLabel: "BC",
+        centralLabel: "BC Financial",
         sectorLabels: [
           "CFOs",
           "Finance Directors",

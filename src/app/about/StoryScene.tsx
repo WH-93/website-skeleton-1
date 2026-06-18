@@ -1,4 +1,27 @@
+'use client';
+
+import { m } from 'framer-motion';
 import type { ChapterVisual } from './content';
+import {
+  dataPhaseVariants,
+  dataTileVariants,
+  filterRevealVariants,
+  funnelStageVariants,
+  funnelOutputVariants,
+  signalPhaseVariants,
+  signalCoreVariants,
+  signalCardVariants,
+  networkPhaseVariants,
+  networkListVariants,
+  networkCoreVariants,
+  networkChipVariants,
+  networkLineVariants,
+  pipelinePhaseVariants,
+  pipelineStageVariants,
+  intertwinePhaseVariants,
+  intertwineLeftVariants,
+  intertwineRightVariants,
+} from './motionVariants';
 
 interface StorySceneProps {
   visual: ChapterVisual;
@@ -7,7 +30,7 @@ interface StorySceneProps {
 export function StoryScene({ visual }: StorySceneProps) {
   switch (visual.type) {
     case 'cv-cards':
-      return <CvCardsVisual labels={visual.data.labels} filterLabel={visual.data.filterLabel} />;
+      return <DataFilterVisual labels={visual.data.labels} filterLabel={visual.data.filterLabel} />;
     case 'human-factors':
       return <HumanFactorsVisual labels={visual.data.labels} />;
     case 'network-graph':
@@ -17,118 +40,192 @@ export function StoryScene({ visual }: StorySceneProps) {
   }
 }
 
-function CvCardsVisual({ labels, filterLabel }: { labels: string[]; filterLabel: string }) {
+// ═══════════════════════════════════════════════════
+// Chapter 1 — Data flood → automated filter → funnel
+// ═══════════════════════════════════════════════════
+
+const SURFACE_DATA = [
+  'CV', 'Salary', 'Location', 'Experience', 'Qualifications',
+  'Job Title', 'Industry', 'Education', 'Skills', 'Tenure',
+  'Certifications', 'Languages', 'Availability', 'References', 'Notice',
+];
+
+const FUNNEL_STAGES = [
+  { label: '15 applicants', width: '100%' },
+  { label: '8 pass filter', width: '58%' },
+  { label: '3 shortlisted', width: '30%' },
+  { label: 'look identical', width: '18%' },
+];
+
+function DataFilterVisual({ labels: _labels, filterLabel }: { labels: string[]; filterLabel: string }) {
   return (
-    <svg className="about-story-visual" viewBox="0 0 360 240" role="img" aria-label="CV data cards">
-      <rect className="about-story-panel" x="36" y="30" width="202" height="166" rx="10" />
-      {labels.slice(0, 5).map((label, index) => (
-        <g key={label} transform={`translate(${58 + index * 9} ${52 + index * 26})`}>
-          <rect className="about-story-card" width="168" height="38" rx="7" />
-          <text className="about-story-text-dark" x="18" y="24">{label}</text>
-        </g>
-      ))}
-      <g transform="translate(252 70)">
-        <rect className="about-story-filter" width="74" height="90" rx="10" />
-        <path className="about-story-gold-stroke" d="M20 28h34M25 44h24M30 60h14" />
-        <text className="about-story-label" x="37" y="78" textAnchor="middle">{filterLabel}</text>
-      </g>
-    </svg>
+    <m.div
+      className="about-story-visual about-story-data-visual"
+      role="img"
+      aria-label="Automated recruitment filters surface data but misses what matters"
+      variants={dataPhaseVariants}
+    >
+      <div className="about-story-data-grid">
+        {SURFACE_DATA.map((label, i) => (
+          <m.div
+            key={label}
+            className={`about-story-data-tile${i >= 11 ? ' about-story-data-tile--dim' : ''}`}
+            variants={dataTileVariants}
+          >
+            <span className="about-story-data-icon">{label.slice(0, 2).toUpperCase()}</span>
+            <span>{label}</span>
+          </m.div>
+        ))}
+      </div>
+
+      <m.div className="about-story-filter-panel" variants={filterRevealVariants}>
+        <span className="about-story-filter-lines" />
+        <span>{filterLabel} by surface criteria</span>
+      </m.div>
+
+      <div className="about-story-funnel">
+        {FUNNEL_STAGES.map((stage, i) => (
+          <m.div
+            key={stage.label}
+            className="about-story-funnel-stage"
+            variants={funnelStageVariants}
+            custom={i}
+          >
+            <m.div
+              className="about-story-funnel-bar"
+              style={{ width: stage.width }}
+            />
+            <span className="about-story-funnel-label">{stage.label}</span>
+          </m.div>
+        ))}
+      </div>
+
+      <m.div className="about-story-output-row" variants={funnelOutputVariants}>
+        <span className="about-story-output-card">Candidate A</span>
+        <span className="about-story-output-card">Candidate B</span>
+      </m.div>
+    </m.div>
   );
 }
+
+// ═══════════════════════════════════════════════════
+// Chapter 2 — Human factors / signal qualities
+// ═══════════════════════════════════════════════════
 
 function HumanFactorsVisual({ labels }: { labels: string[] }) {
-  const points = [
-    [94, 62],
-    [178, 42],
-    [258, 76],
-    [76, 154],
-    [188, 174],
-    [284, 148],
-  ];
-
   return (
-    <svg className="about-story-visual" viewBox="0 0 360 240" role="img" aria-label="Human qualities around a candidate">
-      <circle className="about-story-halo" cx="180" cy="116" r="52" />
-      <circle className="about-story-node-main" cx="180" cy="116" r="30" />
-      <path className="about-story-line" d="M154 101 94 62M181 86 178 42M207 101 258 76M154 130 76 154M183 146 188 174M207 131 284 148" />
-      {labels.slice(0, 6).map((label, index) => {
-        const [x, y] = points[index];
-        return (
-          <g key={label}>
-            <circle className="about-story-node" cx={x} cy={y} r="9" />
-            <text className="about-story-text" x={x} y={y + 27} textAnchor="middle">{label}</text>
-          </g>
-        );
-      })}
-    </svg>
+    <m.div
+      className="about-story-visual about-story-signals-visual"
+      role="img"
+      aria-label="Human qualities that distinguish good from great appointments"
+      variants={signalPhaseVariants}
+    >
+      <m.div className="about-story-signal-core" variants={signalCoreVariants}>
+        <span>Judgement</span>
+      </m.div>
+      <div className="about-story-signal-grid">
+        {labels.slice(0, 6).map((label, index) => (
+          <m.div
+            key={label}
+            className={`about-story-signal-card about-story-signal-card--${index + 1}`}
+            variants={signalCardVariants}
+          >
+            <span className="about-story-signal-mark" />
+            <span>{label}</span>
+          </m.div>
+        ))}
+      </div>
+    </m.div>
   );
 }
+
+// ═══════════════════════════════════════════════════
+// Chapter 3 — Network graph: BC → sectors
+// ═══════════════════════════════════════════════════
 
 function NetworkGraphVisual({ centralLabel, sectorLabels }: { centralLabel: string; sectorLabels: string[] }) {
-  const nodes = [
-    [68, 70],
-    [144, 44],
-    [250, 58],
-    [294, 122],
-    [244, 184],
-    [130, 194],
-    [58, 142],
-  ];
-
   return (
-    <svg className="about-story-visual" viewBox="0 0 360 240" role="img" aria-label="Relationship network">
-      <g>
-        {nodes.map(([x, y], index) => (
-          <path key={`${x}-${y}`} className="about-story-line" d={`M180 120 ${x} ${y}`} />
+    <m.div
+      className="about-story-visual about-story-network-visual"
+      role="img"
+      aria-label="Specialist network of relationships across financial sectors"
+      variants={networkPhaseVariants}
+    >
+      <m.div className="about-story-network-core" variants={networkCoreVariants}>
+        <span>{centralLabel}</span>
+      </m.div>
+
+      <m.div className="about-story-network-list" variants={networkListVariants}>
+        {sectorLabels.slice(0, 7).map((label, index) => (
+          <m.div
+            key={label}
+            className={`about-story-network-chip about-story-network-chip--${index + 1}`}
+            variants={networkChipVariants}
+            custom={index}
+          >
+            <m.span
+              className="about-story-network-line"
+              aria-hidden="true"
+              variants={networkLineVariants}
+              custom={index}
+            />
+            <span className="about-story-network-dot" />
+            <span>{label}</span>
+          </m.div>
         ))}
-      </g>
-      <circle className="about-story-node-main" cx="180" cy="120" r="34" />
-      <text className="about-story-centre-text" x="180" y="128" textAnchor="middle">{centralLabel}</text>
-      {sectorLabels.slice(0, 7).map((label, index) => {
-        const [x, y] = nodes[index];
-        return (
-          <g key={label}>
-            <circle className="about-story-node" cx={x} cy={y} r="11" />
-            <text className="about-story-text" x={x} y={y + 28} textAnchor="middle">{label}</text>
-          </g>
-        );
-      })}
-    </svg>
+      </m.div>
+    </m.div>
   );
 }
 
-function TransformationVisual({ stageLabels, finalCards }: { stageLabels: string[]; finalCards: string[] }) {
-  const stageDisplay = ['20 candidates', '6 strong', '3 intros'];
+// ═══════════════════════════════════════════════════
+// Chapter 4 — Pipeline narrowing + intertwine reveal
+// ═══════════════════════════════════════════════════
+
+function TransformationVisual({ stageLabels, finalCards: _finalCards }: { stageLabels: string[]; finalCards: string[] }) {
+  const stages = [
+    { label: stageLabels[0] ?? '20 candidates', tone: 'many' as const },
+    { label: stageLabels[1] ?? '6 strong possibilities', tone: 'few' as const },
+    { label: stageLabels[2] ?? '3 considered introductions', tone: 'final' as const },
+  ];
 
   return (
-    <svg className="about-story-visual" viewBox="0 0 360 240" role="img" aria-label="Shortlist refinement">
-      {stageLabels.slice(0, 3).map((label, index) => (
-        <g key={label} transform={`translate(${68 + index * 18} ${34 + index * 42})`}>
-          <rect
-            className={index === 2 ? 'about-story-filter' : 'about-story-card'}
-            width={224 - index * 36}
-            height="34"
-            rx="8"
-          />
-          <text className="about-story-label" x={(224 - index * 36) / 2} y="22" textAnchor="middle">
-            {stageDisplay[index]}
-          </text>
-        </g>
-      ))}
-      <path className="about-story-gold-stroke" d="M114 158c38 18 94 18 132 0" />
-      {finalCards.slice(0, 3).map((label, index) => (
-        <g key={label} transform={`translate(${31 + index * 103} 178)`}>
-          <rect className="about-story-final-card" width="92" height="42" rx="8" />
-          {label === 'Finance Director' ? (
-            <text className="about-story-label" x="46" y="18" textAnchor="middle">
-              <tspan x="46" dy="0">Finance</tspan>
-              <tspan x="46" dy="13">Director</tspan>
-            </text>
-          ) : (
-            <text className="about-story-label" x="46" y="26" textAnchor="middle">{label}</text>
-          )}
-        </g>
-      ))}
-    </svg>
+    <div
+      className="about-story-visual about-story-pipeline-visual"
+      role="img"
+      aria-label="Recruitment pipeline narrowing to the perfect lasting fit"
+    >
+      <m.div
+        className="about-story-pipeline-stages"
+        variants={pipelinePhaseVariants}
+      >
+        {stages.map((stage, index) => (
+          <m.div
+            key={stage.label}
+            className={`about-story-pipeline-stage about-story-pipeline-stage--${stage.tone} about-story-pipeline-stage--${index + 1}`}
+            variants={pipelineStageVariants}
+            custom={index}
+          >
+            <span className="about-story-pipeline-count">{stage.label}</span>
+            <span className="about-story-pipeline-bar" />
+          </m.div>
+        ))}
+      </m.div>
+
+      <div className="about-story-pipeline-arrow" />
+
+      <m.div
+        className="about-story-intertwine"
+        variants={intertwinePhaseVariants}
+      >
+        <m.span className="about-story-intertwine-left" variants={intertwineLeftVariants}>
+          Perfect Role
+        </m.span>
+        <span className="about-story-intertwine-slash" aria-hidden="true" />
+        <m.span className="about-story-intertwine-right" variants={intertwineRightVariants}>
+          Lasting Fit
+        </m.span>
+      </m.div>
+    </div>
   );
 }
