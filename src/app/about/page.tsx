@@ -10,13 +10,6 @@ const stats = [
   { icon: 'star' as const, value: 'LONG-TERM RELATIONSHIPS', label: 'Built beyond a single placement' },
 ];
 
-const process = [
-  { icon: 'person' as const, title: '1. Listen', desc: 'I begin with the detail behind the brief or career move: the team, ambitions, motivations, culture and what a successful outcome needs to look like.' },
-  { icon: 'search' as const, title: '2. Search the Market', desc: 'I map the market and draw on my specialist network to uncover people and opportunities that may never appear on a job board.' },
-  { icon: 'people' as const, title: '3. Curate', desc: 'Quality matters more than volume. I personally assess every introduction, ensuring each opportunity or candidate is relevant and carefully considered.' },
-  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I remain closely involved throughout interviews, offers, notice periods and onboarding, providing support well beyond the placement.' },
-];
-
 const values = [
   { icon: 'target' as const, title: 'Specialist Expertise', desc: 'Detailed knowledge of the accountancy practice and tax markets.' },
   { icon: 'person' as const, title: 'Personal Accountability', desc: 'Direct access to an experienced specialist throughout the process.' },
@@ -61,28 +54,6 @@ export default function AboutPage() {
                 <div className="stat-label">{item.label}</div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section bg-white text-center">
-        <div className="container-page">
-          <p className="eyebrow mb-3">My Approach</p>
-          <h2 className="section-title text-3xl sm:text-4xl">I listen. I search. I stay involved.</h2>
-          <span className="gold-rule mx-auto" />
-          <div className="relative mt-12">
-            <div className="process-line" />
-            <div className="grid gap-9 lg:grid-cols-4">
-              {process.map(step => (
-                <div key={step.title} className="relative text-center">
-                  <div className="icon-circle-lg mx-auto mb-5 text-navy relative z-10">
-                    <BcIcon name={step.icon} size={30} strokeWidth={1.3} />
-                  </div>
-                  <h3 className="font-sans text-sm font-bold uppercase tracking-wider text-navy mb-3">{step.title}</h3>
-                  <p className="text-sm leading-6 text-navy/65 max-w-xs mx-auto">{step.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
