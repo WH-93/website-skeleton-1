@@ -91,7 +91,7 @@
 }
 
 .about-story-cta-copy { max-width: 42rem; font-size: clamp(1.6rem, 6vw, 2.35rem); line-height: 1.08; }
-.about-story-cta-link { align-self: flex-start; }
+.about-story-cta-link { align-self: flex-start; justify-self: start; width: auto; }
 
 @media (max-width: 767px) {
   .about-story-card-shell { grid-template-columns: 1fr; gap: 1rem; }
