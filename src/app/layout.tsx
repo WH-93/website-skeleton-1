@@ -5,6 +5,7 @@ import { PublicLayout } from '@/components/public-layout';
 export const metadata: Metadata = {
   title: 'BC Financial Search - Practice & Tax Recruitment',
   description: 'Specialist recruitment for accountancy practices and in-house tax teams.',
+  icons: { icon: '/favicon.png' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
