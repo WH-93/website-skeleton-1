@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { LazyMotion, MotionConfig, domAnimation, m } from 'framer-motion';
-import { chapters, ctaButtonLabel, ctaCopy } from './content';
+import { chapters, ctaButtonLabel, ctaCopy, ctaKicker, ctaSupportingCopy } from './content';
 import {
   aboutStoryCardVariants,
   aboutStoryCardChildVariants,
@@ -72,12 +72,18 @@ export function AboutStory() {
               whileInView="ready"
               viewport={{ once: true, amount: 0.4 }}
             >
-              <p className="about-story-cta-copy font-heading text-white">
-                {ctaCopy}
-              </p>
-              <Link href="/#contact" className="btn-gold about-story-cta-link">
-                {ctaButtonLabel}
-              </Link>
+              <div className="about-story-cta-text">
+                <p className="about-story-cta-copy font-heading text-white">
+                  {ctaCopy}
+                </p>
+              </div>
+              <div className="about-story-cta-action">
+                <span className="about-story-cta-kicker">{ctaKicker}</span>
+                <Link href="/#contact" className="btn-gold about-story-cta-link">
+                  {ctaButtonLabel}
+                </Link>
+                <p className="about-story-cta-note">{ctaSupportingCopy}</p>
+              </div>
             </m.div>
           </div>
         </section>

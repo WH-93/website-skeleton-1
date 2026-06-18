@@ -123,4 +123,7 @@ export const chapters: Chapter[] = [
 // ── CTA ──
 
 export const ctaCopy = "Looking for a more considered financial search partner?";
+export const ctaKicker = "Private, practical advice";
+export const ctaSupportingCopy =
+  "Talk through the brief, the market and who is genuinely worth approaching.";
 export const ctaButtonLabel = "Start a conversation";
