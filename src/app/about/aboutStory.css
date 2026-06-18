@@ -170,7 +170,11 @@
   .about-story-scene { min-height: clamp(12rem, 55vw, 18rem); }
   .about-story-heading { font-size: clamp(1.5rem, 6vw, 2rem); }
   .about-story-copy { font-size: 0.9rem; }
-  .about-story-cta-copy { font-size: clamp(1.32rem, 7vw, 1.85rem); }
+  .about-story-cta-copy {
+    font-size: clamp(1.32rem, 7vw, 1.85rem);
+    line-height: 1.06;
+    padding-bottom: 0.08em;
+  }
   .about-story-cta-note { font-size: 0.86rem; }
 }
 
