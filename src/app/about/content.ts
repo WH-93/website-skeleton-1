@@ -59,9 +59,9 @@ export const chapters: Chapter[] = [
   },
   {
     id: "proof-qualities",
-    headline: "The qualities that matter most are rarely obvious.",
+    headline: "Algorithms can sort a CV. They cannot read a room.",
     supportingCopy:
-      "The difference between a good appointment and a successful one often comes down to factors that never appear on a CV.",
+      "Motivation, timing and judgement show up in conversation, not in a keyword match.",
     visual: {
       type: "human-factors",
       data: {
@@ -78,29 +78,34 @@ export const chapters: Chapter[] = [
   },
   {
     id: "proof-network",
-    headline: "The best candidates are not always looking.",
+    headline: "The best candidates often are not looking.",
     supportingCopy:
-      "Relationships built over years create conversations that databases never will.",
+      "They are known, trusted and approached through relationships built over years.",
     visual: {
       type: "network-graph",
       data: {
         centralLabel: "BC Financial",
         sectorLabels: [
           "CFOs",
-          "Finance Directors",
-          "Risk",
-          "Compliance",
+          "Directors",
+          "Controllers",
+          "Tax Leads",
+          "Audit",
           "Treasury",
-          "Banking",
-          "Private Equity",
+          "Risk",
+          "Finance",
+          "Tax",
+          "Corporate",
+          "FP&A",
+          "Partners",
         ],
       },
     },
   },
   {
     id: "proof-shortlist",
-    headline: "Anyone can send a shortlist.",
-    supportingCopy: "The challenge is sending the right one.",
+    headline: "A shortlist is easy. A considered introduction is not.",
+    supportingCopy: "Data can narrow a field. It takes judgement to know who belongs in the conversation.",
     visual: {
       type: "transformation",
       data: {

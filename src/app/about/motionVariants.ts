@@ -92,6 +92,15 @@ export const filterRevealVariants: Variants = {
   },
 };
 
+export const fitPathVariants: Variants = {
+  idle: { opacity: 0, pathLength: 0 },
+  ready: (i: number) => ({
+    opacity: 1,
+    pathLength: 1,
+    transition: { duration: 0.95, ease: easeSmooth, delay: 0.64 + i * 0.12 },
+  }),
+};
+
 export const funnelStageVariants: Variants = {
   idle: { opacity: 0, scaleX: 0, originX: 0.5 },
   ready: (i: number) => ({
@@ -141,6 +150,24 @@ export const signalCardVariants: Variants = {
   },
 };
 
+export const signalFocusVariants: Variants = {
+  idle: { opacity: 0, scale: 0.72 },
+  ready: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: easeOut, delay: 0.62 },
+  },
+};
+
+export const signalPathVariants: Variants = {
+  idle: { opacity: 0, pathLength: 0 },
+  ready: (i: number) => ({
+    opacity: 1,
+    pathLength: 1,
+    transition: { duration: 0.48, ease: easeSmooth, delay: 0.34 + i * 0.08 },
+  }),
+};
+
 // ═══════════════════════════════════════════════════
 // Chapter 3 — Network graph: BC → sectors
 // ═══════════════════════════════════════════════════
@@ -170,11 +197,20 @@ export const networkCoreVariants: Variants = {
 };
 
 export const networkChipVariants: Variants = {
-  idle: { opacity: 0, x: -12 },
+  idle: { opacity: 0, y: 8 },
   ready: (i: number) => ({
     opacity: 1,
-    x: 0,
-    transition: { duration: 0.35, ease: easeOut, delay: 0.22 + i * 0.1 },
+    y: 0,
+    transition: { duration: 0.42, ease: easeOut, delay: 0.22 + i * 0.08 },
+  }),
+};
+
+export const networkPathVariants: Variants = {
+  idle: { opacity: 0, pathLength: 0 },
+  ready: (i: number) => ({
+    opacity: 1,
+    pathLength: 1,
+    transition: { duration: 1.05, ease: easeSmooth, delay: 0.22 + i * 0.045 },
   }),
 };
 
