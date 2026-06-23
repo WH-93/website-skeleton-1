@@ -105,16 +105,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-warm-white border-y border-navy/10">
+      <section className="bg-navy text-white section">
         <div className="container-page">
-          <h2 className="font-sans text-xl sm:text-2xl tracking-widest uppercase text-navy text-center">Why BC Financial Search?</h2>
+          <h2 className="font-sans text-xl sm:text-2xl tracking-widest uppercase text-white text-center">Why BC Financial Search?</h2>
           <span className="gold-rule mx-auto" />
           <div className="feature-grid">
             {features.map(item => (
-              <div key={item.title} className="feature-card">
+              <div key={item.title} className="feature-card border-white/15">
                 <BcIcon name={item.icon} size={38} className="text-gold mx-auto mb-5" strokeWidth={1.35} />
-                <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-3">{item.title}</h3>
-                <p className="text-xs sm:text-sm leading-6 text-navy/65">{item.desc}</p>
+                <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-white mb-3">{item.title}</h3>
+                <p className="text-xs sm:text-sm leading-6 text-white/70">{item.desc}</p>
               </div>
             ))}
           </div>
