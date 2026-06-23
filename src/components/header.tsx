@@ -11,6 +11,16 @@ export function Header() {
   const router = useRouter();
 
   const handleMobileNav = (href: string) => {
+    // Hash anchor on current page — manually scroll and close menu
+    if (href.startsWith('/#') && pathname === '/') {
+      setOpen(false);
+      const id = href.slice(2);
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+      return;
+    }
     router.push(href);
   };
 
