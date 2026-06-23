@@ -181,21 +181,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="bg-warm-white scroll-mt-24 pt-4 pb-16 sm:pb-20 lg:pb-24">
+      <section id="contact" className="bg-navy lg:bg-warm-white scroll-mt-24 pt-4 pb-16 sm:pb-20 lg:pb-24">
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
           <div>
             <p className="eyebrow mb-4">Get in Touch - Start with a conversation.</p>
-            <h2 className="section-title text-3xl sm:text-4xl">Your priorities shape the search.</h2>
+            <h2 className="section-title text-white lg:text-navy text-3xl sm:text-4xl">Your priorities shape the search.</h2>
             <span className="gold-rule" />
-            <p className="body-copy max-w-xl">
+            <p className="body-copy text-white/70 lg:text-navy/75 max-w-xl">
               Whether you are considering your next career move, planning an important hire or simply looking for a clearer view of the market, I would be happy to hear from you.
             </p>
-            <p className="body-copy max-w-xl mt-4">
+            <p className="body-copy text-white/70 lg:text-navy/75 max-w-xl mt-4">
               Every enquiry is handled personally and in confidence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <Link href="/candidates" className="btn-gold">Start a Career Conversation</Link>
-              <Link href="/clients" className="btn-outline">Discuss Your Hiring Plans</Link>
+              <Link href="/clients" className="inline-flex items-center justify-center font-bold rounded uppercase tracking-wider text-[10px] sm:text-xs px-6 py-3 sm:px-7 sm:py-3.5 transition-colors whitespace-nowrap text-white border border-white/30 hover:bg-white hover:text-navy lg:text-navy lg:border-navy/70 lg:hover:bg-navy lg:hover:text-white">Discuss Your Hiring Plans</Link>
             </div>
           </div>
 
