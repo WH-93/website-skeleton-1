@@ -150,8 +150,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-warm-white border-t border-navy/10">
-        <div className="section px-5 sm:px-8 lg:pl-16 xl:pl-20 lg:pr-10 text-center">
+      <section className="bg-warm-white border-t border-navy/10">
+        <div className="px-5 sm:px-8 lg:pl-16 xl:pl-20 lg:pr-10 pt-10 pb-8 text-center">
           <p className="eyebrow mb-3">Areas I Recruit</p>
           <h2 className="section-title text-3xl sm:text-4xl">Specialist roles across practice and tax.</h2>
           <span className="gold-rule mx-auto" />
@@ -181,7 +181,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="section bg-warm-white scroll-mt-24">
+      <section id="contact" className="bg-warm-white scroll-mt-24 pt-4 pb-16 sm:pb-20 lg:pb-24">
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
           <div>
             <p className="eyebrow mb-4">Get in Touch - Start with a conversation.</p>
