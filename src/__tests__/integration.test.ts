@@ -38,11 +38,10 @@ describe('Public Pages', () => {
     assert.ok(text.includes('BC Financial Search is a specialist recruitment partner'), 'about introduction should be preserved');
     assert.ok(text.includes('12 YEARS'), 'market experience stat should be preserved');
     assert.ok(text.includes('200+'), 'successful placements stat should be preserved');
-    assert.ok(text.includes('id="about-proof"'), 'about proof section should be inserted');
-    assert.ok(text.includes('about-story-grid'), 'about proof responsive grid should render');
-    assert.ok(text.includes('A CV tells you where someone has been.'), 'about proof chapter copy should render');
-    assert.ok(text.includes('Motivation'), 'about proof static visual labels should render');
-    assert.ok(text.includes('Lasting Fit'), 'about proof shortlist visual should render');
+    assert.ok(text.includes('My Approach'), 'process section should be present');
+    assert.ok(text.includes('I listen. I search. I stay involved.'), 'process heading should be present');
+    assert.ok(text.includes('1. Listen'), 'process step 1 should render');
+    assert.ok(text.includes('4. Stay Involved'), 'process step 4 should render');
     assert.ok(text.includes('Judgement. Relationships. Results.'), 'founder section headline should be preserved');
     assert.ok(text.includes('The person behind the introductions'), 'founder eyebrow should be preserved');
     assert.ok(text.includes('Ben Copsey'), 'founder name should be preserved');
