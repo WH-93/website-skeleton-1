@@ -68,6 +68,7 @@ export default function JobsPage() {
         <div className="container-page">
           <h1 className="hero-title hero-title-reveal text-white mb-5">
             <span className="hero-title-line">Current</span>
+            {' '}
             <span className="hero-title-line text-gold">Opportunities.</span>
           </h1>
           <p className="text-white/70 text-sm sm:text-base leading-7 max-w-xl">

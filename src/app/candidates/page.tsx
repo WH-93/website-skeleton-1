@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BcIcon } from '@/components/bc-icon';
+
+export const metadata: Metadata = {
+  title: 'Career Conversations',
+  description: 'Confidential career conversations for accountancy practice and tax professionals. No cost, no pressure.',
+};
 
 const benefits = [
   { icon: 'person' as const, title: 'Personal Service', desc: 'You deal directly with an experienced specialist who listens carefully and understands what matters to you.' },
@@ -35,6 +41,7 @@ export default function CandidatesPage() {
             <p className="eyebrow mb-5">For Candidates</p>
             <h1 className="hero-title hero-title-reveal">
               <span className="hero-title-line">Specialist knowledge,</span>
+              {' '}
               <span className="hero-title-line">applied <span className="text-gold">personally.</span></span>
             </h1>
             <span className="gold-rule" />

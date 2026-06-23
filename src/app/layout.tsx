@@ -3,8 +3,11 @@ import './globals.css';
 import { PublicLayout } from '@/components/public-layout';
 
 export const metadata: Metadata = {
-  title: 'BC Financial Search - Practice & Tax Recruitment',
-  description: 'Specialist recruitment for accountancy practices and in-house tax teams.',
+  title: {
+    template: '%s | BC Financial Search',
+    default: 'Accountancy Practice & Tax Recruitment UK | BC Financial Search',
+  },
+  description: 'Specialist accountancy practice and tax recruitment across the UK. Personal, proactive, relationship-driven.',
   icons: { icon: '/favicon.png' },
 };
 

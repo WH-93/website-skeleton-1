@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import { BcIcon } from '@/components/bc-icon';
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: 'Start a conversation. All enquiries handled personally and in confidence.',
+};
 
 const contacts = [
   { icon: 'mail' as const, label: 'Email', value: 'ben@bcfinancialsearch.co.uk', href: 'mailto:ben@bcfinancialsearch.co.uk' },

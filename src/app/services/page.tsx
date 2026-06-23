@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BcIcon } from '@/components/bc-icon';
+
+export const metadata: Metadata = {
+  title: 'Accountancy & Tax Recruitment Services',
+  description: 'Specialist recruitment across accountancy practice, tax, and senior confidential search.',
+};
 
 const services = [
   {
@@ -13,7 +19,7 @@ const services = [
     icon: 'shield' as const,
     title: 'Tax Recruitment',
     desc: 'Practice and in-house tax appointments across corporate tax, personal tax, VAT, employment tax, international tax and transfer pricing.',
-    roles: ['Corporate Tax Manager and Director', 'Personal Tax Senior and Manager', 'VAT Manager', 'Employment Tax Lead', 'In-House Tax Manager', 'Head of Tax'],
+    roles: ['Corporate Tax Manager and Director', 'Personal Tax Senior and Manager', 'VAT Manager', 'Employment Tax Manager', 'In-House Tax Manager', 'Head of Tax'],
     roleLabel: 'Typical Roles',
   },
   {
@@ -41,6 +47,7 @@ export default function ServicesPage() {
             <p className="eyebrow mb-5">Services</p>
             <h1 className="hero-title hero-title-reveal">
               <span className="hero-title-line">Specialist recruitment</span>
+              {' '}
               <span className="hero-title-line">across <span className="text-gold">practice & tax.</span></span>
             </h1>
             <span className="gold-rule" />

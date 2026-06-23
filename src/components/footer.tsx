@@ -74,13 +74,9 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-4">
-        <div className="container-page flex flex-col sm:flex-row justify-between gap-3 text-[10px] text-white/45 uppercase tracking-wide">
-          <p>© {new Date().getFullYear()} BC Financial Search Limited</p>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-gold">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-gold">Terms</Link>
-          </div>
-          <p>Company Number: 15459835</p>
+        <div className="container-page text-[10px] text-white/45 uppercase tracking-wide leading-relaxed">
+          <p>BC Financial Search LTD. Registered in England and Wales. Company number 17287274.</p>
+          <p>Registered office: Centurion House, 129 Deansgate, Manchester, M3 3WR.</p>
         </div>
       </div>
     </footer>

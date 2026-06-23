@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BcIcon } from '@/components/bc-icon';
+
+export const metadata: Metadata = {
+  title: 'About Ben Copsey',
+  description: '12 years of specialist recruitment experience. Founded on listening, searching proactively, and lasting relationships.',
+};
 
 const stats = [
   { icon: 'person' as const, value: '12 YEARS', label: 'Specialist market experience' },
@@ -32,6 +38,7 @@ export default function AboutPage() {
             <p className="eyebrow mb-5">About Us</p>
             <h1 className="hero-title hero-title-reveal">
               <span className="hero-title-line">Built on experience.</span>
+              {' '}
               <span className="hero-title-line">Focused on <span className="text-gold">people.</span></span>
             </h1>
             <span className="gold-rule" />
@@ -89,7 +96,7 @@ export default function AboutPage() {
         </div>
         <div className="section px-5 sm:px-8 lg:px-12 order-1 lg:order-2">
           <p className="eyebrow mb-5">The person behind the introductions</p>
-          <h2 className="section-title text-3xl sm:text-4xl">Judgement. Relationships. Results.</h2>
+          <h2 className="section-title text-3xl sm:text-4xl">Experience. Relationships. Results.</h2>
           <span className="gold-rule" />
           <div className="body-copy space-y-4">
             <p>Every introduction I make is shaped by 12 years of specialist experience across accountancy practice and in-house tax.</p>

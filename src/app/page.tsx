@@ -1,5 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BcIcon } from '@/components/bc-icon';
+
+export const metadata: Metadata = {
+  description: 'Specialist accountancy practice and tax recruitment across the UK. Personal, proactive, relationship-driven.',
+};
 
 const stats = [
   { icon: 'person' as const, value: '12 YEARS', label: 'Specialist market experience' },
@@ -16,13 +21,6 @@ const features = [
   { icon: 'star' as const, title: 'Long-Term Relationships', desc: 'I focus on appointments that work for the long term, building relationships that continue beyond a single hire.' },
 ];
 
-const process = [
-  { icon: 'person' as const, title: '1. Listen', desc: 'I begin with the detail behind the brief or career move: the team, ambitions, motivations, culture and what a successful outcome needs to look like.' },
-  { icon: 'search' as const, title: '2. Search the Market', desc: 'I map the market and draw on my specialist network to uncover people and opportunities that may never appear on a job board.' },
-  { icon: 'people' as const, title: '3. Curate', desc: 'Quality matters more than volume. I personally assess every introduction, ensuring each opportunity or candidate is relevant and carefully considered.' },
-  { icon: 'clock' as const, title: '4. Stay Involved', desc: 'I remain closely involved throughout interviews, offers, notice periods and onboarding, providing support well beyond the placement.' },
-];
-
 const contacts = [
   { icon: 'mail' as const, label: 'Email', value: 'ben@bcfinancialsearch.co.uk', href: 'mailto:ben@bcfinancialsearch.co.uk' },
   { icon: 'phone' as const, label: 'Phone', value: '07522996561', href: 'tel:07522996561' },
@@ -37,7 +35,9 @@ export default function HomePage() {
           <div className="split-hero-copy">
             <h1 className="hero-title hero-title-reveal">
               <span className="hero-title-line">Specialist Search.</span>
+              {' '}
               <span className="hero-title-line">Personal Service.</span>
+              {' '}
               <span className="hero-title-line text-gold">Lasting Fit.</span>
             </h1>
             <span className="gold-rule" />
@@ -46,7 +46,7 @@ export default function HomePage() {
                 Specialist accountancy practice and tax recruitment across the UK.
               </p>
               <p>
-                With 12 years of experience in the market, I connect ambitious professionals with firms where they can thrive, while helping employers secure talent that supports their long-term growth.
+                With 12 years of experience in the market, I connect ambitious professionals with accountancy practices and in-house tax teams where they can thrive, while helping employers secure talent that supports their long-term growth.
               </p>
             </div>
             <div className="hero-actions">
@@ -138,7 +138,7 @@ export default function HomePage() {
         <div className="bg-navy text-white section px-5 sm:px-8 lg:px-14 flex items-center">
           <div>
             <div className="text-gold font-heading text-7xl leading-none mb-4">{'"'}</div>
-            <p className="eyebrow mb-4">One specialist. One market. One point of contact.</p>
+            <p className="eyebrow mb-4">One specialist. One point of contact. One consistent approach.</p>
             <p className="font-heading text-3xl sm:text-4xl leading-tight max-w-md">
               You work directly with me throughout the search, from understanding the brief to supporting a successful appointment and beyond.
             </p>
@@ -150,29 +150,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-white border-t border-navy/10">
-        <div className="container-page text-center">
-          <p className="eyebrow mb-3">My approach</p>
-          <h2 className="section-title text-3xl sm:text-4xl">I listen. I search. I stay involved.</h2>
-          <span className="gold-rule mx-auto" />
-          <div className="relative mt-12">
-            <div className="process-line" />
-            <div className="grid gap-9 lg:grid-cols-4">
-              {process.map(step => (
-                <div key={step.title} className="relative text-center">
-                  <div className="icon-circle-lg mx-auto mb-5 text-navy relative z-10">
-                    <BcIcon name={step.icon} size={30} strokeWidth={1.3} />
-                  </div>
-                  <h3 className="font-sans text-sm font-bold uppercase tracking-wider text-navy mb-3">{step.title}</h3>
-                  <p className="text-sm leading-6 text-navy/65 max-w-xs mx-auto">{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="grid lg:grid-cols-[1fr_28%] bg-warm-white border-t border-navy/10">
+      <section className="section bg-warm-white border-t border-navy/10">
         <div className="section px-5 sm:px-8 lg:pl-16 xl:pl-20 lg:pr-10 text-center">
           <p className="eyebrow mb-3">Areas I Recruit</p>
           <h2 className="section-title text-3xl sm:text-4xl">Specialist roles across practice and tax.</h2>
@@ -201,27 +179,24 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="bg-navy text-white section px-6 sm:px-10 flex items-center">
-          <div>
-            <h2 className="font-sans text-2xl uppercase tracking-wide leading-tight">Ready to take the next step?</h2>
-            <p className="mt-5 text-sm leading-7 text-white/70">Whether you are beginning to explore your options or actively looking for your next role, start a confidential conversation about what matters to you.</p>
-            <Link href="/#contact" className="btn-gold mt-8">Start a Career Conversation</Link>
-          </div>
-        </div>
       </section>
 
       <section id="contact" className="section bg-warm-white scroll-mt-24">
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
           <div>
-            <p className="eyebrow mb-4">Get In Touch</p>
+            <p className="eyebrow mb-4">Get in Touch - Start with a conversation.</p>
             <h2 className="section-title text-3xl sm:text-4xl">Your priorities shape the search.</h2>
             <span className="gold-rule" />
             <p className="body-copy max-w-xl">
-              Tell me what you are looking to achieve: a better career move, an important hire or simply a clearer view of the market.
+              Whether you are considering your next career move, planning an important hire or simply looking for a clearer view of the market, I would be happy to hear from you.
             </p>
             <p className="body-copy max-w-xl mt-4">
               Every enquiry is handled personally and in confidence.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
+              <Link href="/candidates" className="btn-gold">Start a Career Conversation</Link>
+              <Link href="/clients" className="btn-outline">Discuss Your Hiring Plans</Link>
+            </div>
           </div>
 
           <div className="bg-white border border-navy/10 rounded-card shadow-card p-7 sm:p-10">
