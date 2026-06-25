@@ -22,11 +22,11 @@ const process = [
 ];
 
 const values = [
-  { icon: 'target' as const, title: 'Specialist Expertise', desc: 'Detailed knowledge of the accountancy practice and tax markets.' },
-  { icon: 'person' as const, title: 'Personal Accountability', desc: 'Direct access to an experienced specialist throughout the process.' },
-  { icon: 'search' as const, title: 'Proactive Search', desc: 'A targeted approach that reaches beyond active applicants and advertised vacancies.' },
-  { icon: 'shield' as const, title: 'Honest Communication', desc: 'Clear advice, realistic feedback and regular communication at every stage.' },
-  { icon: 'people' as const, title: 'Lasting Relationships', desc: 'A commitment to relationships that continue beyond a single appointment.' },
+  { icon: 'target' as const, title: 'Specialist Expertise', desc: 'Detailed knowledge of accountancy practice and tax.' },
+  { icon: 'person' as const, title: 'Personal Accountability', desc: 'Direct access to me throughout.' },
+  { icon: 'search' as const, title: 'Proactive Search', desc: 'Targeted access beyond advertised vacancies.' },
+  { icon: 'shield' as const, title: 'Honest Communication', desc: 'Clear advice and regular feedback.' },
+  { icon: 'people' as const, title: 'Lasting Relationships', desc: 'Support beyond a single appointment.' },
 ];
 
 export default function AboutPage() {
@@ -95,12 +95,15 @@ export default function AboutPage() {
           <img src="/ben-about-headshot.jpeg" alt="BC Financial Search founder" className="absolute inset-0 h-full w-full object-cover object-top" />
         </div>
         <div className="section px-5 sm:px-8 lg:px-12 order-1 lg:order-2">
-          <p className="eyebrow mb-5">The person behind the introductions</p>
-          <h2 className="section-title text-3xl sm:text-4xl">Experience. Relationships. Results.</h2>
+          <p className="eyebrow mb-5">Experience. Relationships. Results.</p>
+          <h2 className="section-title text-3xl sm:text-4xl">The person behind the CV matters</h2>
           <span className="gold-rule" />
           <div className="body-copy space-y-4">
-            <p>Every introduction I make is shaped by 12 years of specialist experience across accountancy practice and in-house tax.</p>
-            <p>More than 200 successful placements have reinforced what I believe: the right appointment is rarely the most obvious one. It requires listening for what matters, searching where others don't, and understanding the people involved - not just their qualifications.</p>
+            <p>Technology can improve a search, but it should never replace personal knowledge, direct conversations and human understanding.</p>
+            <p>While AI can make recruitment faster, the best career move or appointment is not always the most obvious one.</p>
+            <p>A CV cannot always capture someone&apos;s motivations, potential or the environment in which they will perform at their best. Equally, a job description rarely tells the full story of a business, its culture or what a successful appointment truly requires.</p>
+            <p>I use modern search tools where they add value, while keeping real conversations at the centre of every introduction. By understanding both the person and the business, I can uncover opportunities and talent that a standard search may overlook.</p>
+            <p>Every introduction is carefully considered, with a clear understanding of why the person, opportunity and business could work well together.</p>
           </div>
           <p className="mt-6 font-heading italic text-3xl text-navy">Ben Copsey</p>
           <p className="text-xs uppercase tracking-wider font-bold text-navy">Founder and Director</p>

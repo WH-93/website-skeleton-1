@@ -48,7 +48,7 @@ export default function ServicesPage() {
             <h1 className="hero-title hero-title-reveal">
               <span className="hero-title-line">Specialist recruitment</span>
               {' '}
-              <span className="hero-title-line">across <span className="text-gold">practice & tax.</span></span>
+              <span className="hero-title-line">across <span className="text-gold">accountancy practice and tax.</span></span>
             </h1>
             <span className="gold-rule" />
             <div className="space-y-5 body-copy max-w-xl">

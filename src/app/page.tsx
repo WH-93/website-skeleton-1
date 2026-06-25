@@ -15,7 +15,7 @@ const stats = [
 
 const features = [
   { icon: 'target' as const, title: 'Specialist Market Knowledge', desc: 'Twelve years of experience recruiting across accountancy practice and tax markets throughout the UK.' },
-  { icon: 'person' as const, title: 'Personal, Not Transactional', desc: 'Every search begins with a proper conversation about the person, business and priorities behind the move.' },
+  { icon: 'person' as const, title: 'Personal Service', desc: 'Every search begins with a proper conversation about the person, business and priorities behind the move.' },
   { icon: 'search' as const, title: 'Proactive Search', desc: 'I go beyond advertised vacancies and active applicants, approaching the market directly to uncover the strongest opportunities and talent.' },
   { icon: 'shield' as const, title: 'Honest Guidance', desc: 'Clear communication, realistic advice and straightforward feedback at every stage.' },
   { icon: 'star' as const, title: 'Long-Term Relationships', desc: 'I focus on appointments that work for the long term, building relationships that continue beyond a single hire.' },
@@ -46,7 +46,7 @@ export default function HomePage() {
                 Specialist accountancy practice and tax recruitment across the UK.
               </p>
               <p>
-                With 12 years of experience in the market, I connect ambitious professionals with accountancy practices and in-house tax teams where they can thrive, while helping employers secure talent that supports their long-term growth.
+                With 12 years of specialist experience, I help professionals make better career moves and businesses secure carefully selected talent across accountancy practice and in-house tax.
               </p>
             </div>
             <div className="hero-actions">
@@ -130,6 +130,8 @@ export default function HomePage() {
             <p>I founded BC Financial Search after 12 years specialising in accountancy practice and tax recruitment across the UK.</p>
             <p>Having placed more than 200 professionals, I wanted to offer a more personal and considered approach to recruitment: one built on listening carefully, searching proactively and developing relationships that continue well beyond a single placement.</p>
           </div>
+          <p className="mt-6 font-heading italic text-3xl text-navy">Ben Copsey</p>
+          <p className="text-xs uppercase tracking-wider font-bold text-navy">Founder and Director</p>
           <Link href="/about" className="btn-gold mt-8">About BC Financial Search</Link>
         </div>
         <div className="min-h-[380px] lg:min-h-0 relative">
