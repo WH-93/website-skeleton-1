@@ -133,9 +133,6 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-        <div className="text-center mt-2">
-          <Link href="/#contact" className="btn-gold">Get in touch</Link>
-        </div>
       </section>
     </>
   );

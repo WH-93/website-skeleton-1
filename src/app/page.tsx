@@ -195,10 +195,7 @@ export default function HomePage() {
             <p className="body-copy text-white/70 lg:text-navy/75 max-w-xl mt-4">
               Every enquiry is handled personally and in confidence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <Link href="/candidates" className="btn-gold">Start a Career Conversation</Link>
-              <Link href="/clients" className="inline-flex items-center justify-center font-bold rounded uppercase tracking-wider text-[10px] sm:text-xs px-6 py-3 sm:px-7 sm:py-3.5 transition-colors whitespace-nowrap text-white border border-white/30 hover:bg-white hover:text-navy lg:text-navy lg:border-navy/70 lg:hover:bg-navy lg:hover:text-white">Discuss Your Hiring Plans</Link>
-            </div>
+
           </div>
 
           <div className="bg-white border border-navy/10 rounded-card shadow-card p-7 sm:p-10">
