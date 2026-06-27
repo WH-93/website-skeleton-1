@@ -178,21 +178,90 @@ resource "aws_lb_listener" "http" {
   protocol          = "HTTP"
 
   default_action {
-    type             = "forward"
-    target_group_arn = aws_lb_target_group.app.arn
+    type = "redirect"
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
   }
 }
 
-# ── HTTPS (self-signed cert, imported manually — enables iOS Safari) ──
+# ── HTTPS (imported cert — Cloudflare terminates SSL at edge) ──
 resource "aws_lb_listener" "https" {
   load_balancer_arn = aws_lb.app.arn
   port              = 443
   protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-TLS13-1-2-2021-06"
   certificate_arn   = "arn:aws:acm:eu-west-2:486208157703:certificate/93f1329e-b316-4b3d-8f76-45154eab338f"
 
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.app.arn
+  }
+}
+
+# ── Redirect rules: all domains → https://bcfinancialsearch.co.uk ──
+resource "aws_lb_listener_rule" "redirect_com" {
+  listener_arn = aws_lb_listener.https.arn
+  priority     = 1
+
+  action {
+    type = "redirect"
+    redirect {
+      host        = "bcfinancialsearch.co.uk"
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+
+  condition {
+    host_header {
+      values = ["bcfinancialsearch.com"]
+    }
+  }
+}
+
+resource "aws_lb_listener_rule" "redirect_www_couk" {
+  listener_arn = aws_lb_listener.https.arn
+  priority     = 2
+
+  action {
+    type = "redirect"
+    redirect {
+      host        = "bcfinancialsearch.co.uk"
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+
+  condition {
+    host_header {
+      values = ["www.bcfinancialsearch.co.uk"]
+    }
+  }
+}
+
+resource "aws_lb_listener_rule" "redirect_www_com" {
+  listener_arn = aws_lb_listener.https.arn
+  priority     = 3
+
+  action {
+    type = "redirect"
+    redirect {
+      host        = "bcfinancialsearch.co.uk"
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+
+  condition {
+    host_header {
+      values = ["www.bcfinancialsearch.com"]
+    }
   }
 }
 
