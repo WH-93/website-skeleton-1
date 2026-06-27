@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { BcIcon } from '@/components/bc-icon';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -7,9 +8,9 @@ export const metadata: Metadata = {
 };
 
 const contacts = [
-  { icon: 'mail' as const, label: 'Email', value: 'ben@bcfinancialsearch.co.uk', href: 'mailto:ben@bcfinancialsearch.co.uk' },
-  { icon: 'phone' as const, label: 'Phone', value: '07522996561', href: 'tel:07522996561' },
-  { icon: 'location' as const, label: 'Location', value: 'Manchester, United Kingdom', href: null },
+  { icon: 'mail' as const, label: 'Email', value: siteConfig.contact.email, href: `mailto:${siteConfig.contact.email}` },
+  { icon: 'phone' as const, label: 'Phone', value: siteConfig.contact.phoneCompact, href: `tel:${siteConfig.contact.phoneCompact}` },
+  { icon: 'location' as const, label: 'Location', value: siteConfig.contact.location, href: null },
 ];
 
 export default function ContactPage() {

@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { BcLogo } from '@/components/bc-logo';
+import { siteConfig } from '@/config/site';
+
+const navItems = siteConfig.nav;
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -11,7 +14,6 @@ export function Header() {
   const router = useRouter();
 
   const handleMobileNav = (href: string) => {
-    // Hash anchor on current page — manually scroll and close menu
     if (href.startsWith('/#') && pathname === '/') {
       setOpen(false);
       const id = href.slice(2);
@@ -24,25 +26,15 @@ export function Header() {
     router.push(href);
   };
 
-  // Close mobile menu when navigation completes
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
-
-  const navItems = [
-    { label: 'HOME', href: '/' },
-    { label: 'ABOUT', href: '/about' },
-    { label: 'SERVICES', href: '/services' },
-    { label: 'CANDIDATES', href: '/candidates' },
-    { label: 'CLIENTS', href: '/clients' },
-    { label: 'JOBS', href: '/jobs' },
-  ];
 
   return (
     <>
       <header className="bg-white sticky top-0 z-50 border-b border-navy/5">
         <div className="container-page flex items-center justify-between h-20 sm:h-24">
-          <Link href="/" className="flex items-center shrink-0" aria-label="BC Financial Search home">
+          <Link href="/" className="flex items-center shrink-0" aria-label={`${siteConfig.name} home`}>
             <BcLogo height={52} />
           </Link>
 
@@ -111,4 +103,3 @@ export function Header() {
     </>
   );
 }
-

@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import { siteConfig } from './src/config/site';
 
 export default {
   content: ['./src/**/*.{ts,tsx}'],
@@ -6,22 +7,22 @@ export default {
     extend: {
       colors: {
         navy: {
-          DEFAULT: '#0B1120',
-          900: '#0B1120',
-          800: '#141c2e',
-          700: '#1d273d',
+          DEFAULT: siteConfig.colors.navy,
+          900: siteConfig.colors.navy,
+          800: siteConfig.colors.navy800,
+          700: siteConfig.colors.navy700,
         },
         gold: {
-          DEFAULT: '#B08D57',
-          400: '#B08D57',
-          500: '#9a7846',
-          600: '#7d6139',
+          DEFAULT: siteConfig.colors.gold,
+          400: siteConfig.colors.gold,
+          500: siteConfig.colors.gold500,
+          600: siteConfig.colors.gold600,
         },
-        'warm-white': '#F5F0EB',
+        'warm-white': siteConfig.colors.warmWhite,
       },
       fontFamily: {
-        heading: ['"Playfair Display"', 'Garamond', 'serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: [siteConfig.fonts.heading],
+        sans: [siteConfig.fonts.body],
       },
       borderRadius: {
         DEFAULT: '4px',

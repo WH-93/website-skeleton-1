@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BcIcon } from '@/components/bc-icon';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  description: 'Specialist accountancy practice and tax recruitment across the UK. Personal, proactive, relationship-driven.',
+  description: siteConfig.seo.defaultDescription,
 };
+
+const contacts = [
+  { icon: 'mail' as const, label: 'Email', value: siteConfig.contact.email, href: `mailto:${siteConfig.contact.email}` },
+  { icon: 'phone' as const, label: 'Phone', value: siteConfig.contact.phoneCompact, href: `tel:${siteConfig.contact.phoneCompact}` },
+  { icon: 'location' as const, label: 'Location', value: siteConfig.contact.location, href: null },
+];
 
 const stats = [
   { icon: 'person' as const, value: '12 YEARS', label: 'Specialist market experience' },
@@ -19,12 +26,6 @@ const features = [
   { icon: 'search' as const, title: 'Proactive Search', desc: 'I go beyond advertised vacancies and active applicants, approaching the market directly to uncover the strongest opportunities and talent.' },
   { icon: 'shield' as const, title: 'Honest Guidance', desc: 'Clear communication, realistic advice and straightforward feedback at every stage.' },
   { icon: 'star' as const, title: 'Long-Term Relationships', desc: 'I focus on appointments that work for the long term, building relationships that continue beyond a single hire.' },
-];
-
-const contacts = [
-  { icon: 'mail' as const, label: 'Email', value: 'ben@bcfinancialsearch.co.uk', href: 'mailto:ben@bcfinancialsearch.co.uk' },
-  { icon: 'phone' as const, label: 'Phone', value: '07522996561', href: 'tel:07522996561' },
-  { icon: 'location' as const, label: 'Location', value: 'Manchester, United Kingdom', href: null },
 ];
 
 export default function HomePage() {
@@ -107,7 +108,7 @@ export default function HomePage() {
 
       <section className="bg-navy text-white section">
         <div className="container-page">
-          <h2 className="font-sans text-xl sm:text-2xl tracking-widest uppercase text-white text-center">Why BC Financial Search?</h2>
+          <h2 className="font-sans text-xl sm:text-2xl tracking-widest uppercase text-white text-center">Why {siteConfig.name}?</h2>
           <span className="gold-rule mx-auto" />
           <div className="feature-grid">
             {features.map(item => (
@@ -123,19 +124,19 @@ export default function HomePage() {
 
       <section className="grid lg:grid-cols-[37%_28%_35%] bg-white">
         <div className="section px-5 sm:px-8 lg:pl-16 xl:pl-20 lg:pr-10">
-          <p className="eyebrow mb-5">About BC Financial Search</p>
+          <p className="eyebrow mb-5">About {siteConfig.name}</p>
           <h2 className="section-title">Experience.<br />Relationships.<br />Results.</h2>
           <span className="gold-rule" />
           <div className="body-copy space-y-5">
-            <p>I founded BC Financial Search after 12 years specialising in accountancy practice and tax recruitment across the UK.</p>
+            <p>I founded {siteConfig.name} after 12 years specialising in accountancy practice and tax recruitment across the UK.</p>
             <p>Having placed more than 200 professionals, I wanted to offer a more personal and considered approach to recruitment: one built on listening carefully, searching proactively and developing relationships that continue well beyond a single placement.</p>
           </div>
-          <p className="mt-6 font-heading italic text-3xl text-navy">Ben Copsey</p>
-          <p className="text-xs uppercase tracking-wider font-bold text-navy">Founder and Director</p>
-          <Link href="/about" className="btn-gold mt-8">About BC Financial Search</Link>
+          <p className="mt-6 font-heading italic text-3xl text-navy">{siteConfig.founder.name}</p>
+          <p className="text-xs uppercase tracking-wider font-bold text-navy">{siteConfig.founder.title}</p>
+          <Link href="/about" className="btn-gold mt-8">About {siteConfig.name}</Link>
         </div>
         <div className="min-h-[380px] lg:min-h-0 relative">
-          <img src="/ben-headshot.jpeg" alt="BC Financial Search founder" className="absolute inset-0 h-full w-full object-cover object-top" />
+          <img src="/ben-headshot.jpeg" alt={`${siteConfig.name} founder`} className="absolute inset-0 h-full w-full object-cover object-top" />
         </div>
         <div className="bg-navy text-white section px-5 sm:px-8 lg:px-14 flex items-center">
           <div>
@@ -229,4 +230,3 @@ export default function HomePage() {
     </>
   );
 }
-

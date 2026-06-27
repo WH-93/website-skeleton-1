@@ -1,16 +1,9 @@
 import Link from 'next/link';
 import { BcLogo } from '@/components/bc-logo';
 import { BcIcon } from '@/components/bc-icon';
+import { siteConfig } from '@/config/site';
 
-const quickLinks = [
-  { label: 'About Us', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Candidates', href: '/candidates' },
-  { label: 'Clients', href: '/clients' },
-  { label: 'Contact', href: '/contact' },
-];
-
-const areas = ['Audit & Assurance', 'Accounts & Business Services', 'Practice Tax', 'Advisory', 'Payroll & Bookkeeping', 'In-House Tax'];
+const { footer, contact, company } = siteConfig;
 
 export function Footer() {
   return (
@@ -19,14 +12,14 @@ export function Footer() {
         <div className="container-page grid gap-8 lg:grid-cols-[1.25fr_1fr_auto] items-center">
           <div>
             <h2 className="font-sans text-2xl sm:text-3xl uppercase tracking-wide text-white">
-              Start with a conversation.
+              {footer.ctaHeadline}
             </h2>
             <p className="mt-2 text-sm text-white/70 max-w-2xl">
-              Whether you are considering your next career move or planning an important hire, speak directly with a specialist.
+              {footer.ctaSubtext}
             </p>
           </div>
           <Link href="/#contact" className="btn-gold justify-self-start lg:justify-self-end">
-            Get in touch
+            {footer.ctaButton}
           </Link>
         </div>
       </div>
@@ -36,14 +29,14 @@ export function Footer() {
           <div>
             <BcLogo variant="white" height={45} />
             <p className="text-sm text-white/60 leading-relaxed mt-5">
-              Specialist recruitment for accountancy practices and in-house tax teams across the UK.
+              {footer.description}
             </p>
           </div>
 
           <div>
             <h4 className="text-xs tracking-widest text-gold mb-4 font-bold uppercase">Quick Links</h4>
             <ul className="space-y-2">
-              {quickLinks.map(link => (
+              {footer.quickLinks.map(link => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-white/65 hover:text-gold transition-colors">
                     {link.label}
@@ -56,7 +49,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs tracking-widest text-gold mb-4 font-bold uppercase">Areas I Recruit</h4>
             <ul className="space-y-2">
-              {areas.map(area => (
+              {footer.services.map(area => (
                 <li key={area} className="text-sm text-white/65">{area}</li>
               ))}
             </ul>
@@ -65,9 +58,9 @@ export function Footer() {
           <div>
             <h4 className="text-xs tracking-widest text-gold mb-4 font-bold uppercase">Get In Touch</h4>
             <ul className="space-y-3 text-sm text-white/65">
-              <li className="flex gap-3"><BcIcon name="phone" size={16} className="text-gold mt-1" /> 07522 996561</li>
-              <li className="flex gap-3"><BcIcon name="mail" size={16} className="text-gold mt-1" /> ben@bcfinancialsearch.co.uk</li>
-              <li className="flex gap-3"><BcIcon name="location" size={16} className="text-gold mt-1" /> Manchester<br />United Kingdom</li>
+              <li className="flex gap-3"><BcIcon name="phone" size={16} className="text-gold mt-1" /> {contact.phone}</li>
+              <li className="flex gap-3"><BcIcon name="mail" size={16} className="text-gold mt-1" /> {contact.email}</li>
+              <li className="flex gap-3"><BcIcon name="location" size={16} className="text-gold mt-1" /> {contact.location}</li>
             </ul>
           </div>
         </div>
@@ -75,8 +68,8 @@ export function Footer() {
 
       <div className="border-t border-white/10 py-4">
         <div className="container-page text-[10px] text-white/45 uppercase tracking-wide leading-relaxed">
-          <p>BC Financial Search LTD. Registered in England and Wales. Company number 17287274.</p>
-          <p>Registered office: Centurion House, 129 Deansgate, Manchester, M3 3WR.</p>
+          <p>{siteConfig.legalName}. Registered in England and Wales. Company number {company.number}.</p>
+          <p>Registered office: {company.address}.</p>
         </div>
       </div>
     </footer>

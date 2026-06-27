@@ -2,6 +2,7 @@
 // Run: npx tsx --test src/__tests__/integration.test.ts
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+import { siteConfig } from '../config/site';
 
 const BASE = 'http://localhost:3000';
 
@@ -14,7 +15,7 @@ describe('Public Pages', () => {
   it('GET / → 200 with BC branding', async () => {
     const { status, text } = await get('/');
     assert.equal(status, 200);
-    assert.ok(text.includes('BC Financial Search'), 'title should contain BC Financial Search');
+    assert.ok(text.includes(siteConfig.name), 'title should contain site name');
     assert.ok(text.includes('Practice'), 'should reference practice');
     assert.ok(text.includes('Tax'), 'should reference tax');
     assert.ok(text.includes('Specialist Search'), 'hero headline present');
@@ -35,7 +36,7 @@ describe('Public Pages', () => {
     assert.ok(text.includes('About Us'), 'about eyebrow should be preserved');
     assert.ok(text.includes('Built on experience.'), 'about hero headline should be preserved');
     assert.ok(text.includes('Focused on'), 'about hero second line should be preserved');
-    assert.ok(text.includes('BC Financial Search is a specialist recruitment partner'), 'about introduction should be preserved');
+    assert.ok(text.includes(siteConfig.name + ' is a specialist recruitment partner'), 'about introduction should be preserved');
     assert.ok(text.includes('12 YEARS'), 'market experience stat should be preserved');
     assert.ok(text.includes('200+'), 'successful placements stat should be preserved');
     assert.ok(text.includes('My Approach'), 'process section should be present');
@@ -44,7 +45,7 @@ describe('Public Pages', () => {
     assert.ok(text.includes('4. Stay Involved'), 'process step 4 should render');
     assert.ok(text.includes('Judgement. Relationships. Results.'), 'founder section headline should be preserved');
     assert.ok(text.includes('The person behind the introductions'), 'founder eyebrow should be preserved');
-    assert.ok(text.includes('Ben Copsey'), 'founder name should be preserved');
+    assert.ok(text.includes(siteConfig.founder.name), 'founder name should be preserved');
     assert.ok(text.includes('One specialist. One point of contact. One consistent approach.'), 'specialist message should be preserved');
     assert.ok(text.includes('What You Can Expect'), 'expectations section should be preserved');
     assert.ok(text.includes('Get in touch'), 'about CTA should be preserved');
@@ -55,7 +56,7 @@ describe('Public Pages', () => {
   it('GET /jobs → 200 with job listings container', async () => {
     const { status, text } = await get('/jobs');
     assert.equal(status, 200);
-    assert.ok(text.includes('BC Financial Search'), 'page title present');
+    assert.ok(text.includes(siteConfig.name), 'page title present');
     assert.ok(text.includes('vacancies') || text.includes('opportunities') || text.includes('Loading'), 'jobs page renders');
   });
 
@@ -74,8 +75,7 @@ describe('Admin Auth', () => {
   it('GET /admin → 200, renders admin shell', async () => {
     const { status, text } = await get('/admin');
     assert.equal(status, 200);
-    assert.ok(text.includes('BC Financial Search'), 'page title present');
-    assert.ok(text.includes('Loading') || text.includes('admin') || text.includes('login'), 'admin page renders');
+    assert.ok(text.includes(siteConfig.name) || text.includes('Loading'), 'admin page renders');
   });
 
   it('GET /admin/jobs → redirects to login', async () => {

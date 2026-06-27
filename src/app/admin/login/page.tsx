@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
+import { siteConfig } from '@/config/site';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -72,7 +73,7 @@ export default function LoginPage() {
         </form>
 
         <p className="text-center text-white/30 text-xs mt-6">
-          BC Financial Search - Admin
+          {siteConfig.admin.loginLabel}
         </p>
       </div>
     </div>
