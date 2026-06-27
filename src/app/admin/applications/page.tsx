@@ -79,12 +79,12 @@ export default function ApplicationsPage() {
             </div>
 
             <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
-              <span className="text-[10px] text-gray-400">
+              <span className="text-2xs text-gray-400">
                 {new Date(app.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
               </span>
               <a
                 href={`/api/cv/${app.cvKey}`}
-                className="text-[10px] font-semibold text-gold hover:underline flex items-center gap-1"
+                className="text-2xs font-semibold text-gold hover:underline flex items-center gap-1"
               >
                 📄 {app.cvName}
               </a>
@@ -101,11 +101,11 @@ export default function ApplicationsPage() {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-100">
-              <th className="text-left px-6 py-4 text-[10px] tracking-wider text-gray-400 font-semibold">CANDIDATE</th>
-              <th className="text-left px-6 py-4 text-[10px] tracking-wider text-gray-400 font-semibold">JOB</th>
-              <th className="text-left px-6 py-4 text-[10px] tracking-wider text-gray-400 font-semibold">STATUS</th>
-              <th className="text-left px-6 py-4 text-[10px] tracking-wider text-gray-400 font-semibold">CV</th>
-              <th className="text-left px-6 py-4 text-[10px] tracking-wider text-gray-400 font-semibold">DATE</th>
+              <th className="text-left px-6 py-4 text-2xs tracking-wider text-gray-400 font-semibold">CANDIDATE</th>
+              <th className="text-left px-6 py-4 text-2xs tracking-wider text-gray-400 font-semibold">JOB</th>
+              <th className="text-left px-6 py-4 text-2xs tracking-wider text-gray-400 font-semibold">STATUS</th>
+              <th className="text-left px-6 py-4 text-2xs tracking-wider text-gray-400 font-semibold">CV</th>
+              <th className="text-left px-6 py-4 text-2xs tracking-wider text-gray-400 font-semibold">DATE</th>
             </tr>
           </thead>
           <tbody>
@@ -121,7 +121,7 @@ export default function ApplicationsPage() {
                   <div className="text-xs text-gray-400">{app.jobCompany}</div>
                 </td>
                 <td className="px-6 py-4">
-                  <span className={`text-[10px] px-2 py-0.5 rounded font-medium ${STATUS_COLORS[app.status] || 'bg-gray-100 text-gray-500'}`}>
+                  <span className={`text-2xs px-2 py-0.5 rounded font-medium ${STATUS_COLORS[app.status] || 'bg-gray-100 text-gray-500'}`}>
                     {app.status}
                   </span>
                 </td>

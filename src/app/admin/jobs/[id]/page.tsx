@@ -113,7 +113,7 @@ export default function JobDetailPage() {
                 { label: 'Posted', value: job.createdAt },
               ].map(item => (
                 <div key={item.label}>
-                  <p className="text-[10px] tracking-wider text-gray-400 font-semibold mb-0.5">{item.label.toUpperCase()}</p>
+                  <p className="text-2xs tracking-wider text-gray-400 font-semibold mb-0.5">{item.label.toUpperCase()}</p>
                   <p className={`text-sm ${item.label === 'Status' ? (job.status === 'Live' ? 'text-green-600 font-medium' : 'text-gray-500') : 'text-navy font-medium'}`}>
                     {item.value}
                   </p>
@@ -122,7 +122,7 @@ export default function JobDetailPage() {
             </div>
 
             <div className="border-t border-gray-100 pt-6">
-              <h3 className="text-[10px] tracking-wider text-gray-400 font-semibold mb-3">DESCRIPTION</h3>
+              <h3 className="text-2xs tracking-wider text-gray-400 font-semibold mb-3">DESCRIPTION</h3>
               <p className="text-sm text-gray-600 leading-relaxed">{job.description}</p>
             </div>
 

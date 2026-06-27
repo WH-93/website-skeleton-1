@@ -56,7 +56,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 <Link
                   key={label}
                   href={href}
-                  className={`text-[10px] lg:text-xs tracking-wider font-semibold whitespace-nowrap transition-colors ${
+                  className={`text-2xs lg:text-xs tracking-wider font-semibold whitespace-nowrap transition-colors ${
                     isActive ? 'text-gold' : 'text-navy/60 hover:text-gold'
                   }`}
                 >
@@ -72,7 +72,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 await fetch('/api/auth/logout', { method: 'POST' });
                 window.location.href = '/';
               }}
-              className="btn-gold text-[9px] sm:text-[10px] px-3 sm:px-5 py-1.5 sm:py-2.5 shrink-0"
+              className="btn-gold text-[9px] sm:text-2xs px-3 sm:px-5 py-1.5 sm:py-2.5 shrink-0"
             >
               &larr; <span className="hidden sm:inline">Back to </span>Site
             </button>
@@ -81,7 +81,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 await fetch('/api/auth/logout', { method: 'POST' });
                 window.location.reload();
               }}
-              className="hidden sm:inline text-[10px] tracking-wider text-navy/40 hover:text-navy transition-colors shrink-0 px-2"
+              className="hidden sm:inline text-2xs tracking-wider text-navy/40 hover:text-navy transition-colors shrink-0 px-2"
             >
               Sign Out
             </button>

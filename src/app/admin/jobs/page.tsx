@@ -43,7 +43,7 @@ export default function AdminJobsPage() {
                   </span>
                 </div>
                 <p className="text-xs text-gray-500 mb-1">{job.company} · {job.location}</p>
-                <p className="text-[10px] text-gray-400">{job.type} · {job.applications} applications</p>
+                <p className="text-2xs text-gray-400">{job.type} · {job.applications} applications</p>
               </Link>
             ))}
           </div>
@@ -53,11 +53,11 @@ export default function AdminJobsPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-100">
-                  <th className="text-left px-6 py-4 text-[10px] tracking-wider text-gray-400 font-semibold">JOB TITLE</th>
-                  <th className="text-left px-6 py-4 text-[10px] tracking-wider text-gray-400 font-semibold">COMPANY</th>
-                  <th className="text-left px-6 py-4 text-[10px] tracking-wider text-gray-400 font-semibold">LOCATION</th>
-                  <th className="text-left px-6 py-4 text-[10px] tracking-wider text-gray-400 font-semibold">STATUS</th>
-                  <th className="text-left px-6 py-4 text-[10px] tracking-wider text-gray-400 font-semibold">APPS</th>
+                  <th className="text-left px-6 py-4 text-2xs tracking-wider text-gray-400 font-semibold">JOB TITLE</th>
+                  <th className="text-left px-6 py-4 text-2xs tracking-wider text-gray-400 font-semibold">COMPANY</th>
+                  <th className="text-left px-6 py-4 text-2xs tracking-wider text-gray-400 font-semibold">LOCATION</th>
+                  <th className="text-left px-6 py-4 text-2xs tracking-wider text-gray-400 font-semibold">STATUS</th>
+                  <th className="text-left px-6 py-4 text-2xs tracking-wider text-gray-400 font-semibold">APPS</th>
                 </tr>
               </thead>
               <tbody>
@@ -71,7 +71,7 @@ export default function AdminJobsPage() {
                     <td className="px-6 py-4 text-gray-500">{job.company}</td>
                     <td className="px-6 py-4 text-gray-500">{job.location}</td>
                     <td className="px-6 py-4">
-                      <span className={`text-[10px] px-2 py-0.5 rounded font-medium ${job.status === 'Live' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
+                      <span className={`text-2xs px-2 py-0.5 rounded font-medium ${job.status === 'Live' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
                         {job.status}
                       </span>
                     </td>

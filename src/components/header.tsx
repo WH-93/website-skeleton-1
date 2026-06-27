@@ -45,7 +45,7 @@ export function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`text-[10px] font-bold tracking-wider transition-colors border-b pb-1 ${
+                  className={`text-2xs font-bold tracking-wider transition-colors border-b pb-1 ${
                     active ? 'text-gold border-gold' : 'text-navy border-transparent hover:text-gold'
                   }`}
                 >
@@ -53,7 +53,7 @@ export function Header() {
                 </Link>
               );
             })}
-            <Link href="/#contact" className="btn-gold text-[10px] px-5 py-3">
+            <Link href="/#contact" className="btn-gold text-2xs px-5 py-3">
               Contact
             </Link>
           </nav>

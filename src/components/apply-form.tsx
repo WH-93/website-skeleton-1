@@ -119,7 +119,7 @@ export function ApplyForm({ jobTitle, jobId, onClose }: {
 
         <div className="flex items-start gap-2">
           <input type="checkbox" required className="mt-1 shrink-0" />
-          <label className="text-[10px] sm:text-xs text-gray-500">
+          <label className="text-2xs sm:text-xs text-gray-500">
             I consent to BC Financial Search storing my data in accordance with the{' '}
             <a href="/privacy" className="text-gold underline">Privacy Policy</a>.
           </label>

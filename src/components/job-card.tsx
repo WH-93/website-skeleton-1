@@ -16,7 +16,7 @@ export function JobCard({ job }: { job: {
             {job.title}
           </h3>
           <p className="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3">{job.company}</p>
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] sm:text-xs text-gray-400">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-2xs sm:text-xs text-gray-400">
             <span>{job.location}</span>
             <span className="text-gold/30 hidden sm:inline">|</span>
             <span>{job.type}</span>
@@ -30,7 +30,7 @@ export function JobCard({ job }: { job: {
             <span className="text-gray-300 text-[9px]">Ref: BC-{job.id.substring(0, 8)}</span>
           </div>
         </div>
-        <span className="text-[9px] sm:text-[10px] tracking-wider text-gold uppercase whitespace-nowrap shrink-0">
+        <span className="text-[9px] sm:text-2xs tracking-wider text-gold uppercase whitespace-nowrap shrink-0">
           {job.postedAt}
         </span>
       </div>

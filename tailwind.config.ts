@@ -36,6 +36,9 @@ export default {
         wide: '0.05em',
         wider: '0.1em',
       },
+      fontSize: {
+        '2xs': ['10px', { lineHeight: '1.4' }],
+      },
     },
   },
   plugins: [],

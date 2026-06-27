@@ -2,10 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BcIcon } from '@/components/bc-icon';
 import { siteConfig } from '@/config/site';
-
-export const metadata: Metadata = {
-  description: siteConfig.seo.defaultDescription,
-};
+import { HomeHero } from '@/components/home-hero';
+import { ContactCard } from '@/components/contact-card';
 
 const contacts = [
   { icon: 'mail' as const, label: 'Email', value: siteConfig.contact.email, href: `mailto:${siteConfig.contact.email}` },
@@ -28,39 +26,14 @@ const features = [
   { icon: 'star' as const, title: 'Long-Term Relationships', desc: 'I focus on appointments that work for the long term, building relationships that continue beyond a single hire.' },
 ];
 
+export const metadata: Metadata = {
+  description: siteConfig.seo.defaultDescription,
+};
+
 export default function HomePage() {
   return (
     <>
-      <section className="split-hero">
-        <div className="split-hero-grid">
-          <div className="split-hero-copy">
-            <h1 className="hero-title hero-title-reveal">
-              <span className="hero-title-line">Specialist Search.</span>
-              {' '}
-              <span className="hero-title-line">Personal Service.</span>
-              {' '}
-              <span className="hero-title-line text-gold">Lasting Fit.</span>
-            </h1>
-            <span className="gold-rule" />
-            <div className="space-y-5 body-copy max-w-xl">
-              <p>
-                Specialist accountancy practice and tax recruitment across the UK.
-              </p>
-              <p>
-                With 12 years of specialist experience, I help professionals make better career moves and businesses secure carefully selected talent across accountancy practice and in-house tax.
-              </p>
-            </div>
-            <div className="hero-actions">
-              <Link href="/jobs" className="btn-gold">View current roles</Link>
-              <Link href="/#contact" className="btn-outline">Start a career conversation</Link>
-              <Link href="/clients" className="btn-outline">Discuss your hiring plans</Link>
-            </div>
-          </div>
-          <div className="split-hero-media">
-            <img src="/placeholder-manchester-cityscape.png" alt="Manchester business district at sunset" />
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       <section className="stats-band">
         <div className="container-page">
@@ -199,32 +172,7 @@ export default function HomePage() {
 
           </div>
 
-          <div className="bg-white border border-navy/10 rounded-card shadow-card p-7 sm:p-10">
-            <div className="space-y-7">
-              {contacts.map(item => (
-                <div key={item.label} className="flex items-center gap-5">
-                  <div className="icon-circle-sm text-gold shrink-0">
-                    <BcIcon name={item.icon} size={18} strokeWidth={1.4} />
-                  </div>
-                  <div>
-                    <p className="eyebrow mb-1">{item.label}</p>
-                    {item.href ? (
-                      <a href={item.href} className="text-navy text-base hover:text-gold transition-colors">
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="text-navy text-base">{item.value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8 pt-6 border-t border-navy/10">
-              <p className="text-sm leading-7 text-navy/65">
-                I aim to respond to all enquiries within one business day. Career conversations and hiring discussions are treated in confidence.
-              </p>
-            </div>
-          </div>
+          <ContactCard contacts={contacts} />
         </div>
       </section>
     </>

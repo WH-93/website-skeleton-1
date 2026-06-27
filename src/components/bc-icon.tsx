@@ -1,3 +1,4 @@
+import React from 'react';
 import { SVGProps } from 'react';
 
 // Brand-aligned geometric icons - 24×24 viewBox, 2px strokes, rounded caps, gold accent

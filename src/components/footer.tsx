@@ -67,7 +67,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-4">
-        <div className="container-page text-[10px] text-white/45 uppercase tracking-wide leading-relaxed">
+        <div className="container-page text-2xs text-white/45 uppercase tracking-wide leading-relaxed">
           <p>{siteConfig.legalName}. Registered in England and Wales. Company number {company.number}.</p>
           <p>Registered office: {company.address}.</p>
         </div>

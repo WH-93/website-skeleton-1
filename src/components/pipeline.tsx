@@ -25,10 +25,10 @@ export function Pipeline({ candidates: initial }: { candidates: Candidate[] }) {
         return (
           <div key={stage} className="bg-gray-50 rounded-card p-3 sm:p-4 min-h-[200px]">
             <div className="flex items-center justify-between mb-3">
-              <h4 className="text-[9px] sm:text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
+              <h4 className="text-[9px] sm:text-2xs font-semibold text-gray-400 uppercase tracking-wider">
                 {stage}
               </h4>
-              <span className="text-[9px] sm:text-[10px] font-medium bg-white px-2 py-0.5 rounded text-gray-500">
+              <span className="text-[9px] sm:text-2xs font-medium bg-white px-2 py-0.5 rounded text-gray-500">
                 {items.length}
               </span>
             </div>
@@ -38,15 +38,15 @@ export function Pipeline({ candidates: initial }: { candidates: Candidate[] }) {
                   <p className="text-xs sm:text-sm font-semibold text-gray-800">
                     {c.firstName} {c.lastName}
                   </p>
-                  <p className="text-[10px] sm:text-xs text-gray-400 mt-0.5">{c.email}</p>
+                  <p className="text-2xs sm:text-xs text-gray-400 mt-0.5">{c.email}</p>
                   <div className="flex gap-1 mt-2">
                     {STAGES[STAGES.indexOf(stage) - 1] && (
                       <button onClick={() => moveStage(c.id, STAGES[STAGES.indexOf(stage) - 1])}
-                              className="text-[10px] text-gray-400 hover:text-gray-600 px-1">←</button>
+                              className="text-2xs text-gray-400 hover:text-gray-600 px-1">←</button>
                     )}
                     {STAGES[STAGES.indexOf(stage) + 1] && (
                       <button onClick={() => moveStage(c.id, STAGES[STAGES.indexOf(stage) + 1])}
-                              className="text-[10px] text-gold hover:text-gold-500 ml-auto px-1">→</button>
+                              className="text-2xs text-gold hover:text-gold-500 ml-auto px-1">→</button>
                     )}
                   </div>
                 </div>

@@ -83,7 +83,7 @@ export default function AdminPage() {
             <Link key={s.label} href={s.href}
                   className="bg-white rounded-card p-5 sm:p-7 shadow-card hover:shadow-card-lg transition-shadow">
               <div className="font-heading text-2xl sm:text-3xl text-navy mb-2">{s.value}</div>
-              <div className="text-[10px] sm:text-xs tracking-wider text-gray-400">{s.label}</div>
+              <div className="text-2xs sm:text-xs tracking-wider text-gray-400">{s.label}</div>
             </Link>
           ))}
         </div>
