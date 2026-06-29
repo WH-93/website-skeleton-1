@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Finance Recruitment Agencies Manchester',
+  title: { absolute: 'Finance Recruitment Agencies in Manchester' },
   description:
     'A practical directory of finance and accountancy recruiters in Manchester. Corporate firms and specialist — the right one depends on what kind of search you need.',
+  openGraph: { title: 'Finance Recruitment Agencies in Manchester' },
 };
 
 interface AgencyEntry {
@@ -80,7 +81,7 @@ export default function FinanceRecruitmentAgenciesManchesterPage() {
         <div className="container-page py-16 sm:py-20 lg:py-24">
           <p className="eyebrow mb-5">Manchester</p>
           <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl leading-tight text-white max-w-3xl">
-            Finance Recruitment Agencies Manchester
+            Finance Recruitment Agencies in Manchester
           </h1>
           <span className="gold-rule" />
           <p className="text-base sm:text-lg leading-7 text-white/75 max-w-2xl">
@@ -157,20 +158,8 @@ export default function FinanceRecruitmentAgenciesManchesterPage() {
               The right recruiter depends on the hire
             </h2>
             <span className="gold-rule" />
-            <div className="body-copy space-y-4 mb-10">
-              <p>
-                If volume, speed, and brand recognition matter most &mdash; pick
-                from the corporate names above. They do what they do at scale
-                and they do it competently.
-              </p>
-              <p>
-                If the hire is specialist, senior, confidential, or requires
-                someone who properly understands the market &mdash; register
-                with a generalist <em>and</em> a specialist. The generalist gets
-                you visibility. The specialist gets you access to roles and
-                candidates that never reach a job board.
-              </p>
-              <p>That is not a sales pitch. It is how the market works.</p>
+            <div className="body-copy space-y-3 mb-10">
+              <p>Some hires need reach. Others need attention.</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
