@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "npx tsx --test src/__tests__/integration.test.ts",
+    "test": "npm run test:unit",
+    "test:unit": "npx tsx --test src/__tests__/components.test.ts src/__tests__/story-maps.test.ts",
+    "test:e2e": "npx tsx --test src/__tests__/integration.test.ts",
+    "story-maps:write": "npx tsx scripts/write-story-map-json.ts",
     "db:push": "prisma db push",
     "db:studio": "prisma studio"
   },

@@ -49,8 +49,8 @@ describe('Public Pages', () => {
     assert.ok(text.includes('One specialist. One point of contact. One consistent approach.'), 'specialist message should be preserved');
     assert.ok(text.includes('What You Can Expect'), 'expectations section should be preserved');
     assert.ok(text.includes('Get in touch'), 'about CTA should be preserved');
-    assert.ok(text.includes('/hero-about.png'), 'about hero image should be preserved');
-    assert.ok(text.includes('/ben-about-headshot.jpeg'), 'founder image should be preserved');
+    assert.ok(text.includes('/hero-about.webp'), 'about hero image should be preserved');
+    assert.ok(text.includes('/ben-about-headshot.webp'), 'founder image should be preserved');
   });
 
   it('GET /jobs → 200 with job listings container', async () => {

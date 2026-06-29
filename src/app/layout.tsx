@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         {fonts.googlePreconnect.map((href) => (
-          <link key={href} rel="preconnect" href={href} crossOrigin="anonymous" />
+          <link key={href} rel="preconnect" href={href} crossOrigin={href.includes('gstatic') ? 'anonymous' : undefined} />
         ))}
         <link href={fonts.googleFontsUrl} rel="stylesheet" />
         <script

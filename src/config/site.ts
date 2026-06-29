@@ -34,7 +34,7 @@ export const siteConfig = {
   // ── Logo ──
   logo: {
     full: '/bc-financial-logo-full.svg',
-    white: '/bc-financial-logo-white.png',
+    white: '/bc-financial-logo-white.webp',
     compact: '/bc-financial-logo-full.svg',
     alt: 'BC Financial Search',
     heights: { full: 40, white: 40, compact: 28 } as Record<string, number>,
@@ -106,8 +106,8 @@ export const siteConfig = {
 
   // ── JSON-LD Schema ──
   schema: {
-    logo: 'https://bcfinancialsearch.co.uk/bc-financial-logo-transparent.png',
-    image: 'https://bcfinancialsearch.co.uk/ben-about-headshot.jpeg',
+    logo: 'https://bcfinancialsearch.co.uk/bc-financial-logo-transparent.webp',
+    image: 'https://bcfinancialsearch.co.uk/ben-about-headshot.webp',
     foundingDate: '2026-06-19',
     services: [
       {
