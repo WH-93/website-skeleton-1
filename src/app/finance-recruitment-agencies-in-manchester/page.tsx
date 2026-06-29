@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: { absolute: 'Finance Recruitment Agencies in Manchester' },
   description:
-    'A practical directory of finance and accountancy recruiters in Manchester. Corporate firms and specialist — the right one depends on what kind of search you need.',
+    'A practical directory of finance and accountancy recruiters in Manchester. Corporate firms and specialist. The right one depends on what kind of search you need.',
   openGraph: { title: 'Finance Recruitment Agencies in Manchester' },
 };
 
@@ -60,7 +60,7 @@ const agencies: AgencyEntry[] = [
     story:
       'Jo Sellick started it from a spare bedroom in Manchester. Still headquartered here. Won multiple Best Place to Work awards. Around 60\u201380 staff.',
     recruits:
-      'Finance, legal, and actuarial across the North West. Finance is a major desk, but one of several. The founder\u2019s name is on the door\u2014but you won\u2019t deal with him.',
+      'Finance, legal, and actuarial across the North West. Finance is a major desk, but one of several.',
   },
   {
     name: 'Axon Moore',
@@ -86,8 +86,8 @@ export default function FinanceRecruitmentAgenciesManchesterPage() {
           <span className="gold-rule" />
           <p className="text-base sm:text-lg leading-7 text-white/75 max-w-2xl">
             A practical directory of finance and accountancy recruiters in
-            Manchester. Large corporate firms alongside smaller specialists
-            &mdash; the right one depends on what kind of search you need.
+            Manchester. Large corporate firms alongside smaller specialists.
+            The right one depends on what kind of search you need.
           </p>
         </div>
       </section>
@@ -114,7 +114,7 @@ export default function FinanceRecruitmentAgenciesManchesterPage() {
               </div>
             ))}
 
-            {/* BC Financial Search — longer, personal */}
+            {/* BC Financial Search */}
             <div className="border-t-2 border-gold pt-14">
               <div className="flex items-baseline gap-3 mb-1">
                 <h2 className="font-heading text-2xl sm:text-3xl text-navy">
@@ -129,19 +129,18 @@ export default function FinanceRecruitmentAgenciesManchesterPage() {
               </p>
               <div className="body-copy space-y-4">
                 <p>
-                  One person. 12 years learning the market before starting. No
+                  One person. 12 years in this market before starting. No
                   outside funding. No growth target. No plan to build a team.
                 </p>
                 <p>
-                  Recruits for accountancy practice and in-house tax only. No
-                  other sectors. No other desks. Every candidate relationship,
-                  every client brief, every search &mdash; that is all this
+                  Accountancy practice and in-house tax. Nothing else. Every
+                  candidate. Every client. Every search. That is what this
                   person does.
                 </p>
                 <p>
-                  The person you call is the person who does the search, manages
-                  the process, and stays involved afterwards. That matters or it
-                  doesn&rsquo;t &mdash; depending on the hire.
+                  One point of contact from first conversation to start date and
+                  beyond. That matters or it doesn&rsquo;t, depending on the
+                  hire.
                 </p>
               </div>
             </div>
@@ -164,10 +163,10 @@ export default function FinanceRecruitmentAgenciesManchesterPage() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/clients" className="btn-gold">
-                I&rsquo;m hiring &mdash; discuss your brief
+                I&rsquo;m hiring. Discuss your brief.
               </Link>
               <Link href="/candidates" className="btn-outline">
-                I&rsquo;m a candidate &mdash; start a conversation
+                I&rsquo;m a candidate. Start a conversation.
               </Link>
             </div>
           </div>
