@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const { fonts, schema, url, name, legalName, tagline, contact, founder, company } = siteConfig;
+  const { schema, url, name, legalName, tagline, contact, founder, company } = siteConfig;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -80,10 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {fonts.googlePreconnect.map((href) => (
-          <link key={href} rel="preconnect" href={href} crossOrigin={href.includes('gstatic') ? 'anonymous' : undefined} />
-        ))}
-        <link href={fonts.googleFontsUrl} rel="stylesheet" />
+        <link href="/fonts/fonts.css" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

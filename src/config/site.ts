@@ -26,9 +26,6 @@ export const siteConfig = {
   fonts: {
     heading: '"Playfair Display", Garamond, serif',
     body: 'Inter, system-ui, -apple-system, sans-serif',
-    googleFontsUrl:
-      'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap',
-    googlePreconnect: ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'],
   },
 
   // ── Logo ──
