@@ -24,7 +24,7 @@ const agencies: AgencyEntry[] = [
     story:
       'Started as a shipping company. Moved into recruitment in the 1960s. Now places someone into a new job every 30 seconds. Listed on the LSE. 33 countries.',
     recruits:
-      'Every sector and level. Finance is one desk among many. You might get a specialist. You might get whoever is available.',
+      'Every sector and level. Finance is one desk among many.',
   },
   {
     name: 'Robert Half',
@@ -40,16 +40,16 @@ const agencies: AgencyEntry[] = [
     founded: '1976',
     location: 'London',
     story:
-      'Michael Page was 30 when he co-founded it. He thought he could do recruitment better. Took it public in 1988. Left the business in 1995. Now FTSE 250. The name stayed. The person didn\u2019t.',
+      'Built one of the first UK recruitment firms to organise by sector, not region. Took it public in 1988. Left the business in 1995. Now FTSE 250. The name stayed.',
     recruits:
-      'Qualified finance, treasury, audit, and tax. Mainly into commerce and industry. Some practice coverage but it is not their focus. Broad remit. Brand-driven.',
+      'Qualified finance, treasury, audit, and tax. Mainly into commerce and industry. Some practice coverage but it is not their focus. Broad remit.',
   },
   {
     name: 'Marks Sattin',
     founded: '1988',
     location: 'London',
     story:
-      'One of the first UK firms to go specialist-only in finance rather than running a finance desk inside a generalist agency. Acquired. Founders have long since moved on. The brand outlasted them.',
+      'One of the first UK firms to go specialist-only in finance rather than running a finance desk inside a generalist agency. Acquired. Founders have long since moved on.',
     recruits:
       'Accountancy, audit, tax, and financial services from newly qualified to director. Specialist name, corporate ownership. Finance-only, but broad within it.',
   },
@@ -152,10 +152,6 @@ export default function FinanceRecruitmentAgenciesManchesterPage() {
         <div className="container-page">
           <div className="max-w-3xl">
             <p className="eyebrow mb-5">How to choose</p>
-            <h2 className="section-title mb-6">
-              The right recruiter depends on the hire
-            </h2>
-            <span className="gold-rule" />
             <div className="body-copy space-y-3 mb-10">
               <p>Some hires need reach. Others need attention.</p>
             </div>
