@@ -129,8 +129,7 @@ export default function FinanceRecruitmentAgenciesManchesterPage() {
               </p>
               <div className="body-copy space-y-4">
                 <p>
-                  One person. 12 years in this market before starting. No
-                  outside funding. No growth target. No plan to build a team.
+                  One person. 12 years in this market. Built to stay personal.
                 </p>
                 <p>
                   Accountancy practice and in-house tax. Nothing else. Every
