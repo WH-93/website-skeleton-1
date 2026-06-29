@@ -16,6 +16,15 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/finance-recruitment-agencies-manchester',
+        destination: '/finance-recruitment-agencies-in-manchester',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
