@@ -82,6 +82,7 @@ export const siteConfig = {
       { label: 'Candidates', href: '/candidates' },
       { label: 'Clients', href: '/clients' },
       { label: 'Contact', href: '/contact' },
+      { label: 'Manchester Finance Recruiters', href: '/finance-recruitment-agencies-manchester' },
     ],
     services: [
       'Audit & Assurance',
