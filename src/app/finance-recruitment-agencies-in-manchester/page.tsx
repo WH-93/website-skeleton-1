@@ -92,6 +92,49 @@ export default function FinanceRecruitmentAgenciesManchesterPage() {
         </div>
       </section>
 
+      {/* Comparison table */}
+      <section className="section bg-white pb-0">
+        <div className="container-page">
+          <p className="body-copy mb-4 text-navy/60">
+            A quick comparison of who you&rsquo;ll deal with at each firm.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full max-w-2xl border-collapse text-sm">
+              <thead>
+                <tr className="border-b border-navy/10">
+                  <th className="text-left py-2 pr-6 font-semibold text-navy text-xs uppercase tracking-wider">
+                    Agency
+                  </th>
+                  <th className="text-left py-2 font-semibold text-navy text-xs uppercase tracking-wider">
+                    Who you speak to
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-navy/5">
+                {agencies.map((agency) => (
+                  <tr key={agency.name}>
+                    <td className="py-2.5 pr-6 text-navy/80">{agency.name}</td>
+                    <td className="py-2.5 text-navy/60">
+                      {agency.name === 'Axon Moore'
+                        ? 'Mid-level to senior team member'
+                        : 'Assigned consultant'}
+                    </td>
+                  </tr>
+                ))}
+                <tr className="bg-gold/5">
+                  <td className="py-2.5 pr-6 text-navy font-semibold">
+                    BC Financial Search
+                  </td>
+                  <td className="py-2.5 text-navy font-medium">
+                    Ex-Director and Founder. One person, start to finish.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* Agency listings */}
       <section className="section bg-white">
         <div className="container-page">
@@ -120,9 +163,6 @@ export default function FinanceRecruitmentAgenciesManchesterPage() {
                 <h2 className="font-heading text-2xl sm:text-3xl text-navy">
                   BC Financial Search
                 </h2>
-                <span className="text-xs uppercase tracking-wider text-navy/40">
-                  Est. 2026
-                </span>
               </div>
               <p className="text-xs uppercase tracking-wider text-gold font-semibold mb-4">
                 Founded in Manchester. Based on Deansgate.
