@@ -4,6 +4,7 @@ import { PublicLayout } from '@/components/public-layout';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     template: siteConfig.seo.template,
     default: siteConfig.seo.defaultTitle,

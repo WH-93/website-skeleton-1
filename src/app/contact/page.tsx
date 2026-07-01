@@ -6,6 +6,7 @@ import { publicPageMaps } from '@/site/story-maps/public-pages';
 export const metadata: Metadata = {
   title: 'Contact',
   description: 'Start a conversation. All enquiries handled personally and in confidence.',
+  alternates: { canonical: '/contact' },
 };
 
 export default function ContactPage() {

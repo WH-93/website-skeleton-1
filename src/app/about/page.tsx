@@ -6,6 +6,7 @@ import { publicPageMaps } from '@/site/story-maps/public-pages';
 export const metadata: Metadata = {
   title: 'About Ben Copsey',
   description: '12 years of specialist recruitment experience. Founded on listening, searching proactively, and lasting relationships.',
+  alternates: { canonical: '/about' },
 };
 
 export default function AboutPage() {

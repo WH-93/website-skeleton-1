@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Finance Recruitment Agencies in Manchester' },
   description:
     'A practical directory of finance and accountancy recruiters in Manchester. Corporate firms and specialist. The right one depends on what kind of search you need.',
+  alternates: { canonical: '/finance-recruitment-agencies-in-manchester' },
   openGraph: { title: 'Finance Recruitment Agencies in Manchester' },
 };
 

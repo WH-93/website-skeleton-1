@@ -6,6 +6,7 @@ import { publicPageMaps } from '@/site/story-maps/public-pages';
 export const metadata: Metadata = {
   title: 'Career Conversations',
   description: 'Confidential career conversations for accountancy practice and tax professionals. No cost, no pressure.',
+  alternates: { canonical: '/candidates' },
 };
 
 export default function CandidatesPage() {

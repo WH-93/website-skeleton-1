@@ -6,6 +6,7 @@ import { publicPageMaps } from '@/site/story-maps/public-pages';
 export const metadata: Metadata = {
   title: 'Accountancy & Tax Hiring',
   description: 'Proactive search and headhunting for accountancy practices and in-house tax teams across the UK.',
+  alternates: { canonical: '/clients' },
 };
 
 export default function ClientsPage() {

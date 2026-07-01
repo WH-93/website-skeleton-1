@@ -4,6 +4,7 @@ import { activeProfile } from '@/site/active-profile';
 import { publicPageMaps } from '@/site/story-maps/public-pages';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/' },
   description: activeProfile.config.seo.defaultDescription,
 };
 

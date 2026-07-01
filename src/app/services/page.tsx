@@ -6,6 +6,7 @@ import { publicPageMaps } from '@/site/story-maps/public-pages';
 export const metadata: Metadata = {
   title: 'Accountancy & Tax Recruitment Services',
   description: 'Specialist recruitment across accountancy practice, tax, and senior confidential search.',
+  alternates: { canonical: '/services' },
 };
 
 export default function ServicesPage() {
